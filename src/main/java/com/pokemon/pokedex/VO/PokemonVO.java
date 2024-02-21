@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Getter
 public class PokemonVO {
-    private String no;
+    private int no;
     private String name;
     private String type1;
     private String type2;

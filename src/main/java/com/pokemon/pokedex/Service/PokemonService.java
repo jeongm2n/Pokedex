@@ -1,9 +1,12 @@
 package com.pokemon.pokedex.Service;
 
-import java.util.List;
 import retrofit2.Call;
+import retrofit2.http.GET;
+import retrofit2.http.Path;
+
 import com.pokemon.pokedex.VO.PokemonVO;
 
 public interface PokemonService {
-    public Call<List<PokemonVO>> allList();
+    @GET("pokemon/{no}")
+    public Call<PokemonVO> getData(@Path("no") String no);
 }
