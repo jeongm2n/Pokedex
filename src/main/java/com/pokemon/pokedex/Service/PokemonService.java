@@ -7,6 +7,6 @@ import retrofit2.http.Path;
 import com.pokemon.pokedex.VO.PokemonVO;
 
 public interface PokemonService {
-    @GET("pokemon/{no}")
+    @GET("pokemon-species/{no}")
     public Call<PokemonVO> getData(@Path("no") String no);
 }

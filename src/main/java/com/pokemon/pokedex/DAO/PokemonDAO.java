@@ -2,6 +2,7 @@ package com.pokemon.pokedex.DAO;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.pokemon.pokedex.Service.PokemonService;
 import com.pokemon.pokedex.VO.PokemonVO;
@@ -29,14 +30,16 @@ public class PokemonDAO {
             ArrayList<String> pokeArray = new ArrayList<>();
             PokemonVO pokeVO = new PokemonVO();
             pokeService = retrofit.create(PokemonService.class);
-            for(int i=1; i<152; i++){
+            for(int i=1; i<10; i++){
                 String no = Integer.toString(i);
                 Call<PokemonVO> call = pokeService.getData(no);
                 Response<PokemonVO> response = call.execute();
                 if (response.isSuccessful()) {
                     pokeVO = response.body();
-                    String name = pokeVO.getName();
-                    //System.out.println(name);
+                    List<PokemonVO.NameInfo> names = pokeVO.getNames();
+                    PokemonVO.NameInfo nameInfo = names.get(2);
+                    String name = nameInfo.getName();
+                    System.out.println(name);
                     pokeArray.add(name);
                 } else {
                     throw new IOException("Failed to fetch Pokemon info");
