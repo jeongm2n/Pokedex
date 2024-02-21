@@ -4,7 +4,10 @@
 <body id="wrap">
 <div class="alldex">
     <c:forEach var="pokemon" items="${gwandong}">
-        <p>${pokemon.korean},<img src="${pokemon.img}"></p>
+        <p>${pokemon.korean},<img src="${pokemon.img}">
+        <c:forEach var="type" items="${pokemon.types}">
+            ,${type}
+        </c:forEach></p>
     </c:forEach>
 </div>
 </body>

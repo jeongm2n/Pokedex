@@ -2,7 +2,6 @@ package com.pokemon.pokedex.Controller;
 
 import com.pokemon.pokedex.DAO.PokemonDAO;
 import com.pokemon.pokedex.Entity.Pokemon;
-import com.pokemon.pokedex.VO.PokemonVO;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +15,7 @@ public class PokedexController {
     PokemonDAO pokeDAO = new PokemonDAO();
 
     @GetMapping("/main")
-    public ModelAndView goMain() throws IOException {
+    public ModelAndView goMain() throws IOException{
         ModelAndView mav = new ModelAndView();
         
         ArrayList<Pokemon> gwandong = new ArrayList<>();

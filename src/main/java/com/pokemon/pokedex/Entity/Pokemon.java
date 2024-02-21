@@ -15,9 +15,8 @@ public class Pokemon {
     private int no;
     private String korean;
     private String img;
-    /*private String type1;
-    private String type2;
-    private List<PokedexDes> des;*/
+    private String[] types = new String[2];
+    //private List<PokedexDes> des;
     
     @Getter
     public class PokedexDes{

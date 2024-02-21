@@ -23,9 +23,10 @@ public class PokemonVO {
     @SerializedName("names")
     private List<NameInfo> names;
 
+    @SerializedName("types")
+    private List<TypeSlot> types;
+
     private String img;
-    //private String type1;
-    //private String type2;
 
     @Getter
     public static class NameInfo{
@@ -33,5 +34,17 @@ public class PokemonVO {
         private String name;
     }
 
-    
+    @Getter
+    @Setter
+    public static class TypeSlot{
+        @SerializedName("type")
+        private Type type;
+    }
+
+    @Getter
+    @Setter
+    public static class Type{
+        private String name;
+    }
+
 }
