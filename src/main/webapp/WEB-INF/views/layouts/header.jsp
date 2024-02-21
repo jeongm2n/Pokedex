@@ -18,7 +18,7 @@
 </head>
 <header>
     <div>
-        <img src="/img/pokemon.png" class="logo"> <span class="header-font">포켓몬스터 도감</span>
-        <img src="/img/monsterball.png" class="ball">
+        <img src="/img/logo/pokemon.png" class="logo"> <span class="header-font">포켓몬스터 도감</span>
+        <img src="/img/logo/monsterball.png" class="ball">
     </div>
 </header>

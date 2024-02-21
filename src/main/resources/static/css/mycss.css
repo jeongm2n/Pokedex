@@ -36,3 +36,13 @@ header{
     margin-left:5%;
     margin-right:5%;
 }
+
+.typeimg{
+    width : 60px;
+    height : 25px;
+}
+
+.pokemonimg{
+    width : 150px;
+    height : 150px
+}

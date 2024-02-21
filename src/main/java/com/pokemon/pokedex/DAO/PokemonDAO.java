@@ -34,7 +34,7 @@ public class PokemonDAO {
     public ArrayList<Pokemon> allList() throws IOException{
         try {
             ArrayList<Pokemon> pokeArray = new ArrayList<>();
-            for(int i=1; i<10; i++){
+            for(int i=1; i<152; i++){
                 String no = Integer.toString(i);
                 if (getspeciesData(no) && getpokemonData(no)) {
                     String img = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+i+".png";
@@ -98,6 +98,4 @@ public class PokemonDAO {
             return false;
         }
     }
-    
-
 }

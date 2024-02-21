@@ -4,10 +4,12 @@
 <body id="wrap">
 <div class="alldex">
     <c:forEach var="pokemon" items="${gwandong}">
-        <p>${pokemon.korean},<img src="${pokemon.img}">
+        ${pokemon.korean},<img src="${pokemon.img}">
         <c:forEach var="type" items="${pokemon.types}">
-            ,${type}
-        </c:forEach></p>
+            <c:if test="${!empty type}">
+                <img class="typeimg" src="/img/types/${type}.png">
+            </c:if>
+        </c:forEach>
     </c:forEach>
 </div>
 </body>
