@@ -2,9 +2,9 @@
 <%@ include file="./layouts/header.jsp" %>
 
 <body id="wrap">
-<div>
+<div class="alldex">
     <c:forEach var="pokemon" items="${gwandong}">
-        <p>${pokemon}</p>
+        <p>${pokemon.korean},<img src="${pokemon.img}"></p>
     </c:forEach>
 </div>
 </body>

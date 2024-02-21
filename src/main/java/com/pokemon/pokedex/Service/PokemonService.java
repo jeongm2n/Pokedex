@@ -8,5 +8,8 @@ import com.pokemon.pokedex.VO.PokemonVO;
 
 public interface PokemonService {
     @GET("pokemon-species/{no}")
-    public Call<PokemonVO> getData(@Path("no") String no);
+    public Call<PokemonVO> getspeciesData(@Path("no") String no);
+
+    @GET("pokemon/{no}")
+    public Call<PokemonVO> getpokemonData(@Path("no") String no);
 }

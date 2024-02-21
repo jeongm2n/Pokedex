@@ -12,6 +12,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
+@Setter
 public class PokemonVO {
     @SerializedName("id")
     private int no;
@@ -22,6 +23,7 @@ public class PokemonVO {
     @SerializedName("names")
     private List<NameInfo> names;
 
+    private String img;
     //private String type1;
     //private String type2;
 
@@ -30,4 +32,6 @@ public class PokemonVO {
         @SerializedName("name")
         private String name;
     }
+
+    
 }
