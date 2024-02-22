@@ -13,16 +13,37 @@ import java.util.ArrayList;
 @Controller
 public class PokedexController {
     PokemonDAO pokeDAO = new PokemonDAO();
+    ArrayList<Pokemon> gwandong;
+    ArrayList<Pokemon> seongdo;
+    
+    @GetMapping("main")
+    public String goMain(){
+        return "main";
+    }
 
-    @GetMapping("/main")
-    public ModelAndView goMain() throws IOException{
+    @GetMapping("/gwandong")
+    public ModelAndView goGwandong() throws IOException{
         ModelAndView mav = new ModelAndView();
         
-        ArrayList<Pokemon> gwandong = new ArrayList<>();
-        gwandong = pokeDAO.allList();
+        if(gwandong == null){
+            gwandong = pokeDAO.allList(1,151);
+        }
 
         mav.addObject("gwandong", gwandong);
-        mav.setViewName("main");
+        mav.setViewName("pokedex");
+        return mav;
+    }
+
+    @GetMapping("/seongdo")
+    public ModelAndView goSeongdo() throws IOException{
+        ModelAndView mav = new ModelAndView();
+        
+        if(seongdo == null){
+            seongdo = pokeDAO.allList(152,250);
+        }
+
+        mav.addObject("seongdo", seongdo);
+        mav.setViewName("pokedex");
         return mav;
     }
 }
