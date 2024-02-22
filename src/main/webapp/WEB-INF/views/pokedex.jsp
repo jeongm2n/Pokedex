@@ -3,6 +3,7 @@
 
 <body id="wrap">
 <div class="alldex row">
+    <p style="color:Plum;font-size:10pt;font-weight:bold;">각 지방별 추가된 포켓몬만 표시됩니다.</p>
     <c:forEach var="pokemon" items="${pokemons}">
         <div class="card col-2" style="text-align:center;">
             <img src="${pokemon.img}" class="pokemonimg" style="text-align: center;">

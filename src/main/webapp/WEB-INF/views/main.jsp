@@ -10,24 +10,24 @@
 <body id="wrap">
 <div class="main-div container text-center">
     <div class="row" style="width:100%">
-        <div class="col-6 region-div" onClick="goDex('gwandong')">관동지방</div>
-        <div class="col-6 region-div" onClick="goDex('seongdo')">성도지방</div>
+        <div class="col-6 region-div" onclick="goDex('gwandong')">관동지방</div>
+        <div class="col-6 region-div" onclick="goDex('seongdo')">성도지방</div>
     </div>
     <div class="row" style="width:100%">
-        <div class="col-6 region-div">호연지방</div>
-        <div class="col-6 region-div">신오지방</div>
+        <div class="col-6 region-div" onclick="goDex('hoyeon')">호연지방</div>
+        <div class="col-6 region-div" onclick="goDex('shinoh')">신오지방</div>
     </div>
     <div class="row" style="width:100%">
-        <div class="col-6 region-div">하나지방</div>
-        <div class="col-6 region-div">칼로스지방</div>
+        <div class="col-6 region-div" onclick="goDex('hana')">하나지방</div>
+        <div class="col-6 region-div" onclick="goDex('carlos')">칼로스지방</div>
     </div>
     <div class="row" style="width:100%">
-        <div class="col-6 region-div">알로라지방</div>
-        <div class="col-6 region-div">가라르지방</div>
+        <div class="col-6 region-div" onclick="goDex('alola')">알로라지방</div>
+        <div class="col-6 region-div" onclick="goDex('galar')">가라르지방</div>
     </div>
     <div class="row" style="width:100%">
-        <div class="col-6 region-div">히스이</div>
-        <div class="col-6 region-div">팓데아지방</div>
+        <div class="col-6 region-div" onclick="goDex('hisui')">히스이</div>
+        <div class="col-6 region-div" onclick="goDex('paldea')">팔데아지방</div>
     </div>
 </div>
 </body>
