@@ -29,7 +29,7 @@ public class PokedexController {
             gwandong = pokeDAO.allList(1,151);
         }
 
-        mav.addObject("gwandong", gwandong);
+        mav.addObject("pokemons", gwandong);
         mav.setViewName("pokedex");
         return mav;
     }
@@ -39,10 +39,10 @@ public class PokedexController {
         ModelAndView mav = new ModelAndView();
         
         if(seongdo == null){
-            seongdo = pokeDAO.allList(152,250);
+            seongdo = pokeDAO.allList(152,251);
         }
 
-        mav.addObject("seongdo", seongdo);
+        mav.addObject("pokemons", seongdo);
         mav.setViewName("pokedex");
         return mav;
     }

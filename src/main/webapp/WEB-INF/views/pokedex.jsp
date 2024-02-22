@@ -3,7 +3,7 @@
 
 <body id="wrap">
 <div class="alldex row">
-    <c:forEach var="pokemon" items="${gwandong}">
+    <c:forEach var="pokemon" items="${pokemons}">
         <div class="card col-2" style="text-align:center;">
             <img src="${pokemon.img}" class="pokemonimg" style="text-align: center;">
             <div class="card-body">

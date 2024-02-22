@@ -14,20 +14,20 @@
         <div class="col-6 region-div" onClick="goDex('seongdo')">성도지방</div>
     </div>
     <div class="row" style="width:100%">
-        <div class="region-div">호연지방</div>
-        <div class="region-div">신오지방</div>
+        <div class="col-6 region-div">호연지방</div>
+        <div class="col-6 region-div">신오지방</div>
     </div>
     <div class="row" style="width:100%">
-        <div class="region-div">하나지방</div>
-        <div class="region-div">칼로스지방</div>
-    </div>
-    <div>
-        <div class="region-div">알로라지방</div>
-        <div class="region-div">가라르지방</div>
+        <div class="col-6 region-div">하나지방</div>
+        <div class="col-6 region-div">칼로스지방</div>
     </div>
     <div class="row" style="width:100%">
-        <div class="region-div">히스이</div>
-        <div class="region-div">팓데아지방</div>
+        <div class="col-6 region-div">알로라지방</div>
+        <div class="col-6 region-div">가라르지방</div>
+    </div>
+    <div class="row" style="width:100%">
+        <div class="col-6 region-div">히스이</div>
+        <div class="col-6 region-div">팓데아지방</div>
     </div>
 </div>
 </body>
