@@ -31,10 +31,10 @@ public class PokemonDAO {
         pokeService = retrofit.create(PokemonService.class);
     }
 
-    public ArrayList<Pokemon> allList() throws IOException{
+    public ArrayList<Pokemon> allList(int start, int end) throws IOException{
         try {
             ArrayList<Pokemon> pokeArray = new ArrayList<>();
-            for(int i=1; i<152; i++){
+            for(int i=start; i<=end; i++){
                 String no = Integer.toString(i);
                 if (getspeciesData(no) && getpokemonData(no)) {
                     String img = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+i+".png";
