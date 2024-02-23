@@ -29,6 +29,9 @@ public class PokemonVO {
     @SerializedName("flavor_text_entries")
     private List<Fte> flavor_text_entries;
 
+    @SerializedName("genera")
+    private List<Genera> genera;
+
     private String img;
 
     @Getter
@@ -83,5 +86,11 @@ public class PokemonVO {
     @Setter
     public static class Version{
         private String name;
+    }
+
+    @Getter
+    @Setter
+    public static class Genera{
+        private String genus;
     }
 }

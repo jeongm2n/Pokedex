@@ -34,7 +34,7 @@ public class PokedexController {
         ModelAndView mav = new ModelAndView();
         
         if(gwandong == null){
-            gwandong = pokeDAO.allList(1,9);
+            gwandong = pokeDAO.allList(1,151);
         }
 
         mav.addObject("pokemons", gwandong);

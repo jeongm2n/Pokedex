@@ -20,6 +20,7 @@ public class Pokemon {
     private String[] types = new String[2];
     private ArrayList<Ability> abilities;
     private ArrayList<PokedexDes> des;
+    private String genus;
     
     @Getter
     @AllArgsConstructor

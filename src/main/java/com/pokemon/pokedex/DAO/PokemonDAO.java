@@ -40,6 +40,7 @@ public class PokemonDAO {
 
     private String name;
     private String[] types;
+    private String genus;
 
     public PokemonDAO(){
         retrofit = new Retrofit.Builder()
@@ -56,7 +57,7 @@ public class PokemonDAO {
                 String no = Integer.toString(i);
                 if (getspeciesData(no) && getpokemonData(no)) {
                     String img = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/"+i+".gif";
-                    pokemon = new Pokemon(i,name,img,types,abilities,pokedexs);
+                    pokemon = new Pokemon(i,name,img,types,abilities,pokedexs,genus);
                     System.out.println(name);
                     pokeArray.add(pokemon);
                 } else {
@@ -98,6 +99,10 @@ public class PokemonDAO {
                         }else{ continue; }
                     }else{ continue; }
                 }
+                List<PokemonVO.Genera> generas = pokeVO.getGenera();
+                PokemonVO.Genera ge = generas.get(1);
+                genus = ge.getGenus();
+                System.out.println(genus);
             }
             return true;
         }catch (IOException e) {

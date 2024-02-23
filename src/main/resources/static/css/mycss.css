@@ -50,8 +50,7 @@ header{
 .pokemonimg{
     width : 150px;
     height : 150px;
-    margin-top:10px;
-    margin-left:25px;
+    margin : 0 auto;
 }
 
 .main-div{
