@@ -26,6 +26,9 @@ public class PokemonVO {
     @SerializedName("abilities")
     private List<AbSlot> abilities;
 
+    @SerializedName("flavor_text_entries")
+    private List<Fte> flavor_text_entries;
+
     private String img;
 
     @Getter
@@ -59,5 +62,26 @@ public class PokemonVO {
     @Setter
     public static class AbilityUrl{
         private String url;
+    }
+
+    @Getter
+    @Setter
+    public static class Fte{
+        @SerializedName("flavor_text")
+        private String flavor_text;
+        private Language language;
+        private Version version;
+    }
+
+    @Getter
+    @Setter
+    public static class Language{
+        private String name;
+    }
+
+    @Getter
+    @Setter
+    public static class Version{
+        private String name;
     }
 }

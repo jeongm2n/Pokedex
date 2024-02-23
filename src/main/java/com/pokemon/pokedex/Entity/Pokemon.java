@@ -1,5 +1,6 @@
 package com.pokemon.pokedex.Entity;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,12 +19,13 @@ public class Pokemon {
     private String img;
     private String[] types = new String[2];
     private ArrayList<Ability> abilities;
-    //private List<PokedexDes> des;
+    private ArrayList<PokedexDes> des;
     
     @Getter
+    @AllArgsConstructor
     public static class PokedexDes{
         String version;
-        String content;
+        String flavor_text;
     }
 
     @Getter

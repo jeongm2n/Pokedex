@@ -2,10 +2,14 @@ package com.pokemon.pokedex.DAO;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.List;
+import java.util.Map;
 
 import com.pokemon.pokedex.Entity.Pokemon;
 import com.pokemon.pokedex.Entity.Pokemon.Ability;
+import com.pokemon.pokedex.Entity.Pokemon.PokedexDes;
 import com.pokemon.pokedex.Service.PokemonService;
 import com.pokemon.pokedex.VO.PokemonVO;
 
@@ -21,6 +25,18 @@ public class PokemonDAO {
     private Pokemon pokemon;
     private PokemonVO pokeVO;
     private ArrayList<Ability> abilities = new ArrayList<>();
+    private ArrayList<PokedexDes> pokedexs = new ArrayList<>();
+
+    private String[] engVer = {"x","omega-ruby","sun","sword","legens-arceus","scarlet"};
+
+    private String[] korVer = {"X/Y","오메가루비/알파사파이어","썬/문","소드/실드","레전드아르세우스","스칼렛/바이올렛"};
+    private final Map<String,String> vs_map = new HashMap<String,String>(){
+        {
+            for(int i=0; i<engVer.length; i++){
+                put(engVer[i], korVer[i]);
+            }
+        }
+    };
 
     private String name;
     private String[] types;
@@ -39,8 +55,8 @@ public class PokemonDAO {
             for(int i=start; i<=end; i++){
                 String no = Integer.toString(i);
                 if (getspeciesData(no) && getpokemonData(no)) {
-                    String img = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+i+".png";
-                    pokemon = new Pokemon(i,name,img,types,abilities);
+                    String img = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/"+i+".gif";
+                    pokemon = new Pokemon(i,name,img,types,abilities,pokedexs);
                     System.out.println(name);
                     pokeArray.add(pokemon);
                 } else {
@@ -66,6 +82,22 @@ public class PokemonDAO {
                 List<PokemonVO.NameInfo> names = pokeVO.getNames();
                 PokemonVO.NameInfo nameInfo = names.get(2);
                 name = nameInfo.getName();
+
+                List<PokemonVO.Fte> ftes = pokeVO.getFlavor_text_entries();
+                for(int i=0; i<ftes.size(); i++){
+                    PokemonVO.Fte fte = ftes.get(i);
+                    PokemonVO.Language lans = fte.getLanguage();
+                    String lan = lans.getName();
+                    if(lan.equals("ko")){
+                        String des = fte.getFlavor_text();
+                        PokemonVO.Version vers = fte.getVersion();
+                        String ver = vers.getName(); 
+                        if(vs_map.containsKey(ver)){
+                            pokedexs.add(new PokedexDes(vs_map.get(ver),des));
+                            System.out.println(des+","+vs_map.get(ver));
+                        }else{ continue; }
+                    }else{ continue; }
+                }
             }
             return true;
         }catch (IOException e) {
