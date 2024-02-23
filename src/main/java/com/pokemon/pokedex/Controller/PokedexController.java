@@ -29,16 +29,6 @@ public class PokedexController {
     
     @GetMapping("main")
     public String goMain() throws IOException{
-
-        /*allPokemons = pokeDAO.allList(1,1010);
-        ObjectMapper mapper = new ObjectMapper();
-        try {
-            // JSON 파일로 쓰기
-            mapper.writeValue(new File("data.json"), allPokemons);
-            System.out.println("JSON 파일이 생성되었습니다.");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }*/
         return "main";
     }
 
@@ -86,7 +76,7 @@ public class PokedexController {
         ModelAndView mav = new ModelAndView();
         
         if(shinoh == null){
-            shinoh = pokeDAO.allList(387,397);
+            shinoh = pokeDAO.allList(387,493);
         }
 
         mav.addObject("pokemons", shinoh);
@@ -166,6 +156,15 @@ public class PokedexController {
         
         if(paldea == null){
             paldea = pokeDAO.allList(906,1010);
+        }
+
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            // JSON 파일로 쓰기
+            mapper.writeValue(new File("9.json"), paldea);
+            System.out.println("JSON 파일이 생성되었습니다.");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
         mav.addObject("pokemons", paldea);

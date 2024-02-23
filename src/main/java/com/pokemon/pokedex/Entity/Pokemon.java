@@ -19,6 +19,15 @@ public class Pokemon {
     private String[] types = new String[2];
     private ArrayList<Ability> abilities;
     private String genus;
+    private ArrayList<PokedexDes> des;
+    
+    @Getter
+    @Setter
+    @AllArgsConstructor
+    public static class PokedexDes{
+        String version;
+        String flavor_text;
+    }
 
     @Getter
     @AllArgsConstructor

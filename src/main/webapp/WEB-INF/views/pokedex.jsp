@@ -19,7 +19,6 @@
                 </c:forEach>
             </div>
         </div>
-        
     </c:forEach>
 </div>
 </body>

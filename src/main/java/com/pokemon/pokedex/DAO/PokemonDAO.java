@@ -8,7 +8,7 @@ import java.util.Map;
 
 import com.pokemon.pokedex.Entity.Pokemon;
 import com.pokemon.pokedex.Entity.Pokemon.Ability;
-import com.pokemon.pokedex.Entity.Pokedexs.PokedexDes;
+import com.pokemon.pokedex.Entity.Pokemon.PokedexDes;
 import com.pokemon.pokedex.Service.PokemonService;
 import com.pokemon.pokedex.VO.PokemonVO;
 
@@ -24,7 +24,7 @@ public class PokemonDAO {
     private Pokemon pokemon;
     private PokemonVO pokeVO;
     private ArrayList<Ability> abilities;
-    private ArrayList<PokedexDes> pokedexs = new ArrayList<>();
+    private ArrayList<PokedexDes> pokedexs;
 
     private String[] engVer = {"x","omega-ruby","sun","sword","legens-arceus","scarlet"};
 
@@ -57,7 +57,7 @@ public class PokemonDAO {
                 if (getspeciesData(no) && getpokemonData(no)) {
                     String img = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/"+i+".gif";
                     String simg = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/shiny/"+i+".gif";
-                    pokemon = new Pokemon(i,name,img,simg,types,abilities,genus);
+                    pokemon = new Pokemon(i,name,img,simg,types,abilities,genus,pokedexs);
                     pokeArray.add(pokemon);
                 } else {
                     throw new IOException("Failed to fetch Pokemon info");
@@ -73,6 +73,7 @@ public class PokemonDAO {
 
     public boolean getspeciesData(String no) throws IOException{
         try{
+            pokedexs = new ArrayList<>();
             types=new String[2];
             Call<PokemonVO> call = pokeService.getspeciesData(no);
             Response<PokemonVO> response = call.execute();
@@ -83,7 +84,7 @@ public class PokemonDAO {
                 PokemonVO.NameInfo nameInfo = names.get(2);
                 name = nameInfo.getName();
                 System.out.print(name);
-                /*List<PokemonVO.Fte> ftes = pokeVO.getFlavor_text_entries();
+                List<PokemonVO.Fte> ftes = pokeVO.getFlavor_text_entries();
                 for(int i=0; i<ftes.size(); i++){
                     PokemonVO.Fte fte = ftes.get(i);
                     PokemonVO.Language lans = fte.getLanguage();
@@ -97,7 +98,7 @@ public class PokemonDAO {
                             System.out.println(des+","+vs_map.get(ver));
                         }else{ continue; }
                     }else{ continue; }
-                }*/
+                }
                 List<PokemonVO.Genera> generas = pokeVO.getGenera();
                 PokemonVO.Genera ge = generas.get(1);
                 genus = ge.getGenus();
