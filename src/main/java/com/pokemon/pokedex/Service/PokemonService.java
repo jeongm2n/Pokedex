@@ -12,4 +12,7 @@ public interface PokemonService {
 
     @GET("pokemon/{no}")
     public Call<PokemonVO> getpokemonData(@Path("no") String no);
+
+    @GET("ability/{no}")
+    public Call<PokemonVO> getAbility(@Path("no") String no);
 }

@@ -14,9 +14,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class PokemonVO {
-    @SerializedName("id")
-    private int no;
-
     @SerializedName("name")
     private String name;
 
@@ -25,6 +22,15 @@ public class PokemonVO {
 
     @SerializedName("types")
     private List<TypeSlot> types;
+
+    @SerializedName("abilities")
+    private List<AbSlot> abilities;
+
+    @SerializedName("flavor_text_entries")
+    private List<Fte> flavor_text_entries;
+
+    @SerializedName("genera")
+    private List<Genera> genera;
 
     private String img;
 
@@ -47,4 +53,44 @@ public class PokemonVO {
         private String name;
     }
 
+    @Getter
+    @Setter
+    public static class AbSlot{
+        @SerializedName("ability")
+        private AbilityUrl ability;
+        private String is_hidden;
+    }
+
+    @Getter
+    @Setter
+    public static class AbilityUrl{
+        private String url;
+    }
+
+    @Getter
+    @Setter
+    public static class Fte{
+        @SerializedName("flavor_text")
+        private String flavor_text;
+        private Language language;
+        private Version version;
+    }
+
+    @Getter
+    @Setter
+    public static class Language{
+        private String name;
+    }
+
+    @Getter
+    @Setter
+    public static class Version{
+        private String name;
+    }
+
+    @Getter
+    @Setter
+    public static class Genera{
+        private String genus;
+    }
 }

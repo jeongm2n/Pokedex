@@ -1,5 +1,6 @@
 package com.pokemon.pokedex.Controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pokemon.pokedex.DAO.PokemonDAO;
 import com.pokemon.pokedex.Entity.Pokemon;
 
@@ -7,12 +8,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
 @Controller
 public class PokedexController {
     PokemonDAO pokeDAO = new PokemonDAO();
+    ArrayList<Pokemon> allPokemons;
     ArrayList<Pokemon> gwandong;
     ArrayList<Pokemon> seongdo;
     ArrayList<Pokemon> hoyeon;
@@ -25,7 +28,17 @@ public class PokedexController {
     ArrayList<Pokemon> hisui;
     
     @GetMapping("main")
-    public String goMain(){
+    public String goMain() throws IOException{
+
+        /*allPokemons = pokeDAO.allList(1,1010);
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            // JSON 파일로 쓰기
+            mapper.writeValue(new File("data.json"), allPokemons);
+            System.out.println("JSON 파일이 생성되었습니다.");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }*/
         return "main";
     }
 
@@ -73,7 +86,7 @@ public class PokedexController {
         ModelAndView mav = new ModelAndView();
         
         if(shinoh == null){
-            shinoh = pokeDAO.allList(387,493);
+            shinoh = pokeDAO.allList(387,397);
         }
 
         mav.addObject("pokemons", shinoh);
@@ -152,7 +165,7 @@ public class PokedexController {
         ModelAndView mav = new ModelAndView();
         
         if(paldea == null){
-            paldea = pokeDAO.allList(906,1024);
+            paldea = pokeDAO.allList(906,1010);
         }
 
         mav.addObject("pokemons", paldea);
