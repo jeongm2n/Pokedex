@@ -1,8 +1,6 @@
 package com.pokemon.pokedex.Entity;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,15 +18,7 @@ public class Pokemon {
     private String simg;
     private String[] types = new String[2];
     private ArrayList<Ability> abilities;
-    private ArrayList<PokedexDes> des;
     private String genus;
-    
-    @Getter
-    @AllArgsConstructor
-    public static class PokedexDes{
-        String version;
-        String flavor_text;
-    }
 
     @Getter
     @AllArgsConstructor
