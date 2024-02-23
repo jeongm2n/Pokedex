@@ -57,7 +57,8 @@ public class PokemonDAO {
                 String no = Integer.toString(i);
                 if (getspeciesData(no) && getpokemonData(no)) {
                     String img = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/"+i+".gif";
-                    pokemon = new Pokemon(i,name,img,types,abilities,pokedexs,genus);
+                    String simg = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/shiny/"+i+".gif";
+                    pokemon = new Pokemon(i,name,img,simg,types,abilities,pokedexs,genus);
                     System.out.println(name);
                     pokeArray.add(pokemon);
                 } else {

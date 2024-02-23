@@ -17,6 +17,7 @@ public class Pokemon {
     private int no;
     private String korean;
     private String img;
+    private String simg;
     private String[] types = new String[2];
     private ArrayList<Ability> abilities;
     private ArrayList<PokedexDes> des;
