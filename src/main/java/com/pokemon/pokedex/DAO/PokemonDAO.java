@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.pokemon.pokedex.Entity.Pokemon;
+import com.pokemon.pokedex.Entity.Pokemon.Ability;
 import com.pokemon.pokedex.Service.PokemonService;
 import com.pokemon.pokedex.VO.PokemonVO;
 
@@ -19,6 +20,7 @@ public class PokemonDAO {
     private PokemonService pokeService;
     private Pokemon pokemon;
     private PokemonVO pokeVO;
+    private ArrayList<Ability> abilities = new ArrayList<>();
 
     private String name;
     private String[] types;
@@ -38,7 +40,7 @@ public class PokemonDAO {
                 String no = Integer.toString(i);
                 if (getspeciesData(no) && getpokemonData(no)) {
                     String img = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+i+".png";
-                    pokemon = new Pokemon(i,name,img,types);
+                    pokemon = new Pokemon(i,name,img,types,abilities);
                     System.out.println(name);
                     pokeArray.add(pokemon);
                 } else {
@@ -71,7 +73,6 @@ public class PokemonDAO {
             // IOException 처리 로직 추가
             return false;
         }
-        
     }
 
     public boolean getpokemonData(String no){
@@ -82,20 +83,50 @@ public class PokemonDAO {
             if(response.isSuccessful()){
                 pokeVO = response.body();
                 List<PokemonVO.TypeSlot> typeslot = pokeVO.getTypes();
+                List<PokemonVO.AbSlot> abslot = pokeVO.getAbilities();
                 for(int i=0; i<typeslot.size(); i++){
                     PokemonVO.TypeSlot typeinfo = typeslot.get(i);
                     PokemonVO.Type type = typeinfo.getType();
-                    //System.out.println(type.getName());
                     types[i] = type.getName();
                     System.out.println(types[i]);
                 }
-                
+                for(int i=0; i<abslot.size(); i++){
+                    PokemonVO.AbSlot abInfo = abslot.get(i);
+                    PokemonVO.AbilityUrl tmp = abInfo.getAbility();
+                    String hidden = abInfo.getIs_hidden();
+                    String url[] = tmp.getUrl().split("ability/");
+                    String num = url[1];
+                    String abname = getAbilityName(num);
+                    Ability ab = new Ability(abname, hidden);
+                    abilities.add(ab);
+                }
             }
             return true;
         }catch (IOException e) {
             e.printStackTrace();
             // IOException 처리 로직 추가
             return false;
+        }
+    }
+
+    public String getAbilityName(String no){
+        try{
+            String abname = null;
+            Call<PokemonVO> call = pokeService.getAbility(no);
+            Response<PokemonVO> response = call.execute();
+
+            if(response.isSuccessful()){
+                pokeVO = response.body();
+                List<PokemonVO.NameInfo> names = pokeVO.getNames();
+                PokemonVO.NameInfo nameInfo = names.get(1);
+                abname = nameInfo.getName();
+                System.out.print(abname+" , ");
+            }
+            return abname;
+        }catch (IOException e) {
+            e.printStackTrace();
+            // IOException 처리 로직 추가
+            return "";
         }
     }
 }
