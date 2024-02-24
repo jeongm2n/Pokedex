@@ -14,11 +14,12 @@ import lombok.Setter;
 public class Pokemon {
     private int no;
     private String korean;
+    private String eng;
+    private String genus;
     private String img;
     private String simg;
     private String[] types = new String[2];
     private ArrayList<Ability> abilities;
-    private String genus;
     private ArrayList<PokedexDes> des;
     
     @Getter

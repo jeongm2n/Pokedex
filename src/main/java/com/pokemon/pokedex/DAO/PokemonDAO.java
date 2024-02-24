@@ -40,6 +40,7 @@ public class PokemonDAO {
     private String name;
     private String[] types;
     private String genus;
+    private String eng;
 
     public PokemonDAO(){
         retrofit = new Retrofit.Builder()
@@ -55,9 +56,9 @@ public class PokemonDAO {
             for(int i=start; i<=end; i++){
                 String no = Integer.toString(i);
                 if (getspeciesData(no) && getpokemonData(no)) {
-                    String img = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/"+i+".gif";
-                    String simg = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/shiny/"+i+".gif";
-                    pokemon = new Pokemon(i,name,img,simg,types,abilities,genus,pokedexs);
+                    String img = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+i+".png";
+                    String simg = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/"+i+".png";
+                    pokemon = new Pokemon(i,name,eng,genus,img,simg,types,abilities,pokedexs);
                     pokeArray.add(pokemon);
                 } else {
                     throw new IOException("Failed to fetch Pokemon info");
@@ -80,6 +81,7 @@ public class PokemonDAO {
 
             if(response.isSuccessful()){
                 pokeVO = response.body();
+                eng = pokeVO.getName();
                 List<PokemonVO.NameInfo> names = pokeVO.getNames();
                 PokemonVO.NameInfo nameInfo = names.get(2);
                 name = nameInfo.getName();

@@ -158,18 +158,17 @@ public class PokedexController {
             paldea = pokeDAO.allList(906,1010);
         }
 
-        ObjectMapper mapper = new ObjectMapper();
-        try {
-            // JSON 파일로 쓰기
-            mapper.writeValue(new File("9.json"), paldea);
-            System.out.println("JSON 파일이 생성되었습니다.");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
         mav.addObject("pokemons", paldea);
         mav.setViewName("pokedex");
         return mav;
     }
     
+    /*ObjectMapper mapper = new ObjectMapper();
+    try {
+        // JSON 파일로 쓰기
+        mapper.writeValue(new File("1.json"), gwandong);
+        System.out.println("JSON 파일이 생성되었습니다.");
+    } catch (Exception e) {
+        e.printStackTrace();
+    }*/
 }
