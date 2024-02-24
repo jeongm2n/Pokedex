@@ -14,7 +14,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 
 @Controller
 public class PokedexController {
@@ -25,15 +24,19 @@ public class PokedexController {
         ObjectMapper mapper = new ObjectMapper();
         ArrayList<Pokemon> pokemons = new ArrayList<>();
         
-        /*int[] nums1 = {3,6,6,9,65,94,115,127,130,142,150,150,181,212,214,229,248,257,282,303,306,308,310,354,359,445,448,460};
-        int[] nums2 = {380,381,260,254,302,334,475,531,319,80,208,18,362,719,376,382,383,384};
-        int[] nums3 = {323,428,373,15};
-        pokemons.addAll(pokeDAO.allList(10033, 10060, nums1));
-        pokemons.addAll(pokeDAO.allList(10062, 10079, nums2));
-        pokemons.addAll(pokeDAO.allList(10087, 10090, nums3));
+        /*int[] nums = {890};
+        int[] nums1 = {3,6,9,12,25,52,68,94,99,131,133,143,569,809,812,815,818,823,826,834,839,841,842,844,849};
+        int[] nums2 = {849};
+        int[] nums3 = {851,858,861,869,879,884};
+        int[] nums4 = {892,892};
+        pokemons.addAll(pokeDAO.allList(10195, 10219, nums1));
+        pokemons.addAll(pokeDAO.allList(10228, 10228, nums2));
+        pokemons.addAll(pokeDAO.allList(10220, 10225, nums3));
+        pokemons.addAll(pokeDAO.allList(10226, 10227, nums4));
+        pokemons.addAll(pokeDAO.allList(10190, 10190, nums));
         try {
             // JSON 파일로 쓰기
-            mapper.writeValue(new File("mega.json"), pokemons);
+            mapper.writeValue(new File("gmax.json"), pokemons);
             System.out.println("JSON 파일이 생성되었습니다.");
         } catch (Exception e) {
             e.printStackTrace();

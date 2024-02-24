@@ -1,10 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="./layouts/header.jsp" %>
-<% String gen = request.getParameter("gen"); %>
+<% String gen = request.getParameter("gen"); 
+String[] region = {"관동지방","성도지방","호연지방","신오지방","하나지방","칼로스지방","알로라지방","가라르지방","팔데아지방","히스이"};
+String page_name;
+if(gen.equals("mega")){
+    page_name = "메가진화";
+}else if(gen.equals("gmax")){
+    page_name = "거다이맥스";
+}else{
+    int n = Integer.parseInt(gen);
+    page_name = region[n-1];
+}%>
 
 <body id="wrap">
 <div class="alldex row">
-    <p style="color:Plum;font-size:10pt;font-weight:bold;">각 지방별 추가된 포켓몬만 표시됩니다.</p>
+    <p class="page_name"><%=page_name %></p>
     <c:forEach var="pokemon" items="${pokemons}">
         <%if(!gen.equals("9")){%><div class="card col-2 text-center" style="padding-top:15px">
             <div class="div_else" style="display: flex; justify-content: center;">

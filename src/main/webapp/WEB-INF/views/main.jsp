@@ -23,6 +23,7 @@
     </div>
     <div class="row" style="width:100%">
         <div class="col-3 region-div" onclick="goDex('8')">가라르지방</div>
+        <div class="col-3 region-div" onclick="goDex('gmax')">거다이맥스</div>
         <div class="col-3 region-div" onclick="goDex('10')">히스이</div>
         <div class="col-3 region-div" onclick="goDex('9')">팔데아지방</div>
     </div>

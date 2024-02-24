@@ -89,7 +89,7 @@ public class PokemonDAO {
                 eng = pokeVO.getName();
                 List<PokemonVO.NameInfo> names = pokeVO.getNames();
                 PokemonVO.NameInfo nameInfo = names.get(2);
-                name = "메가" + nameInfo.getName();
+                name = "거다이" + nameInfo.getName();
                 System.out.print(name);
                 /*List<PokemonVO.Fte> ftes = pokeVO.getFlavor_text_entries();
                 for(int i=0; i<ftes.size(); i++){
@@ -106,7 +106,7 @@ public class PokemonDAO {
                         }else{ continue; }
                     }else{ continue; }
                 }*/
-                pokedexs.add(new PokedexDes(null,null));
+                pokedexs.add(new PokedexDes("소드/실드",null));
                 List<PokemonVO.Genera> generas = pokeVO.getGenera();
                 PokemonVO.Genera ge = generas.get(1);
                 genus = ge.getGenus();
