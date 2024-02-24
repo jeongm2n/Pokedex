@@ -14,6 +14,9 @@ import lombok.Setter;
 @Getter
 @Setter
 public class PokemonVO {
+    @SerializedName("id")
+    private int id;
+
     @SerializedName("name")
     private String name;
 

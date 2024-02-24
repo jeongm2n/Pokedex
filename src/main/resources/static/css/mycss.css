@@ -43,7 +43,7 @@ header{
 }
 
 .typeimg{
-    width : 60px;
+    width : 80px;
     height : 25px;
 }
 
@@ -53,9 +53,18 @@ header{
     margin : 0 auto;
 }
 
+.div_else{
+    height:150px;
+    vertical-align: middle;
+}
+
+.card_body{
+    padding : 5px;
+    text-align: center;
+}
+
 .pokemonimg{
-    width : auto;
-    height : 180px;
+    object-fit: contain;
     margin : 0 auto;
 }
 
