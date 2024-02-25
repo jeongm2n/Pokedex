@@ -61,8 +61,8 @@ public class PokemonDAO {
                 int num = nums[j++];
                 String s = Integer.toString(num);
                 if (getspeciesData(s) && getpokemonData(no)) {
-                    String img = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/"+i+".gif";
-                    String simg = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/shiny/"+i+".gif";
+                    String img = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+i+".png";
+                    String simg = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/"+i+".png";
                     pokemon = new Pokemon(num,name,eng,genus,img,simg,types,abilities,pokedexs);
                     pokeArray.add(pokemon);
                 } else {
@@ -89,7 +89,7 @@ public class PokemonDAO {
                 eng = pokeVO.getName();
                 List<PokemonVO.NameInfo> names = pokeVO.getNames();
                 PokemonVO.NameInfo nameInfo = names.get(2);
-                name = "거다이" + nameInfo.getName();
+                name = nameInfo.getName();
                 System.out.print(name);
                 /*List<PokemonVO.Fte> ftes = pokeVO.getFlavor_text_entries();
                 for(int i=0; i<ftes.size(); i++){
@@ -105,12 +105,12 @@ public class PokemonDAO {
                             System.out.println(des+","+vs_map.get(ver));
                         }else{ continue; }
                     }else{ continue; }
-                }*/
-                pokedexs.add(new PokedexDes("소드/실드",null));
+                }
+                pokedexs.add(new PokedexDes("",null));
                 List<PokemonVO.Genera> generas = pokeVO.getGenera();
                 PokemonVO.Genera ge = generas.get(1);
                 genus = ge.getGenus();
-                System.out.println(genus);
+                System.out.println(genus)*/;
             }
             return true;
         }catch (IOException e) {
