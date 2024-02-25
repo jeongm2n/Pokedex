@@ -23,24 +23,33 @@ public class PokedexController {
     public String goMain() throws IOException{
         ObjectMapper mapper = new ObjectMapper();
         ArrayList<Pokemon> pokemons = new ArrayList<>();
-        
-        /*int[] nums = {890};
-        int[] nums1 = {3,6,9,12,25,52,68,94,99,131,133,143,569,809,812,815,818,823,826,834,839,841,842,844,849};
-        int[] nums2 = {849};
-        int[] nums3 = {851,858,861,869,879,884};
-        int[] nums4 = {892,892};
-        pokemons.addAll(pokeDAO.allList(10195, 10219, nums1));
-        pokemons.addAll(pokeDAO.allList(10228, 10228, nums2));
-        pokemons.addAll(pokeDAO.allList(10220, 10225, nums3));
-        pokemons.addAll(pokeDAO.allList(10226, 10227, nums4));
-        pokemons.addAll(pokeDAO.allList(10190, 10190, nums));
+        /* */
+        pokemons.addAll(pokeDAO.allList(10001, 10024));
+        pokemons.addAll(pokeDAO.allList(10026, 10026));
+        pokemons.addAll(pokeDAO.allList(10077, 10078));
+        pokemons.addAll(pokeDAO.allList(10086, 10086));
+        pokemons.addAll(pokeDAO.allList(10118, 10120));
+        pokemons.addAll(pokeDAO.allList(10123, 10127));
+        pokemons.addAll(pokeDAO.allList(10147, 10147));
+        pokemons.addAll(pokeDAO.allList(10155, 10157));
+        pokemons.addAll(pokeDAO.allList(10178, 10178));
+        pokemons.addAll(pokeDAO.allList(10184, 10184));
+        pokemons.addAll(pokeDAO.allList(10188, 10189));
+        pokemons.addAll(pokeDAO.allList(10191, 10191));
+        /*pokemons.addAll(pokeDAO.allList(10245, 10246));
+        pokemons.addAll(pokeDAO.allList(10249, 10249));
+        pokemons.addAll(pokeDAO.allList(10256, 10256));
+        pokemons.addAll(pokeDAO.allList(10258, 10259));
+        pokemons.addAll(pokeDAO.allList(10260, 10263));
+        pokemons.addAll(pokeDAO.allList(10272, 10277));*/
+
         try {
             // JSON 파일로 쓰기
-            mapper.writeValue(new File("gmax.json"), pokemons);
+            mapper.writeValue(new File("./jsons/formchange.json"), pokemons);
             System.out.println("JSON 파일이 생성되었습니다.");
         } catch (Exception e) {
             e.printStackTrace();
-        }*/
+        }
         return "main";
     }
 
@@ -60,7 +69,7 @@ public class PokedexController {
     /*ObjectMapper mapper = new ObjectMapper();
     try {
         // JSON 파일로 쓰기
-        mapper.writeValue(new File("1.json"), gwandong);
+        mapper.writeValue(new File("./jsons/1.json"), gwandong);
         System.out.println("JSON 파일이 생성되었습니다.");
     } catch (Exception e) {
         e.printStackTrace();

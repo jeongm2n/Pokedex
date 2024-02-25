@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class PokemonJSON {
     
     public ArrayList<Pokemon> getData(String gen){
-        try (FileReader reader = new FileReader(gen+".json")) {
+        try (FileReader reader = new FileReader("./jsons/"+gen+".json")) {
             // JSON 파서 생성
             JSONParser parser = new JSONParser();
 
