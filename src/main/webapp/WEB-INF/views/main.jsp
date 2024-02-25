@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="./layouts/header.jsp" %>
-<link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
 <script>
     function goDex(region){
         window.location.href = '${contextPath}/generation/' + region +'?gen='+region;

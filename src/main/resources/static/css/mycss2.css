@@ -1,0 +1,48 @@
+.no_del{
+    font-family: "Kode Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    font-size : 20pt;
+}
+
+.name_del{
+    font-family: "Jua", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size : 17pt;
+}
+
+.left_div{
+    width:50%;
+    padding : 20px;
+    height:300px;
+    border: 1px solid black
+}
+
+.sd_image{
+    width:200px;
+    height:200px;
+    object-fit: contain;
+    margin : 0 auto;
+}
+
+.right_div{
+    width:50%;
+    padding:20px;
+    height:300px;
+    border: 1px solid black
+}
+
+.right_table{
+    padding : 10px;
+    width:100%;
+    height:100%;
+    border: 1px solid black
+}
+
+.right_table th{
+    width : 120px;
+    background-color: #2B394B;
+    color : white;
+}

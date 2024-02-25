@@ -1,13 +1,13 @@
 package com.pokemon.pokedex.Controller;
 
-import com.pokemon.pokedex.DAO.PokemonDAO;
 import com.pokemon.pokedex.DAO.PokemonJSON;
 import com.pokemon.pokedex.Entity.Pokemon;
-import com.pokemon.pokedex.VO.FemaleVO;
+import com.pokemon.pokedex.Entity.PokemonDetail;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 @Controller
 public class PokedexController {
-    
+
     @GetMapping("main")
     public String goMain() throws IOException{
         return "main";
@@ -26,14 +26,26 @@ public class PokedexController {
         ModelAndView mav = new ModelAndView();
 
         PokemonJSON pokeJSON = new PokemonJSON();
-        
+
         ArrayList<Pokemon> pokemons = pokeJSON.getData(num);
 
         mav.addObject("pokemons", pokemons);
         mav.setViewName("pokedex");
         return mav;
     }
-    
+
+    @GetMapping("/detail")
+    public ModelAndView goDetail(@RequestParam("no") int no, @RequestParam("gen") String gen){
+        ModelAndView mav = new ModelAndView();
+        PokemonJSON pokeJSON = new PokemonJSON();
+
+        PokemonDetail pokemon = pokeJSON.getDatas(no,gen);
+
+        mav.addObject("pokemon", pokemon);
+        mav.setViewName("detail");
+        return mav;
+    }
+
     /*
     import java.io.File;
     import com.fasterxml.jackson.databind.ObjectMapper;

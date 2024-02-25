@@ -1,4 +1,4 @@
-package com.pokemon.pokedex.DAO;
+/*package com.pokemon.pokedex.DAO;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,7 +10,6 @@ import com.pokemon.pokedex.Entity.Pokemon;
 import com.pokemon.pokedex.Entity.Pokemon.Ability;
 import com.pokemon.pokedex.Entity.Pokemon.PokedexDes;
 import com.pokemon.pokedex.Service.PokemonService;
-import com.pokemon.pokedex.VO.FemaleVO;
 import com.pokemon.pokedex.VO.PokemonVO;
 
 import retrofit2.Call;
@@ -91,7 +90,7 @@ public class PokemonDAO {
                 PokemonVO.NameInfo nameInfo = names.get(2);
                 name = nameInfo.getName();
                 System.out.print(name);
-                /*List<PokemonVO.Fte> ftes = pokeVO.getFlavor_text_entries();
+                List<PokemonVO.Fte> ftes = pokeVO.getFlavor_text_entries();
                 for(int i=0; i<ftes.size(); i++){
                     PokemonVO.Fte fte = ftes.get(i);
                     PokemonVO.Language lans = fte.getLanguage();
@@ -110,7 +109,7 @@ public class PokemonDAO {
                 List<PokemonVO.Genera> generas = pokeVO.getGenera();
                 PokemonVO.Genera ge = generas.get(1);
                 genus = ge.getGenus();
-                System.out.println(genus)*/;
+                System.out.println(genus);
             }
             return true;
         }catch (IOException e) {
@@ -177,4 +176,4 @@ public class PokemonDAO {
             return "";
         }
     }
-}
+}*/
