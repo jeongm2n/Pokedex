@@ -20,9 +20,8 @@ if(gen.equals("mega")){
         window.location.href = "${contextPath}/detail?no="+no+"&gen="+gen;
     }
 </script>
-
-<body id="wrap">
-<div class="alldex row">
+<div class="container">
+<div class="row">
     <p class="page_name"><%=page_name %></p>
     <c:forEach var="pokemon" items="${pokemons}">
         <%if(!gen.equals("9")){%><div class="card col-2 text-center" style="padding-top:15px;background-color:LightCyan;margin-bottom:10px" onclick="goDetail('${pokemon.no}')">
@@ -43,6 +42,7 @@ if(gen.equals("mega")){
             </div>
         </div>
     </c:forEach>
+</div>
 </div>
 </body>
 </html>
