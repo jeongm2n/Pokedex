@@ -1,4 +1,4 @@
-package com.pokemon.pokedex.DAO;
+/*package com.pokemon.pokedex.DAO;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,7 +10,6 @@ import com.pokemon.pokedex.Entity.Pokemon;
 import com.pokemon.pokedex.Entity.Pokemon.Ability;
 import com.pokemon.pokedex.Entity.Pokemon.PokedexDes;
 import com.pokemon.pokedex.Service.PokemonService;
-import com.pokemon.pokedex.VO.FemaleVO;
 import com.pokemon.pokedex.VO.PokemonVO;
 
 import retrofit2.Call;
@@ -61,8 +60,8 @@ public class PokemonDAO {
                 int num = nums[j++];
                 String s = Integer.toString(num);
                 if (getspeciesData(s) && getpokemonData(no)) {
-                    String img = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/"+i+".gif";
-                    String simg = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/shiny/"+i+".gif";
+                    String img = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+i+".png";
+                    String simg = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/"+i+".png";
                     pokemon = new Pokemon(num,name,eng,genus,img,simg,types,abilities,pokedexs);
                     pokeArray.add(pokemon);
                 } else {
@@ -89,9 +88,9 @@ public class PokemonDAO {
                 eng = pokeVO.getName();
                 List<PokemonVO.NameInfo> names = pokeVO.getNames();
                 PokemonVO.NameInfo nameInfo = names.get(2);
-                name = "메가" + nameInfo.getName();
+                name = nameInfo.getName();
                 System.out.print(name);
-                /*List<PokemonVO.Fte> ftes = pokeVO.getFlavor_text_entries();
+                List<PokemonVO.Fte> ftes = pokeVO.getFlavor_text_entries();
                 for(int i=0; i<ftes.size(); i++){
                     PokemonVO.Fte fte = ftes.get(i);
                     PokemonVO.Language lans = fte.getLanguage();
@@ -105,8 +104,8 @@ public class PokemonDAO {
                             System.out.println(des+","+vs_map.get(ver));
                         }else{ continue; }
                     }else{ continue; }
-                }*/
-                pokedexs.add(new PokedexDes(null,null));
+                }
+                pokedexs.add(new PokedexDes("",null));
                 List<PokemonVO.Genera> generas = pokeVO.getGenera();
                 PokemonVO.Genera ge = generas.get(1);
                 genus = ge.getGenus();
@@ -177,4 +176,4 @@ public class PokemonDAO {
             return "";
         }
     }
-}
+}*/
