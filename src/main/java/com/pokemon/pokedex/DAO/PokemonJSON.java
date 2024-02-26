@@ -111,7 +111,7 @@ public class PokemonJSON {
             JSONParser parser = new JSONParser();
             // JSON 파일 파싱
             JSONArray jsonArray = (JSONArray) parser.parse(reader);
-            if(gen.equals("9") && id == 215){
+            if(gen.equals("10") && id == 215){
                 JSONObject ob = (JSONObject) jsonArray.get(jsonArray.size()-1);
                 f_img = (String) ob.get("f_img");
                 fs_img = (String) ob.get("fs_img");

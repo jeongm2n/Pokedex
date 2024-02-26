@@ -27,7 +27,7 @@ if(gen.equals("mega")){
         <%if(!gen.equals("9")){%><div class="card col-2 text-center" style="padding-top:15px;background-color:LightCyan;margin-bottom:10px" onclick="goDetail('${pokemon.no}')">
             <div class="div_else" style="display: flex; justify-content: center;">
             <img src="${pokemon.img}" class="pokemonimg"></div><%}
-            else{%><div class="card col-2 text-center" style="padding-top:15px">
+            else{%><div class="card col-2 text-center" style="padding-top:15px" onclick="goDetail('${pokemon.no}')">
                 <img src="${pokemon.img}" class="pokemonimg_9"><%}%>
             <div class="card_body" style="height:100px">
                 <p class="no">No.${pokemon.no}</p>
