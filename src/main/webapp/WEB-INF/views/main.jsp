@@ -5,26 +5,23 @@
         window.location.href = '${contextPath}/generation/' + region +'?gen='+region;
     }
 </script>
-
+<% String[] gens = {"1","2","3","4","5","6","7","mega","8","gmax","hisui","9"};
+String[] regions = {"관동지방","성도지방","호연지방","신오지방","하나지방","칼로스지방","알로라지방","메가진화","가라르지방","거다이맥스","히스이","팔데아지방"};
+int[] nums = {152,100,135,107,156,72,106,50,108,35,24,124};
+int cnt=0;
+%>
     <div class="container text-center">
-    <div class="row">
-    <div class="col-md-3 col-xs-6 region-div" onclick="goDex('1')">관동지방</div>
-    <div class="col-md-3 col-xs-6 region-div" onclick="goDex('2')">성도지방</div>
-    <div class="col-md-3 col-xs-6 region-div" onclick="goDex('3')">호연지방</div>
-    <div class="col-md-3 col-xs-6 region-div" onclick="goDex('4')">신오지방</div>
+    <%for(int i=0; i<3; i++){%>
+        <div class="row">
+            <%for(int j=0; j<4; j++){%>
+                <div class="col-md-3 col-6 region-div" onclick="goDex('<%=gens[cnt]%>')">
+                    <div class="rounded-4 div1">
+                        <div class="region_name"><%=regions[cnt]%></div><div class="poke_num"><%=nums[cnt]%></div></div></div>
+            <%cnt++;
+        }%>
+        </div>
+    <%}%> 
 </div>
-    <div class="row">
-        <div class="col-md-3 col-xs-6 region-div" onclick="goDex('5')">하나지방</div>
-        <div class="col-md-3 col-xs-6 region-div" onclick="goDex('6')">칼로스지방</div>
-        <div class="col-md-3 col-xs-6 region-div" onclick="goDex('7')">알로라지방</div>
-        <div class="col-md-3 col-xs-6 region-div" onclick="goDex('mega')">메가진화</div>
-    </div>
-    <div class="row">
-        <div class="col-md-3 col-xs-6 region-div" onclick="goDex('8')">가라르지방</div>
-        <div class="col-md-3 col-xs-6 region-div" onclick="goDex('gmax')">거다이맥스</div>
-        <div class="col-md-3 col-xs-6 region-div" onclick="goDex('10')">히스이</div>
-        <div class="col-md-3 col-xs-6 region-div" onclick="goDex('9')">팔데아지방</div>
-    </div>
-</div>
+<%@ include file="./layouts/footer.jsp" %>
 </body>
 </html>
