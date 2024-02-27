@@ -16,22 +16,21 @@ if(gen.equals("mega")){
 }%>
 
 <script>
-    function goDetail(no){
+    function goDetail(no, str){
         var gen = '<%=gen %>';
-
-        window.location.href = "${contextPath}/detail?no="+no+"&gen="+gen;
+        window.location.href = "${contextPath}/detail?no="+no+"&name="+str+"&gen="+gen;
     }
 </script>
 <div class="container">
 <div class="row">
     <p class="page_name"><%=page_name %></p>
     <c:forEach var="pokemon" items="${pokemons}">
-        <%if(!gen.equals("9")){%><div class="card col-4 col-md-2 text-center div2" onclick="goDetail('${pokemon.no}')">
+        <%if(!gen.equals("9")){%><div class="card col-4 col-md-2 text-center div2" onclick="goDetail('${pokemon.no}','${pokemon.korean}')">
             <div class="div_else" style="display: flex; justify-content: center;">
             <%if(gen.equals("gmax") || gen.equals("mega")){%>
             <img src="${pokemon.img}" class="pokemonimg gmax_img">
             <%}else{%><img src="${pokemon.img}" class="pokemonimg"><%}%></div>
-        <%}else{%><div class="card col-4 col-md-2 text-center div3" onclick="goDetail('${pokemon.no}')">
+        <%}else{%><div class="card col-4 col-md-2 text-center div3" onclick="goDetail('${pokemon.no}','${pokemon.korean}')">
             <div class="div_else" style="display: flex; justify-content: center;">
                 <img src="${pokemon.img}" class="pokemonimg_9"></div><%}%>
             <div class="card_body middle_div">
