@@ -43,7 +43,7 @@ public class PokemonJSON {
         }
     }
 
-    public PokemonDetail getDatas(int id, String gen){
+    public PokemonDetail getDatas(String name, String gen){
         try (FileReader reader = new FileReader("./jsons/"+gen+".json")) {
             // JSON 파서 생성
             JSONParser parser = new JSONParser();
@@ -57,8 +57,9 @@ public class PokemonJSON {
                 JSONObject jsonObject = (JSONObject) obj;
                 long a = (long) jsonObject.get("no");
                 int no = (int) a;
-                if(id == no){
-                    String korean = (String) jsonObject.get("korean");
+                String cmp = (String) jsonObject.get("korean");
+                if(cmp.equals(name)){
+                    String korean = cmp;
                     String eng = (String) jsonObject.get("eng");
                     String genus = (String) jsonObject.get("genus");
                     String img = (String) jsonObject.get("img");
@@ -80,7 +81,7 @@ public class PokemonJSON {
                         JSONObject desObject = (JSONObject) desArray.get(i);
                         String str1 = (String) desObject.get("version");
                         String str2 = (String) desObject.get("flavor_text");
-                        if(gen.equals("9")){
+                        if(str2.contains("/")){
                             String[] versions = str1.split("/");
                             String[] dess = str2.split("/");
                             for(int j=0; j<2; j++){
@@ -90,7 +91,7 @@ public class PokemonJSON {
                             pokedexs.add(new PokedexDes(str1,str2));
                         }
                     }
-                    Female female = getFemale(no,gen);
+                    Female female = getFemale(no,gen,korean);
                     pokemon = new PokemonDetail(no,korean,eng,genus,img,simg,types,abilities,pokedexs,female);
                     break;
                 }
@@ -102,7 +103,7 @@ public class PokemonJSON {
         }
     }
 
-    public Female getFemale(int id, String gen){
+    public Female getFemale(int id, String gen, String str){
         String f_img = null;
         String fs_img = null;
 
@@ -111,16 +112,20 @@ public class PokemonJSON {
             JSONParser parser = new JSONParser();
             // JSON 파일 파싱
             JSONArray jsonArray = (JSONArray) parser.parse(reader);
-            if(gen.equals("10") && id == 215){
+            if(gen.equals("hisui") && id == 215){
                 JSONObject ob = (JSONObject) jsonArray.get(jsonArray.size()-1);
                 f_img = (String) ob.get("f_img");
                 fs_img = (String) ob.get("fs_img");
+            }else if(gen.equals("mega") || gen.equals("gmax")){
+                f_img = null;
+                fs_img = null;
             }else{
                 for(Object obj : jsonArray){
                     JSONObject jsonObject = (JSONObject) obj;
                     long a = (long) jsonObject.get("no");
                     int no = (int) a;
-                    if(no == id){
+                    String cmp = (String) jsonObject.get("name");
+                    if(no==id && cmp.equals(str)){
                         f_img = (String) jsonObject.get("f_img");
                         fs_img = (String) jsonObject.get("fs_img");
                     }

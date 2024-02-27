@@ -35,11 +35,11 @@ public class PokedexController {
     }
 
     @GetMapping("/detail")
-    public ModelAndView goDetail(@RequestParam("no") int no, @RequestParam("gen") String gen){
+    public ModelAndView goDetail(@RequestParam("no") int no,@RequestParam("name") String name ,@RequestParam("gen") String gen){
         ModelAndView mav = new ModelAndView();
         PokemonJSON pokeJSON = new PokemonJSON();
 
-        PokemonDetail pokemon = pokeJSON.getDatas(no,gen);
+        PokemonDetail pokemon = pokeJSON.getDatas(name,gen);
 
         mav.addObject("pokemon", pokemon);
         mav.setViewName("detail");
