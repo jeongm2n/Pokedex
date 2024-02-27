@@ -67,11 +67,11 @@
     </div>
 <div class="col-12 px-3" style="padding-top:3vh;padding-bottom:5vh;">
     <table class="des">
-    <caption class="title">도감설명</caption>
+    <caption class="title"><img src="img/phone.jpg" style="width:20px">도감설명</caption>
     <tbody>
     <c:forEach var="des" items="${pokemon.des}">
         <tr><td><div class="row" style="width:100%">
-                <div class="col-3 des_ver">${des.version}</div>
+                <div class="col-3 des_ver"><div style="width:100%;background-color: #e6f4fa;">${des.version}</div></div>
                 <div class="col-9 des_ft">${des.flavor_text}</div></div></td></tr>
     </c:forEach>
     </tbody>

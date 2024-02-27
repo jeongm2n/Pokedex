@@ -92,6 +92,9 @@
     font-size:2rem;
     text-align: left;
     caption-side: top;
+    background-color: DodgerBlue;
+    opacity:0.8;
+    color:white
 }
 
 .des_ft{
