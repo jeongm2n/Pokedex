@@ -103,6 +103,62 @@ public class PokemonJSON {
         }
     }
 
+    public ArrayList<PokemonDetail> getFormchange(int id){
+        try(FileReader reader = new FileReader("./jsons/formchange.json")){
+            JSONParser parser = new JSONParser();
+
+            JSONArray jsonArray = (JSONArray) parser.parse(reader);
+
+            ArrayList<PokemonDetail> pokemons = new ArrayList<>();
+            for (Object obj : jsonArray) {
+                ArrayList<Ability> abilities = new ArrayList<>();
+                ArrayList<PokedexDes> pokedexs = new ArrayList<>();
+                JSONObject jsonObject = (JSONObject) obj;
+                long a = (long) jsonObject.get("no");
+                int no = (int) a;
+                String korean = (String) jsonObject.get("korean");
+                String eng = (String) jsonObject.get("eng");
+                String genus = (String) jsonObject.get("genus");
+                String img = (String) jsonObject.get("img");
+                String simg = (String) jsonObject.get("simg");
+                JSONArray typesArray = (JSONArray) jsonObject.get("types");
+                JSONArray abArray = (JSONArray) jsonObject.get("abilities");
+                String[] types = new String[2];
+                for(int i=0; i<2; i++){ //포켓몬 타입 정보 가져오기
+                    types[i] = (String) typesArray.get(i);
+                }
+                for(int i=0; i<abArray.size(); i++){ //포켓몬 특성 정보 가져오기
+                    JSONObject ab = (JSONObject) abArray.get(i);
+                    String abname = (String) ab.get("name");
+                    String hidden = (String) ab.get("hidden");
+                    abilities.add(new Ability(abname,hidden));
+                }
+                JSONArray desArray = (JSONArray) jsonObject.get("des");
+                for(int i=0; i<desArray.size(); i++){
+                    JSONObject desObject = (JSONObject) desArray.get(i);
+                    String str1 = (String) desObject.get("version");
+                    String str2 = (String) desObject.get("flavor_text");
+                    if(str2.contains("/")){
+                        String[] versions = str1.split("/");
+                        String[] dess = str2.split("/");
+                        for(int j=0; j<2; j++){
+                            pokedexs.add(new PokedexDes(versions[j],dess[j]));
+                        }
+                    }else{
+                        pokedexs.add(new PokedexDes(str1,str2));
+                    }
+                }
+                Female female = new Female(null, null);
+                pokemons.add(new PokemonDetail(no,korean,eng,genus,img,simg,types,abilities,pokedexs,female));
+            }
+            return pokemons;
+
+        }catch (IOException | ParseException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     public Female getFemale(int id, String gen, String str){
         String f_img = null;
         String fs_img = null;

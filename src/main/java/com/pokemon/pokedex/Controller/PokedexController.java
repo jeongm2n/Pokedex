@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 @Controller
 public class PokedexController {
-
+    int[] nums = {};
     @GetMapping("main")
     public String goMain() throws IOException{
         return "main";

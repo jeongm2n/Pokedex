@@ -1,17 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="./layouts/header.jsp" %>
 <link rel="stylesheet" href="/css/mycss2.css">
-<script>
-    /*function chShiny1(str1, str2){
-        $("#male").attr("src",str2);
-        $("#shiny").after("<button onclick='originMale('"+str1+"')'>오리지널</button>");
-    }
-    function chShiny2(str1,str2,str3,str4){
-        $("#male").attr("src",str3);
-        $("#female").attr("src",str4);
-        $("#male").after("<button onclick='originMale('"+str1+"')'>오리지널</button>");
-    }*/
-</script>
+
 <div class="container">
 <div class="row" style="margin-bottom:10px">
 <c:set var="pokemon" value="${pokemon}"/>
