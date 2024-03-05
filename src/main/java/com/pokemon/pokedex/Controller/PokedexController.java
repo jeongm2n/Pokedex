@@ -48,7 +48,7 @@ public class PokedexController {
                 break;
             }
             else{
-                PokemonDetail pokemon = pokeJSON.getDatas(name,gen);
+                PokemonDetail pokemon = pokeJSON.getNormal(name,gen);
 
                 mav.addObject("pokemon", pokemon);
                 mav.setViewName("detail");
