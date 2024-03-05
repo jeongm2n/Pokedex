@@ -1,3 +1,120 @@
-.form_table{
+.span1{
+    font-family: "Jua", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+.span2{
+    text-align: right;
+}
+
+.shine{
+    background-color: #ffcf40;
+    border : 0px;
+    width:auto;
+    font-family: "Kode Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    height: 6vh;
+    color : white;
+}
+
+.shine:hover{
+    color:white;
+}
+
+.shine:active{
+    opacity: 0.5;
+    color : white;
+}
+
+.form-table th,.form-table td, .des-table th,.des-table td{
+    border : 1px solid black;
+    text-align: center;
+    word-break: keep-all;
+}
+
+.form-table th{
+    background-color: #2B394B;
+    color : white;
+}
+
+.form-table td{
+    background-color: #EDE9D7;
+}
+
+.form-table{
     width:100%;
+    font-family: "Jua", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    border-collapse: collapse;
+    font-size: 1.5rem;
+}
+
+.des-table{
+    width:100%;
+    font-family: "Gamja Flower", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 3vh;
+    border-collapse: collapse;
+    font-size: 1.5rem;
+}
+
+.fc-img-td{
+    width : 50%;
+    text-align: center;
+}
+
+.form-table tr, .des-table tr{
+    height: 8vh;
+}
+
+.form-table td{
+    width : 20vw;
+}
+
+.type_img{
+    width : 9vw;
+    height : 4vh;
+}
+
+.fc-ver{
+    width: 30%;
+    background-color: DodgerBlue;
+    color:white;
+}
+
+.fc-ft{
+    width: 90%;
+}
+
+.pokemonimg{
+    width:10vw;
+    height:auto;
+}
+
+@media screen and (max-width:768px) {
+    .form-table, .des-table{
+        font-size:1rem;
+    }
+    .type_img{
+        width : 10vw;
+        height : 25px;
+    }
+}
+
+@media screen and (max-width:425px) {
+    .type_img{
+        width : 20vw;
+        height : 25px;
+    }
+    .pokemonimg{
+        width: 17vw;
+        height: auto;
+    }
 }
