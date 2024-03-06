@@ -26,17 +26,19 @@ if(gen.equals("mega")){
     <p class="page_name"><%=page_name %></p>
     <div style="margin-bottom: 10px;">
         <select id="category" style="height:5vh;font-size:1.3rem;margin-right:1vw">
-            <option id="num">도감번호</option>
-            <option id="name">이름</option>
+            <option value="num">도감번호</option>
+            <option value="name">이름</option>
         </select><input type="text" id="search" placeholder="검색" style="height: 5vh;font-size:1.3rem">
     </div>
     <c:forEach var="pokemon" items="${pokemons}">
-        <%if(!gen.equals("9")){%><div class="card col-4 col-md-2 text-center div2" onclick="goDetail('${pokemon.no}','${pokemon.korean}')">
+        <!--팔데아 지방은 showdown 이미지가 없기 때문에 css를 다르게 설정해야 해서 다른 지방 도감일 때와 비교해야함-->
+        <%if(!gen.equals("9")){%><div id="pkcard" class="card col-4 col-md-2 text-center div2" onclick="goDetail('${pokemon.no}','${pokemon.korean}')">
             <div class="div_else" style="display: flex; justify-content: center;">
             <%if(gen.equals("gmax") || gen.equals("mega")){%>
+                <!--팔데아처럼 메가진화와 거다이맥스도 기본 이미지 크기차이때문에 css를 다르게 설정해야해서-->
             <img src="${pokemon.img}" class="pokemonimg gmax_img">
             <%}else{%><img src="${pokemon.img}" class="pokemonimg"><%}%></div>
-        <%}else{%><div class="card col-4 col-md-2 text-center div3" onclick="goDetail('${pokemon.no}','${pokemon.korean}')">
+        <%}else{%><div id="pkcard" class="card col-4 col-md-2 text-center div3" onclick="goDetail('${pokemon.no}','${pokemon.korean}')">
             <div class="div_else" style="display: flex; justify-content: center;">
                 <img src="${pokemon.img}" class="pokemonimg_9"></div><%}%>
             <div class="card_body middle_div">
@@ -58,6 +60,17 @@ if(gen.equals("mega")){
     </c:forEach>
 </div>
 </div>
+<script>
+    $(document).ready(function(){
+        $("#search").keyup(function(){
+            var keyword = $(this).val();
+            
+            $("#pkcard").hide();
+            var target = $("#pkcard:contains('"+keyword+"')");
+            $(target).show();
+        });
+    });
+</script>
 <%@ include file="./layouts/footer.jsp" %>
 </body>
 </html>
