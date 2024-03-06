@@ -24,6 +24,12 @@ if(gen.equals("mega")){
 <div class="container">
 <div class="row">
     <p class="page_name"><%=page_name %></p>
+    <div style="margin-bottom: 10px;">
+        <select id="category" style="height:5vh;font-size:1.3rem;margin-right:1vw">
+            <option id="num">도감번호</option>
+            <option id="name">이름</option>
+        </select><input type="text" id="search" placeholder="검색" style="height: 5vh;font-size:1.3rem">
+    </div>
     <c:forEach var="pokemon" items="${pokemons}">
         <%if(!gen.equals("9")){%><div class="card col-4 col-md-2 text-center div2" onclick="goDetail('${pokemon.no}','${pokemon.korean}')">
             <div class="div_else" style="display: flex; justify-content: center;">
