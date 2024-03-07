@@ -26,49 +26,49 @@ if(gen.equals("mega")){
     <p class="page_name"><%=page_name %></p>
     <div style="margin-bottom: 10px;">
         <select id="category" style="height:5vh;font-size:1.3rem;margin-right:1vw">
-            <option value="num">도감번호</option>
+            <option value="no">도감번호</option>
             <option value="name">이름</option>
         </select><input type="text" id="search" placeholder="검색" style="height: 5vh;font-size:1.3rem">
     </div>
     <c:forEach var="pokemon" items="${pokemons}">
-        <!--팔데아 지방은 showdown 이미지가 없기 때문에 css를 다르게 설정해야 해서 다른 지방 도감일 때와 비교해야함-->
-        <%if(!gen.equals("9")){%><div id="pkcard" class="card col-4 col-md-2 text-center div2" onclick="goDetail('${pokemon.no}','${pokemon.korean}')">
-            <div class="div_else" style="display: flex; justify-content: center;">
-            <%if(gen.equals("gmax") || gen.equals("mega")){%>
-                <!--팔데아처럼 메가진화와 거다이맥스도 기본 이미지 크기차이때문에 css를 다르게 설정해야해서-->
-            <img src="${pokemon.img}" class="pokemonimg gmax_img">
-            <%}else{%><img src="${pokemon.img}" class="pokemonimg"><%}%></div>
-        <%}else{%><div id="pkcard" class="card col-4 col-md-2 text-center div3" onclick="goDetail('${pokemon.no}','${pokemon.korean}')">
-            <div class="div_else" style="display: flex; justify-content: center;">
-                <img src="${pokemon.img}" class="pokemonimg_9"></div><%}%>
-            <div class="card_body middle_div">
-                <%if(gen.equals("gmax")){%>
-                <div class="no">No.${pokemon.no}</div>
-                <div class="name g_name">${pokemon.korean}</div>
-            <%}else{%>
-                <div class="no">No.${pokemon.no}</div>
-                <div class="name">${pokemon.korean}</div><%}%>
-            </div>
-            <div class="card_body type_div">
-                <c:forEach var="type" items="${pokemon.types}">
-                    <c:if test="${!empty type}">
-                    <img class="typeimg" src="/img/types/${type}.png">
-                    </c:if>
-                </c:forEach>
-            </div>
+    <div class="card col-4 col-md-2 text-center" onclick="goDetail('${pokemon.no}','${pokemon.korean}')">
+        <div class="div_else" style="display: flex; justify-content: center;">
+            <img src="${pokemon.img}" class="pokemonimg">
         </div>
+        <div class="card_body middle_div">
+            <div class="no">No.${pokemon.no}</div>
+            <div class="name">${pokemon.korean}</div>
+        </div>
+        <div class="card_body type_div">
+            <c:forEach var="type" items="${pokemon.types}">
+                <c:if test="${!empty type}">
+                    <img class="typeimg" src="/img/types/${type}.png">
+                </c:if>
+            </c:forEach>
+        </div>
+    </div>
     </c:forEach>
+    <div id="none" class="col-12 none">검색하려는 포켓몬이 없습니다.</div>
 </div>
 </div>
 <script>
     $(document).ready(function(){
-        $("#search").keyup(function(){
-            var keyword = $(this).val();
-            
-            $("#pkcard").hide();
-            var target = $("#pkcard:contains('"+keyword+"')");
-            $(target).show();
-        });
+        var gen = '<%=gen %>';
+        if(gen!='9'){ //팔데아 지방 제외한 나머지 도감들 요소에 대한 클래스 추가
+            $(".card").addClass("div2");
+            if(gen=='gmax' || gen=='mega'){ //거다이나 메가진화는 이미지 크기가 달라서 
+                $(".pokemonimg").addClass("gmax_img");
+                if(gen=='gmax'){ //거다이맥스는 이름이 너무 길어서 폰트 크기 다르게 설정
+                    $(".name").addClass("g_name");
+                }
+            }
+        }else{ //팔데아 지방 도감의 요소에 대한 클래스 추가 
+            $(".card").addClass("div3");
+            $(".pokemonimg").addClass("pokemonimg_9")
+            $(".pokemonimg").removeClass("pokemonimg");
+        }
+        $("#none").hide();
+
     });
 </script>
 <%@ include file="./layouts/footer.jsp" %>
