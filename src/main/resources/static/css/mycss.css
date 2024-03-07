@@ -81,7 +81,7 @@
 }
 
 .typeimg{
-    width : 5vw;
+    width : 4vw;
     height : 3vh;
 }
 
@@ -217,7 +217,7 @@
 }
 
 footer{
-    height : 10vh;
+    height : 20vh;
     background-color: black;
     font-family: "Roboto Mono", monospace;
     font-optical-sizing: auto;
@@ -228,4 +228,11 @@ footer{
 .sns{
     color:white;
     font-size:1rem;
+}
+
+.none{
+    height:100px;
+    font-size:1.3rem;
+    background-color: lightgray;
+    margin-bottom: 10vh;
 }
