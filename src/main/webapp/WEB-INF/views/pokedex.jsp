@@ -69,6 +69,22 @@ if(gen.equals("mega")){
         }
         $("#none").hide();
 
+        $("#search").keyup(function(){
+            $(".card").show();
+            var keyword = $(this).val().toLowerCase();//대소문자 구분없이 검색하기 위함
+            
+            $(".card").hide().filter(function(){
+                var std = "." + $("#category").val();
+                var key = $(this).find(std).text().toLowerCase();
+                return key.includes(keyword);
+            }).show();
+            //var target = $(".card:contains('"+keyword+"')");
+            if ($(".card:visible").length === 0) {
+                $("#none").show();
+            } else {
+                $("#none").hide();
+            }
+        });
     });
 </script>
 <%@ include file="./layouts/footer.jsp" %>
