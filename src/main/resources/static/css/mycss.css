@@ -1,28 +1,238 @@
-header{
-    width : 100%;
-    height : 200px;
+.header{
+    height : 20vh;
     text-align : center;
+    margin-bottom : 25px;
 }
 
 .logo{
-    width : 150px;
-    height : 100px
+    width : 25vw;
+    height : 15vh;
 }
 
-.ball{
-    width : 80px;
-    height : 100px
+.back{
+    display: none;
+    width:5vw;
+    height: 2vh;
 }
 
 .header-font{
     font-family: "Gasoek One", sans-serif;
     font-weight: 300;
     font-style: normal;
-    font-size : 60pt;
-    margin-left : 20px;
-    margin-right : 20px
+    font-size : 7vw;
 }
 
-.logo, .ball, .header-font{
+@media  screen and (max-width:768px) {
+    .back{
+        display : block;
+        width:3vw;
+        height: 3vh;
+    }
+    .logo{
+        width : 25vw;
+        height : 15vh;
+    }
+
+    .header-font{
+        font-family: "Gasoek One", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size : 9vw;
+    }
+
+    .region-div{
+        /*background-color: #2B394B;*/
+        height : 15vh;
+        font-family: "Poor Story", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        font-size : 4vw;
+        margin-bottom: 5vh;
+        vertical-align: middle;
+    }
+
+    .typeimg{
+        width:4vw;
+    }
+
+    .gmax_img{
+        width:15vw;
+    }
+}
+
+.header-font > a{
+    color : black;
+    text-decoration: none;
+}
+
+#wrap{
+    width:100%;
+}
+
+.div1{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    text-align:center
+}
+
+.div1:hover{
+    opacity: 0.4;
+}
+
+.typeimg{
+    width : 4vw;
+    height : 3vh;
+}
+
+.pokemonimg_9{
+    width : 40vw;
+    height : 20vh;
+    margin : 0 auto;
+}
+
+.div_else{
+    height:20vh;
     vertical-align: middle;
+}
+
+.card_body{
+    padding : 5px;
+    text-align: center;
+}
+
+.div2{
+    padding-top:15px;
+    background-color:LightCyan;
+    margin-bottom:10px
+}
+
+.div3{
+    background-color:LightCyan;
+    margin-bottom:10px
+}
+
+.div2:hover, .div3:hover{
+    background-color: PaleTurquoise;
+}
+
+.pokemonimg{
+    object-fit: contain;
+    margin : 0 auto;
+}
+
+.region-div{
+    height : 20vh;
+    font-family: "Poor Story", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size : 4vw;
+    margin-bottom: 3vh;
+}
+
+.region_name, .poke_num, .no, .name{
+    width:100%;
+    height:50%;
+}
+
+.region_name{
+    background-color: #2B394B;
+    color:white;
+}
+.poke_num{
+    background-color: #EDE9D7;
+}
+
+.no{
+    font-family: "Kode Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    font-size : 2vw;
+}
+
+.name{
+    font-family: "Jua", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size : 1.8vw;
+}
+
+.middle_div{
+    height:10vh;
+}
+
+.type_div{
+    height:5vh;
+}
+
+.page_name{
+    font-family: "Jua", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color:CornflowerBlue;
+    font-size:25pt;
+    font-weight:bold;
+    margin-bottom:20px
+}
+
+@media screen and (max-width:768px) {
+    
+}
+
+@media screen and (max-width:425px) {
+    .back{
+        width:5vw;
+        height: 2vh;
+    }
+    .region-div{
+        height:10vh;
+        font-size:6vw;
+    }
+    .middle_div{
+        height:10vh;
+    }
+    .no{
+        font-size:1rem;
+    }
+    .name{
+        font-size: 0.9rem;
+    }
+    .g_name{
+        font-size:0.7rem;
+    }
+    .type_div{
+        height:5vh;
+    }
+    .typeimg{
+        width:10vw;
+        height:3vh;
+    }
+    .gmax_img{
+        width:30vw;
+    }
+    .div_else{
+        height:20vh
+    }
+}
+
+footer{
+    height : 20vh;
+    background-color: black;
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.sns{
+    color:white;
+    font-size:1rem;
+}
+
+.none{
+    height:100px;
+    font-size:1.3rem;
+    background-color: lightgray;
+    margin-bottom: 10vh;
 }
