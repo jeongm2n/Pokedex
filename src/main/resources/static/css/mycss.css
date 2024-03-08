@@ -1,7 +1,12 @@
-.header{
+header{
     height : 20vh;
     text-align : center;
     margin-bottom : 25px;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    background-color: DodgerBlue;
 }
 
 .logo{
@@ -66,6 +71,7 @@
 }
 
 #wrap{
+    padding-top: 25vh;
     width:100%;
 }
 
