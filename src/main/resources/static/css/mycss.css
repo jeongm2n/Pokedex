@@ -7,6 +7,11 @@ header{
     left:0;
     right:0;
     background-color: DodgerBlue;
+    z-index: 1000;
+}
+
+.container{
+    margin-bottom:10vh;
 }
 
 .logo{
@@ -182,8 +187,18 @@ header{
     margin-bottom:20px
 }
 
+.b{
+    width:50px;
+    height: 50px;
+    background-size: cover;
+    background-color: mediumspringgreen;
+}
+
 @media screen and (max-width:768px) {
-    
+    .b{
+        width:30px;
+        height: 30px;
+    }
 }
 
 @media screen and (max-width:425px) {
@@ -241,4 +256,12 @@ footer{
     font-size:1.3rem;
     background-color: lightgray;
     margin-bottom: 10vh;
+}
+
+#tb{
+    display:none;
+    position:fixed;
+    z-index: 9999;
+    bottom:40px;
+    right:20px;
 }
