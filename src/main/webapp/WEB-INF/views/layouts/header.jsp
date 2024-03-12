@@ -32,7 +32,7 @@
     <img class="back" src="/img/arrow.png" onclick="goBack();">
     <div class="row">
     <div class="col-4"><img src="/img/logo/pokemon.png" class="logo"></div>
-    <div class="col-8 gy-4 header-font position-relative"><a class="position-absolute bottom-0 start-0" href="${contextPath}/main">포켓몬스터 도감</a></div>
+    <div class="col-8 header-font position-relative"><a class="position-absolute bottom-0 start-0" href="${contextPath}/main">포켓몬스터 도감</a></div>
     </div>
 </header>
 <body id="wrap">

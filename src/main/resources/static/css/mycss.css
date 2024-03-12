@@ -29,7 +29,7 @@ header{
     font-family: "Gasoek One", sans-serif;
     font-weight: 300;
     font-style: normal;
-    font-size : 7vw;
+    font-size : 6vw;
 }
 
 @media  screen and (max-width:768px) {
@@ -38,16 +38,12 @@ header{
         width:3vw;
         height: 3vh;
     }
-    .logo{
-        width : 25vw;
-        height : 15vh;
+    header{
+        height:16vh;
     }
-
-    .header-font{
-        font-family: "Gasoek One", sans-serif;
-        font-weight: 300;
-        font-style: normal;
-        font-size : 9vw;
+    .logo{
+        width : 23vw;
+        height : 12vh;
     }
 
     .region-div{
@@ -67,6 +63,11 @@ header{
 
     .gmax_img{
         width:15vw;
+    }
+
+    .b{
+        width:30px;
+        height: 30px;
     }
 }
 
@@ -194,17 +195,13 @@ header{
     background-color: mediumspringgreen;
 }
 
-@media screen and (max-width:768px) {
-    .b{
-        width:30px;
-        height: 30px;
-    }
-}
-
 @media screen and (max-width:425px) {
     .back{
         width:5vw;
         height: 2vh;
+    }
+    .header-font{
+        font-size:2.3rem;
     }
     .region-div{
         height:10vh;
