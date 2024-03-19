@@ -8,16 +8,20 @@
     z-index: 1000;
 }
 
-.row{
-    height:100%
-}
-
 .container{
     margin-bottom:10vh;
 }
 
 .logo{
     width : 10vw;
+}
+
+.mydd{
+    display : none;
+}
+
+.dmenu{
+    width:5vw;
 }
 
 .back{
@@ -160,13 +164,12 @@
 @media  screen and (max-width:768px) {
     .back{
         display : block;
-        width:3vw;
-        height: 3vh;
+        width:2vw;
+        height: 2vh;
     }
-    .row{
-        height : 85%;
+    .header-font{
+        font-size : 1.5rem;
     }
-
     .region-div{
         height : 15vh;
         font-family: "Poor Story", system-ui;
@@ -192,15 +195,18 @@
 }
 
 @media screen and (max-width:425px) {
+    .login{
+        display:none;
+    }
+    .mydd{
+        display:block;
+    }
     .back{
         width:5vw;
         height: 2vh;
     }
     .logo{
         width : 30vw;
-    }
-    .header-font{
-        font-size:1.5rem;
     }
     .region-div{
         height:10vh;

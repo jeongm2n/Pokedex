@@ -33,7 +33,16 @@
     <img class="back" src="/img/arrow.png" onclick="goBack();">
     <div class="container-fluid">
         <a class="navbar-brand header-font" href="#"><img class="logo" src="/img/logo/pokemon.png">Pokedex</a>
-        <a>로그인</a>
+        <a class="login">로그인</a>
+        <div class="dropdown mydd">
+            <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img class="dmenu" src="/img/menu.png"></button>
+            <ul class="dropdown-menu dropdown-toggle">
+                <li><a class="dropdown-item" type="button">Action</a></li>
+                <li><a class="dropdown-item" type="button">Another action</a></li>
+                <li><a class="dropdown-item" type="button">Something else here</a></li>
+            </ul>
+        </div>
     </div>
     </div>
 </nav>
