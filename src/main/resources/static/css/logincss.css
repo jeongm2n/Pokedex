@@ -1,0 +1,58 @@
+.login-card{
+    width:50%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.logintbl{
+    width : 100%;
+    height : 30vh;
+}
+
+.logintbl tr{
+    height : 15%;
+}
+
+.regist{
+    color : gray;
+    text-decoration: none;
+}
+
+.loginimg{
+    width:3vw;
+}
+
+.btn-primary{
+    background-color: DodgerBlue;
+}
+
+.login-footer{
+    height:10vh;
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.footer-div{
+    width:25%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.sns{
+    color:gray;
+    font-size:0.7rem;
+}
+
+@media screen and (max-width:768px) {
+    .login-card{
+        width : 100%;
+    }
+    .loginimg{
+        width:8vw;
+    }
+    .footer-div{
+        width:100%;
+    }
+}

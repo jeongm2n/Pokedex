@@ -21,6 +21,12 @@ public class PokedexController {
         return "main";
     }
 
+    @GetMapping("/loginpage")
+    public String goLoginpage() {
+        return "login/login";
+    }
+    
+
     @GetMapping("/generation/{num}")
     public ModelAndView goJSON(@PathVariable String num) throws IOException {
         ModelAndView mav = new ModelAndView();

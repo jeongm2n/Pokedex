@@ -2,7 +2,7 @@
     <div><button id="top" class="b rounded-circle" style="background-image:url('/img/top.png');"></button></div>
     <div><button id="bottom" class="b rounded-circle" style="background-image:url('/img/bottom.png');"></button></div>
 </div>
-<footer>
+<footer class="allfooter">
     <nav class="nav">
         <a class="nav-link sns" href="https://velog.io/@jeongm2n">Velog</a>
         <a class="nav-link sns" href="https://github.com/jeongm2n">Github</a>

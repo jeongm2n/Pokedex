@@ -1,9 +1,4 @@
 #header{
-    margin-bottom : 25px;
-    position: fixed;
-    top:0;
-    left:0;
-    right:0;
     background-color: DodgerBlue;
     z-index: 1000;
 }
@@ -14,6 +9,19 @@
 
 .logo{
     width : 10vw;
+    margin-right : 2vw;
+}
+
+.login{
+    color : black;
+    text-decoration: none;
+    font-family: "Poor Story", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.login:hover{
+    color : white;
 }
 
 .mydd{
@@ -104,7 +112,7 @@
     font-family: "Poor Story", system-ui;
     font-weight: 400;
     font-style: normal;
-    font-size : 4vw;
+    font-size : 3.8vw;
     margin-bottom: 3vh;
 }
 
@@ -239,7 +247,7 @@
     }
 }
 
-footer{
+.allfooter{
     height : 20vh;
     background-color: black;
     font-family: "Roboto Mono", monospace;
