@@ -8,6 +8,9 @@ header{
     background-color: DodgerBlue;
     z-index: 1000;
 }
+.row{
+    height:100%
+}
 
 .container{
     margin-bottom:10vh;
@@ -164,6 +167,9 @@ header{
     }
     header{
         height:16vh;
+    }
+    .row{
+        height : 85%;
     }
     .logo{
         padding-top : 1vh;
