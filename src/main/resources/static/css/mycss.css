@@ -1,6 +1,5 @@
 header{
     height : 15vh;
-    text-align : center;
     margin-bottom : 25px;
     position: fixed;
     top:0;
@@ -15,7 +14,8 @@ header{
 }
 
 .logo{
-    width : 25vw;
+    padding-top : 3vh;
+    width : 17vw;
     height : 13vh;
 }
 
@@ -29,7 +29,7 @@ header{
     font-family: "Gasoek One", sans-serif;
     font-weight: 300;
     font-style: normal;
-    font-size : 6vw;
+    font-size : 5vw;
 }
 
 .header-font > a{
@@ -166,6 +166,7 @@ header{
         height:16vh;
     }
     .logo{
+        padding-top : 1vh;
         width : 23vw;
         height : 12vh;
     }
@@ -200,7 +201,7 @@ header{
         height: 2vh;
     }
     .header-font{
-        font-size:2.3rem;
+        font-size:2rem;
     }
     .region-div{
         height:10vh;
