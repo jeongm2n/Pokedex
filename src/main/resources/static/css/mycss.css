@@ -1,5 +1,4 @@
-header{
-    height : 15vh;
+#header{
     margin-bottom : 25px;
     position: fixed;
     top:0;
@@ -8,6 +7,7 @@ header{
     background-color: DodgerBlue;
     z-index: 1000;
 }
+
 .row{
     height:100%
 }
@@ -17,9 +17,7 @@ header{
 }
 
 .logo{
-    padding-top : 3vh;
-    width : 17vw;
-    height : 13vh;
+    width : 10vw;
 }
 
 .back{
@@ -32,7 +30,7 @@ header{
     font-family: "Gasoek One", sans-serif;
     font-weight: 300;
     font-style: normal;
-    font-size : 5vw;
+    font-size : 2.5rem;
 }
 
 .header-font > a{
@@ -165,16 +163,8 @@ header{
         width:3vw;
         height: 3vh;
     }
-    header{
-        height:16vh;
-    }
     .row{
         height : 85%;
-    }
-    .logo{
-        padding-top : 1vh;
-        width : 23vw;
-        height : 12vh;
     }
 
     .region-div{
@@ -206,8 +196,11 @@ header{
         width:5vw;
         height: 2vh;
     }
+    .logo{
+        width : 30vw;
+    }
     .header-font{
-        font-size:2rem;
+        font-size:1.5rem;
     }
     .region-div{
         height:10vh;

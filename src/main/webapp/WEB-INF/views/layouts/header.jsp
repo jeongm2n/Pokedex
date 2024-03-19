@@ -28,12 +28,12 @@
         window.history.back();
     }
 </script>
-<header>
-    <img class="back" src="/img/arrow.png" onclick="goBack();">
-    <div class="row">
-    <div class="col-3"><img src="/img/logo/pokemon.png" class="logo"></div>
-    <div class="col-7 header-font"><a href="${contextPath}/main" style="vertical-align: middle;">포켓몬스터 도감</a></div>
-    <div class="col-2"><div>로그인</div></div>
-    </div>
-</header>
 <body id="wrap">
+<nav id="header" class="navbar">
+    <img class="back" src="/img/arrow.png" onclick="goBack();">
+    <div class="container-fluid">
+        <a class="navbar-brand header-font" href="#"><img class="logo" src="/img/logo/pokemon.png">Pokedex</a>
+        <a>로그인</a>
+    </div>
+    </div>
+</nav>
