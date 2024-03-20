@@ -25,6 +25,12 @@ public class PokedexController {
     public String goLoginpage() {
         return "login/login";
     }
+
+    @GetMapping("/registpage")
+    public String goRegistpage() {
+        return "login/registform";
+    }
+    
     
 
     @GetMapping("/generation/{num}")

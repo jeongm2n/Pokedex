@@ -17,7 +17,7 @@
                     <td colspan="2"><button type="submit" class="btn btn-primary btn-lg">로그인</button></td>
                 </tr>
                 <tr>
-                    <td colspan="2"><a class="regist" href="#">회원가입</a></td>
+                    <td colspan="2"><a class="regist" href="/registpage">회원가입</a></td>
                 </tr>
             </table>
             </form>
