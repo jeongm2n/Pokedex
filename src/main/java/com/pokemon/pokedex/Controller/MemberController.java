@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.pokemon.pokedex.Service.MemberService;
 
@@ -25,10 +26,16 @@ public class MemberController {
     }
 
     @PostMapping("/dcheckId")
-    public boolean doubleCheckId(@RequestParam String id) {
+    @ResponseBody
+    public String doubleCheckId(@RequestParam String id) {
         //TODO: process POST request
-        boolean result = memberService.getCheckId(id);
-        return result;
+        int result = memberService.getCheckId(id);
+        System.out.println(result);
+        if(result==1){
+            return "true";
+        }else{
+            return "false";
+        }
     }
     
 }

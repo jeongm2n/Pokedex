@@ -10,7 +10,7 @@ public class MemberService {
     @Autowired
     MemberMapper member;
 
-    public boolean getCheckId(String id){
+    public int getCheckId(String id){
         return member.checkId(id);
     }
 }
