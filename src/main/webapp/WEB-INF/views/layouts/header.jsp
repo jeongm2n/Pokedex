@@ -35,14 +35,10 @@
     <div class="container-fluid">
         <a class="navbar-brand header-font" href="#"><img class="logo" src="/img/logo/pokemon.png">Pokedex</a>
         <a class="login" href="/loginpage">로그인</a>
-        <!--<div class="dropdown mydd">
-            <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img class="dmenu" src="/img/menu.png"></button>
-        </div>-->
         <button class="navbar-toggler mydd" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="offcanvas offcanvas-end" style="width:50%" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+          <div class="offcanvas offcanvas-end" style="width:60%" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
             <div class="offcanvas-header">
               <img id="idimg" src="/img/id.png" style="width:8vw"><h7 class="offcanvas-title" id="offcanvasDarkNavbarLabel">로그인해주세요.</h7>
               <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
