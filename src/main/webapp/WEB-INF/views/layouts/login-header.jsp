@@ -19,10 +19,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/mycss.css">
+    <link rel="stylesheet" href="/css/logincss.css">
 </head>
 <script>
     function goBack() { //뒤로가기 이벤트
@@ -33,26 +33,6 @@
 <nav id="header" class="navbar fixed-top">
     <img class="back" src="/img/arrow.png" onclick="goBack();">
     <div class="container-fluid">
-        <a class="navbar-brand header-font" href="#"><img class="logo" src="/img/logo/pokemon.png">Pokedex</a>
-        <a class="login" href="/loginpage">로그인</a>
-        <button class="navbar-toggler mydd" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="offcanvas offcanvas-end" style="width:60%" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-            <div class="offcanvas-header">
-              <img id="idimg" src="/img/id.png" style="width:8vw"><h7 class="offcanvas-title" id="offcanvasDarkNavbarLabel">로그인해주세요.</h7>
-              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">로그인</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-              </ul>
-            </div>
-          </div>
+        <a class="navbar-brand header-font" href="/main"><img class="logo" src="/img/logo/pokemon.png">Pokedex</a>
     </div>
 </nav>
