@@ -15,10 +15,10 @@ public class MemberService {
     }
 
     public int getCheckNick(String nick){
-        return member.checkId(nick);
+        return member.checkNick(nick);
     }
 
-    public void insertMember(String id, String password, String nickname, String box, String bag){
-        member.insertMember(id,password,nickname,box,bag);
+    public void insertMember(String id, String password, String nickname){
+        member.insertMember(id,password,nickname);
     }
 }

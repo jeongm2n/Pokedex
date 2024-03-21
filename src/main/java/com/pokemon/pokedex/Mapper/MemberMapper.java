@@ -6,5 +6,5 @@ import org.apache.ibatis.annotations.Mapper;
 public interface MemberMapper {
     int checkId(String id);
     int checkNick(String nick);
-    void insertMember(String id, String password, String nickname, String box, String bag);
+    void insertMember(String id, String password, String nickname);
 }

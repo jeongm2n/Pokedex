@@ -24,8 +24,8 @@ $(document).ready(function(){
                     }else{
                         alert('사용 가능한 아이디입니다.');
                         $("#dchk1").hide();
-                        $("#chk1").prop('disabled',true);
-                        $("#ID").prop('disabled',true);
+                        $("#chk1").prop('readonly',true);
+                        $("#ID").prop('readonly',true);
                         checkedId = true;
                     }
                 },
@@ -57,8 +57,8 @@ $(document).ready(function(){
                     }else{
                         alert('사용 가능한 아이디입니다.');
                         $("#dchk1").hide();
-                        $("#chk1").prop('disabled',true);
-                        $("#ID").prop('disabled',true);
+                        $("#chk1").prop('readonly',true);
+                        $("#ID").prop('readonly',true);
                         $("#gchk1").attr("src","/img/greencheck.png");
                         checkedId = true;
                     }
@@ -92,8 +92,8 @@ $(document).ready(function(){
         var txt2 = $(this).val();
 
         if(txt1 == txt2){
-            $("#pwd1").prop('disabled',true);
-            $("#pwd2").prop('disabled',true);
+            $("#pwd1").prop('readonly',true);
+            $("#pwd2").prop('readonly',true);
             checkedPwd = true;
         }
     });
@@ -110,7 +110,7 @@ $(document).ready(function(){
                 url: '/dcheckNick', // 서버로 요청을 보낼 URL
                 type: 'POST', // HTTP 요청 메서드 (GET, POST 등)
                 data:{
-                    nick : nick
+                    nickname : nick
                 },
                 dataType: 'text', // 서버의 응답으로 받을 데이터 타입
                 success: function(response) { // 성공적으로 응답을 받았을 때 실행할 콜백 함수
@@ -119,8 +119,8 @@ $(document).ready(function(){
                     }else{
                         alert('사용 가능한 별명입니다.');
                         $("#dchk2").hide();
-                        $("#chk2").prop('disabled',true);
-                        $("#nick").prop('disabled',true);
+                        $("#chk2").prop('readonly',true);
+                        $("#nick").prop('readonly',true);
                         checkedNick = true;
                     }
                 },
@@ -143,7 +143,7 @@ $(document).ready(function(){
                 url: '/dcheckNick', // 서버로 요청을 보낼 URL
                 type: 'POST', // HTTP 요청 메서드 (GET, POST 등)
                 data:{
-                    nick : nick
+                    nickname : nick
                 },
                 dataType: 'text', // 서버의 응답으로 받을 데이터 타입
                 success: function(response) { // 성공적으로 응답을 받았을 때 실행할 콜백 함수
@@ -152,8 +152,8 @@ $(document).ready(function(){
                     }else{
                         alert('사용 가능한 별명입니다.');
                         $("#dchk2").hide();
-                        $("#chk2").prop('disabled',true);
-                        $("#nick").prop('disabled',true);
+                        $("#chk2").prop('readonly',true);
+                        $("#nick").prop('readonly',true);
                         $("#gchk2").attr("src","/img/greencheck.png");
                         checkedNick = true;
                     }
@@ -177,6 +177,11 @@ function goRegist(){
         alert('별명 중복 확인을 해주세요.');
         return false;
     }else{
-        return true;
+        if(confirm('회원가입을 하시겠습니까?')){
+            alert('회원가입 되셨습니다.');
+            return true;
+        }else{
+            return false;
+        }
     }
 }

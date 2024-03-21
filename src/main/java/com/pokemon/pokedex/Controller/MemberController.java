@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.pokemon.pokedex.Service.MemberService;
-import org.springframework.web.bind.annotation.RequestBody;
 
 
 
@@ -43,9 +42,9 @@ public class MemberController {
 
     @PostMapping("/dcheckNick")
     @ResponseBody
-    public String doubleCheckNick(@RequestParam String nick) {
+    public String doubleCheckNick(@RequestParam String nickname) {
         //TODO: process POST request
-        int result = memberService.getCheckNick(nick);
+        int result = memberService.getCheckNick(nickname);
         if(result==1){
             return "true";
         }else{
@@ -54,9 +53,9 @@ public class MemberController {
     }
 
     @PostMapping("/regist")
-    public String postMethodName(@RequestParam String ID, String pwd1, String nick) {
+    public String postMethodName(@RequestParam String ID, String pwd, String nickname) {
         //TODO: process POST request
-        memberService.insertMember(ID,pwd1,nick,ID+"box",ID+"bag");
+        memberService.insertMember(ID,pwd,nickname);
         return goLoginpage();
     }
     

@@ -11,6 +11,6 @@
     </select>
 
     <insert id="insertMember">
-        INSERT INTO members VALUES(#{id},#{password},#{nickname},#{box},#{bag})
+        INSERT INTO members VALUES(#{id},#{password},#{nickname})
     </insert>
 </mapper>
