@@ -13,4 +13,8 @@ public class MemberService {
     public int getCheckId(String id){
         return member.checkId(id);
     }
+
+    public int getCheckNick(String nick){
+        return member.checkId(nick);
+    }
 }

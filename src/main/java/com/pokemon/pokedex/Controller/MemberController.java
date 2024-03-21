@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.pokemon.pokedex.Service.MemberService;
 
 
+
 @Controller
 public class MemberController {
     @Autowired
@@ -37,5 +38,16 @@ public class MemberController {
             return "false";
         }
     }
-    
+
+    @PostMapping("/dcheckNick")
+    @ResponseBody
+    public String doubleCheckNick(@RequestParam String nick) {
+        //TODO: process POST request
+        int result = memberService.getCheckNick(nick);
+        if(result==1){
+            return "true";
+        }else{
+            return "false";
+        }
+    }
 }
