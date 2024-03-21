@@ -13,4 +13,12 @@ public class MemberService {
     public int getCheckId(String id){
         return member.checkId(id);
     }
+
+    public int getCheckNick(String nick){
+        return member.checkNick(nick);
+    }
+
+    public void insertMember(String id, String password, String nickname){
+        member.insertMember(id,password,nickname);
+    }
 }

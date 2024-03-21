@@ -11,4 +11,6 @@ public class Memeber {
     private String mem_id;
     private String password;
     private String nickname;
+    private String boxes;
+    private String bags;
 }
