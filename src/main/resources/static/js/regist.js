@@ -90,4 +90,69 @@ $(document).ready(function(){
             $("#pwd2").prop('disabled',true);
         }
     });
+
+    $('#dchk2').click(function(event) {
+        event.preventDefault();
+        var nick = $("#nick").val();
+
+        if(nick == '') {
+            alert('아이디를 입력해주세요.');
+            return false;
+        }else{
+            $.ajax({
+                url: '/dcheckId', // 서버로 요청을 보낼 URL
+                type: 'POST', // HTTP 요청 메서드 (GET, POST 등)
+                data:{
+                    nick : nick
+                },
+                dataType: 'text', // 서버의 응답으로 받을 데이터 타입
+                success: function(response) { // 성공적으로 응답을 받았을 때 실행할 콜백 함수
+                    if(response == "true"){
+                        alert('이미 존재하는 아이디입니다.');
+                    }else{
+                        alert('사용 가능한 아이디입니다.');
+                        $("#dchk2").hide();
+                        $("#chk2").prop('disabled',true);
+                        $("#nick").prop('disabled',true);
+                    }
+                },
+                error: function(xhr, status, error) { // 에러가 발생했을 때 실행할 콜백 함수
+                    console.error('AJAX Error:', status, error); // 에러 로그 출력
+                }
+            });
+        }
+    });
+
+    $('#chk2').click(function(event) {
+        event.preventDefault();
+        var nick = $("#nick").val();
+        
+        if(nick == '') {
+            alert('아이디를 입력해주세요.');
+            return false;
+        }else{
+            $.ajax({
+                url: '/dcheckId', // 서버로 요청을 보낼 URL
+                type: 'POST', // HTTP 요청 메서드 (GET, POST 등)
+                data:{
+                    nick : nick
+                },
+                dataType: 'text', // 서버의 응답으로 받을 데이터 타입
+                success: function(response) { // 성공적으로 응답을 받았을 때 실행할 콜백 함수
+                    if(response == "true"){
+                        alert('이미 존재하는 아이디입니다.');
+                    }else{
+                        alert('사용 가능한 아이디입니다.');
+                        $("#dchk2").hide();
+                        $("#chk2").prop('disabled',true);
+                        $("#nick").prop('disabled',true);
+                        $("#gchk2").attr("src","/img/greencheck.png");
+                    }
+                },
+                error: function(xhr, status, error) { // 에러가 발생했을 때 실행할 콜백 함수
+                    console.error('AJAX Error:', status, error); // 에러 로그 출력
+                }
+            });
+        }
+    });
 });
