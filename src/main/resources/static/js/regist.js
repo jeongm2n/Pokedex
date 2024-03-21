@@ -1,3 +1,7 @@
+var checkedId = false;
+var checkedPwd = false;
+var checkedNick = false;
+
 $(document).ready(function(){
     $('#dchk1').click(function(event) {
         event.preventDefault();
@@ -22,6 +26,7 @@ $(document).ready(function(){
                         $("#dchk1").hide();
                         $("#chk1").prop('disabled',true);
                         $("#ID").prop('disabled',true);
+                        checkedId = true;
                     }
                 },
                 error: function(xhr, status, error) { // 에러가 발생했을 때 실행할 콜백 함수
@@ -55,6 +60,7 @@ $(document).ready(function(){
                         $("#chk1").prop('disabled',true);
                         $("#ID").prop('disabled',true);
                         $("#gchk1").attr("src","/img/greencheck.png");
+                        checkedId = true;
                     }
                 },
                 error: function(xhr, status, error) { // 에러가 발생했을 때 실행할 콜백 함수
@@ -88,6 +94,7 @@ $(document).ready(function(){
         if(txt1 == txt2){
             $("#pwd1").prop('disabled',true);
             $("#pwd2").prop('disabled',true);
+            checkedPwd = true;
         }
     });
 
@@ -96,11 +103,11 @@ $(document).ready(function(){
         var nick = $("#nick").val();
 
         if(nick == '') {
-            alert('아이디를 입력해주세요.');
+            alert('별명을 입력해주세요.');
             return false;
         }else{
             $.ajax({
-                url: '/dcheckId', // 서버로 요청을 보낼 URL
+                url: '/dcheckNick', // 서버로 요청을 보낼 URL
                 type: 'POST', // HTTP 요청 메서드 (GET, POST 등)
                 data:{
                     nick : nick
@@ -108,12 +115,13 @@ $(document).ready(function(){
                 dataType: 'text', // 서버의 응답으로 받을 데이터 타입
                 success: function(response) { // 성공적으로 응답을 받았을 때 실행할 콜백 함수
                     if(response == "true"){
-                        alert('이미 존재하는 아이디입니다.');
+                        alert('이미 존재하는 별명입니다.');
                     }else{
-                        alert('사용 가능한 아이디입니다.');
+                        alert('사용 가능한 별명입니다.');
                         $("#dchk2").hide();
                         $("#chk2").prop('disabled',true);
                         $("#nick").prop('disabled',true);
+                        checkedNick = true;
                     }
                 },
                 error: function(xhr, status, error) { // 에러가 발생했을 때 실행할 콜백 함수
@@ -128,11 +136,11 @@ $(document).ready(function(){
         var nick = $("#nick").val();
         
         if(nick == '') {
-            alert('아이디를 입력해주세요.');
+            alert('별명을 입력해주세요.');
             return false;
         }else{
             $.ajax({
-                url: '/dcheckId', // 서버로 요청을 보낼 URL
+                url: '/dcheckNick', // 서버로 요청을 보낼 URL
                 type: 'POST', // HTTP 요청 메서드 (GET, POST 등)
                 data:{
                     nick : nick
@@ -140,13 +148,14 @@ $(document).ready(function(){
                 dataType: 'text', // 서버의 응답으로 받을 데이터 타입
                 success: function(response) { // 성공적으로 응답을 받았을 때 실행할 콜백 함수
                     if(response == "true"){
-                        alert('이미 존재하는 아이디입니다.');
+                        alert('이미 존재하는 별명입니다.');
                     }else{
-                        alert('사용 가능한 아이디입니다.');
+                        alert('사용 가능한 별명입니다.');
                         $("#dchk2").hide();
                         $("#chk2").prop('disabled',true);
                         $("#nick").prop('disabled',true);
                         $("#gchk2").attr("src","/img/greencheck.png");
+                        checkedNick = true;
                     }
                 },
                 error: function(xhr, status, error) { // 에러가 발생했을 때 실행할 콜백 함수
@@ -156,3 +165,18 @@ $(document).ready(function(){
         }
     });
 });
+
+function goRegist(){
+    if(!checkedId){
+        alert('아이디 중복 확인을 해주세요.');
+        return false;
+    }else if(!checkedPwd){
+        alert('2차 비밀번호를 확인해주세요.');
+        return false;
+    }else if(!checkedNick){
+        alert('별명 중복 확인을 해주세요.');
+        return false;
+    }else{
+        return true;
+    }
+}

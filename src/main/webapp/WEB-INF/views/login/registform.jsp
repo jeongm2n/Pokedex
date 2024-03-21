@@ -23,7 +23,7 @@
                         <td style="width:15%;"><button id="dchk2" class="btn btn-secondary chkbtn" style="font-size:7pt;">중복확인</button>
                         <button id="chk2" class="btn"><img id="gchk2" src="/img/check.png" style="width:5vw"></button></td>
                     </tr>
-                    <tr><td colspan="3" style="text-align:right"><input class="btn btn-primary" type="submit" value="가입하기"></td></tr>
+                    <tr><td colspan="3" style="text-align:right"><input class="btn btn-primary" type="submit" onclick="return goRegist()" value="가입하기"></td></tr>
                 </table>
             </form>
         </div>
