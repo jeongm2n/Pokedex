@@ -9,4 +9,8 @@
     <select id="checkNick" resultType="int">
         SELECT COUNT(nickname) FROM members WHERE nickname=#{nick}
     </select>
+
+    <insert id="insertMember">
+        INSERT INTO members VALUES(#{id},#{password},#{nickname},#{box},#{bag})
+    </insert>
 </mapper>

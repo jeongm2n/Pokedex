@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.pokemon.pokedex.Service.MemberService;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 
@@ -50,4 +52,12 @@ public class MemberController {
             return "false";
         }
     }
+
+    @PostMapping("/regist")
+    public String postMethodName(@RequestParam String ID, String pwd1, String nick) {
+        //TODO: process POST request
+        memberService.insertMember(ID,pwd1,nick,ID+"box",ID+"bag");
+        return goLoginpage();
+    }
+    
 }

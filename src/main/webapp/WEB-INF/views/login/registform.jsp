@@ -3,7 +3,7 @@
 <div class="container">
     <div class="card login-card">
         <div class="card-body">
-            <form>
+            <form action="/regist" method="post">
                 <table id="registtbl">
                     <tr>
                         <th>아이디</th><td><input id="ID" type="text" class="form-control"></td>
