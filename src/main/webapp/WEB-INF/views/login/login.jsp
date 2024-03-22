@@ -3,15 +3,15 @@
 <div class="container">
     <div class="card login-card">
         <div class="card-body" style="text-align:center;padding-top:10vh">
-            <form>
+            <form action="dologin" method="post">
             <table class="logintbl">
                 <tr>
                     <td><img class="loginimg" src="/img/id.png"></td>
-                    <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder="아이디"></td>
+                    <td><input name="ID" type="text" class="form-control" id="exampleFormControlInput1" placeholder="아이디"></td>
                 </tr>
                 <tr>
                     <td><img class="loginimg" src="/img/pwd.png"></td>
-                    <td><input type="password" class="form-control" id="inputPassword" placeholder="비밀번호"></td>
+                    <td><input name="pwd" type="password" class="form-control" id="inputPassword" placeholder="비밀번호"></td>
                 </tr>
                 <tr>
                     <td colspan="2"><button type="submit" class="btn btn-primary btn-lg">로그인</button></td>
@@ -24,6 +24,9 @@
         </div>
     </div>
 </div>
+<script>
+    
+</script>
 <%@ include file="../layouts/login-footer.jsp" %>
 </body>
 </html>

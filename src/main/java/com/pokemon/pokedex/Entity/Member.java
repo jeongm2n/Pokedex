@@ -7,10 +7,8 @@ import lombok.Setter;
 @Data
 @Getter
 @Setter
-public class Memeber {
+public class Member {
     private String mem_id;
     private String password;
     private String nickname;
-    private String boxes;
-    private String bags;
 }

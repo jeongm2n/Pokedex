@@ -1,5 +1,7 @@
 package com.pokemon.pokedex.Controller;
 
+import java.io.PrintWriter;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,9 +9,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.pokemon.pokedex.Entity.Member;
 import com.pokemon.pokedex.Service.MemberService;
 
-
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 
 @Controller
@@ -26,6 +30,32 @@ public class MemberController {
     public String goRegistpage() {
         return "login/registform";
     }
+
+    @PostMapping("/dologin")
+    public String goLogin(HttpServletResponse response, @RequestParam String ID, String pwd, HttpSession session)throws Exception{
+        Member result = memberService.goLogin(ID,pwd);
+        if(result==null){
+            PrintWriter out = response.getWriter();
+			response.setCharacterEncoding("utf-8");
+			response.setContentType("text/html; charset=utf-8");
+			out.println("<script> alert('아이디 또는 비밀번호를 확인해주세요.');");
+			out.println("history.go(-1); </script>"); 
+			out.close();
+			return ""; 
+        }else{
+            session.setAttribute("nickname", result.getNickname());
+            System.out.println(result.getNickname());
+            return "main";
+        }
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.removeAttribute("nickname");
+        return "main";
+    }
+    
+    
 
     @PostMapping("/dcheckId")
     @ResponseBody

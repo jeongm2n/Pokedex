@@ -29,30 +29,56 @@
         window.history.back();
     }
 </script>
+<% String nickname = (String) session.getAttribute("nickname");%>
 <body id="wrap">
 <nav id="header" class="navbar fixed-top">
     <img class="back" src="/img/arrow.png" onclick="goBack();">
     <div class="container-fluid">
-        <a class="navbar-brand header-font" href="#"><img class="logo" src="/img/logo/pokemon.png">Pokedex</a>
-        <a class="login" href="/loginpage">로그인</a>
+        <a class="navbar-brand header-font" href="/main"><img class="logo" src="/img/logo/pokemon.png">Pokedex</a>
+        <div id="login1"><a class="login" href="/loginpage">로그인</a></div>
+        <div id="login2">
+          <a class="login" href="#" style="margin-right:1vw;"><img style="width:2vw;" src="/img/bag.png">가방</a>
+          <a class="login" href="#" style="margin-right:1vw;"><img style="width:2vw;" src="/img/box.png">상자</a>
+          <a class="login" href="/logout" style="font-size:8pt">로그아웃</a></div>
         <button class="navbar-toggler mydd" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="offcanvas offcanvas-end" style="width:60%" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
             <div class="offcanvas-header">
-              <img id="idimg" src="/img/id.png" style="width:8vw"><h7 class="offcanvas-title" id="offcanvasDarkNavbarLabel">로그인해주세요.</h7>
+              <img id="idimg" src="/img/id.png" style="width:8vw"><h7 id="plslogin" class="offcanvas-title" id="offcanvasDarkNavbarLabel">로그인해주세요.</h7>
               <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <ul id="none-login" class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">로그인</a>
+                  <a class="nav-link active" aria-current="page" href="/loginpage">로그인</a>
+                </li>
+              </ul>
+              <ul id="done-login" class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"><img style="width:5vw;margin-right:2vw" src="/img/bag.png">가방</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
+                  <a class="nav-link active" aria-current="page" href="#"><img style="width:5vw;margin-right:2vw" src="/img/box.png">박스</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/logout" style="font-size:8pt">로그아웃</a>
                 </li>
               </ul>
             </div>
           </div>
     </div>
 </nav>
+<script>
+  var nickname = '<%=nickname%>';
+  $(document).ready(function(){
+    if(nickname=='null'){
+      $("#login2").hide();
+      $("#done-login").hide();
+    }else{
+      $("#login1").hide();
+      $("#plslogin").text(nickname+" 님");
+      $("#none-login").hide();
+    }
+  });
+</script>

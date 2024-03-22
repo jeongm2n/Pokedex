@@ -13,4 +13,8 @@
     <insert id="insertMember">
         INSERT INTO members VALUES(#{id},#{password},#{nickname})
     </insert>
+
+    <select id="goLogin" resultType="com.pokemon.pokedex.Entity.Member">
+        SELECT mem_id,nickname FROM members WHERE mem_id=#{id} AND password=#{password}
+    </select>
 </mapper>
