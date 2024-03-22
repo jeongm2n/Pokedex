@@ -3,6 +3,7 @@ package com.pokemon.pokedex.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.pokemon.pokedex.Entity.Member;
 import com.pokemon.pokedex.Mapper.MemberMapper;
 
 @Service
@@ -22,7 +23,7 @@ public class MemberService {
         member.insertMember(id,password,nickname);
     }
 
-    public int goLogin(String id, String password){
+    public Member goLogin(String id, String password){
         return member.goLogin(id, password);
     }
 }
