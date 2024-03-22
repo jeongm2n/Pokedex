@@ -7,4 +7,5 @@ public interface MemberMapper {
     int checkId(String id);
     int checkNick(String nick);
     void insertMember(String id, String password, String nickname);
+    int goLogin(String id, String password);
 }
