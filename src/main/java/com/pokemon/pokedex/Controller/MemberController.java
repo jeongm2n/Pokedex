@@ -4,7 +4,6 @@ import java.io.PrintWriter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,6 +13,7 @@ import com.pokemon.pokedex.Entity.Member;
 import com.pokemon.pokedex.Service.MemberService;
 
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class MemberController {
@@ -31,8 +31,7 @@ public class MemberController {
     }
 
     @PostMapping("/dologin")
-    public String goLogin(HttpServletResponse response, @RequestParam String ID, String pwd, Model model)throws Exception{
-        //TODO: process POST request
+    public String goLogin(HttpServletResponse response, @RequestParam String ID, String pwd, HttpSession session)throws Exception{
         Member result = memberService.goLogin(ID,pwd);
         if(result==null){
             PrintWriter out = response.getWriter();
@@ -43,7 +42,8 @@ public class MemberController {
 			out.close();
 			return ""; 
         }else{
-            model.addAttribute("nickname", result.getNickname());
+            session.setAttribute("nickname", result.getNickname());
+            System.out.println(result.getNickname());
             return "main";
         }
     }

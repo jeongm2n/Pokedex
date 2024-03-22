@@ -29,6 +29,7 @@
         window.history.back();
     }
 </script>
+<% String nickname = (String) session.getAttribute("nickname");%>
 <body id="wrap">
 <nav id="header" class="navbar fixed-top">
     <img class="back" src="/img/arrow.png" onclick="goBack();">
@@ -56,3 +57,7 @@
           </div>
     </div>
 </nav>
+<script>
+  var nickname = '<%=nickname%>';
+  console.log(nickname);
+</script>
