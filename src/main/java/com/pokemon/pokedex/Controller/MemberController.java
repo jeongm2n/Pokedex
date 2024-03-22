@@ -15,6 +15,7 @@ import com.pokemon.pokedex.Service.MemberService;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
+
 @Controller
 public class MemberController {
     @Autowired
@@ -47,6 +48,13 @@ public class MemberController {
             return "main";
         }
     }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.removeAttribute("nickname");
+        return "main";
+    }
+    
     
 
     @PostMapping("/dcheckId")

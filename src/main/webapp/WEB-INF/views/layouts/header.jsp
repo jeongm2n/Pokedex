@@ -35,7 +35,11 @@
     <img class="back" src="/img/arrow.png" onclick="goBack();">
     <div class="container-fluid">
         <a class="navbar-brand header-font" href="#"><img class="logo" src="/img/logo/pokemon.png">Pokedex</a>
-        <a class="login" href="/loginpage">로그인</a>
+        <div id="login1"><a class="login" href="/loginpage">로그인</a></div>
+        <div id="login2">
+          <a class="login" href="#" style="margin-right:1vw;"><img style="width:2vw;" src="/img/bag.png">가방</a>
+          <a class="login" href="#" style="margin-right:1vw;"><img style="width:2vw;" src="/img/box.png">상자</a>
+          <a class="login" href="/logout" style="font-size:8pt">로그아웃</a></div>
         <button class="navbar-toggler mydd" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -59,5 +63,13 @@
 </nav>
 <script>
   var nickname = '<%=nickname%>';
-  console.log(nickname);
+  $(document).ready(function(){
+    if(nickname=='null'){
+      $("#login2").hide();
+      $("#login1").show();
+    }else{
+      $("#login1").hide();
+      $("#login2").show();
+    }
+  });
 </script>
