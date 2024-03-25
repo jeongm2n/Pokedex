@@ -86,6 +86,7 @@ public class MemberController {
     public String postMethodName(@RequestParam String ID, String pwd, String nickname) {
         //TODO: process POST request
         memberService.insertMember(ID,pwd,nickname);
+        memberService.insertBag(ID, "몬스터볼", "ball", 20);
         return goLoginpage();
     }
     
