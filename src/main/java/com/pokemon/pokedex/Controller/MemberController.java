@@ -44,6 +44,7 @@ public class MemberController {
 			return ""; 
         }else{
             session.setAttribute("nickname", result.getNickname());
+            session.setAttribute("mem_id", result.getMem_id());
             System.out.println(result.getNickname());
             return "main";
         }
@@ -52,6 +53,7 @@ public class MemberController {
     @GetMapping("/logout")
     public String logout(HttpSession session) {
         session.removeAttribute("nickname");
+        session.removeAttribute("mem_id");
         return "main";
     }
     
