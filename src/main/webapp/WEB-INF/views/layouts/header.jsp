@@ -38,8 +38,9 @@ String mem_id = (String) session.getAttribute("mem_id");%>
         <a class="navbar-brand header-font" href="/main"><img class="logo" src="/img/logo/pokemon.png">Pokedex</a>
         <div id="login1"><a class="login" href="/loginpage">로그인</a></div>
         <div id="login2">
-          <a class="login" href="/mybag?mem_id=<%=mem_id%>" style="margin-right:1vw;"><img style="width:2vw;" src="/img/bag.png">가방</a>
-          <a class="login" href="#" style="margin-right:1vw;"><img style="width:2vw;" src="/img/box.png">상자</a>
+          <a class="login"><img src="/img/id.png"><%=nickname%>님</a>
+          <a class="login" href="/mybag?mem_id=<%=mem_id%>"><img src="/img/bag.png">가방</a>
+          <a class="login" href="#"><img src="/img/box.png">상자</a>
           <a class="login" href="/logout" style="font-size:8pt">로그아웃</a></div>
         <button class="navbar-toggler mydd" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
             <span class="navbar-toggler-icon"></span>
