@@ -23,6 +23,10 @@ public class MemberService {
         member.insertMember(id,password,nickname);
     }
 
+    public void insertBag(String mem_id, String name, String category, int many){
+        member.insertBag(mem_id, name, category, many);
+    }
+
     public Member goLogin(String id, String password){
         return member.goLogin(id, password);
     }

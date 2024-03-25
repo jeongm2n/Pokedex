@@ -14,6 +14,10 @@
         INSERT INTO members VALUES(#{id},#{password},#{nickname})
     </insert>
 
+    <insert id="insertBag">
+        INSERT INTO bag VALUES(#{mem_id},#{name},#{category},#{many})
+    </insert>
+
     <select id="goLogin" resultType="com.pokemon.pokedex.Entity.Member">
         SELECT mem_id,nickname FROM members WHERE mem_id=#{id} AND password=#{password}
     </select>

@@ -44,6 +44,7 @@ public class MemberController {
 			return ""; 
         }else{
             session.setAttribute("nickname", result.getNickname());
+            session.setAttribute("mem_id", result.getMem_id());
             System.out.println(result.getNickname());
             return "main";
         }
@@ -52,6 +53,7 @@ public class MemberController {
     @GetMapping("/logout")
     public String logout(HttpSession session) {
         session.removeAttribute("nickname");
+        session.removeAttribute("mem_id");
         return "main";
     }
     
@@ -86,6 +88,7 @@ public class MemberController {
     public String postMethodName(@RequestParam String ID, String pwd, String nickname) {
         //TODO: process POST request
         memberService.insertMember(ID,pwd,nickname);
+        memberService.insertBag(ID, "몬스터볼", "ball", 20);
         return goLoginpage();
     }
     

@@ -29,7 +29,8 @@
         window.history.back();
     }
 </script>
-<% String nickname = (String) session.getAttribute("nickname");%>
+<% String nickname = (String) session.getAttribute("nickname");
+String mem_id = (String) session.getAttribute("mem_id");%>
 <body id="wrap">
 <nav id="header" class="navbar fixed-top">
     <img class="back" src="/img/arrow.png" onclick="goBack();">
@@ -37,7 +38,7 @@
         <a class="navbar-brand header-font" href="/main"><img class="logo" src="/img/logo/pokemon.png">Pokedex</a>
         <div id="login1"><a class="login" href="/loginpage">로그인</a></div>
         <div id="login2">
-          <a class="login" href="#" style="margin-right:1vw;"><img style="width:2vw;" src="/img/bag.png">가방</a>
+          <a class="login" href="/mybag?mem_id=<%=mem_id%>" style="margin-right:1vw;"><img style="width:2vw;" src="/img/bag.png">가방</a>
           <a class="login" href="#" style="margin-right:1vw;"><img style="width:2vw;" src="/img/box.png">상자</a>
           <a class="login" href="/logout" style="font-size:8pt">로그아웃</a></div>
         <button class="navbar-toggler mydd" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
@@ -56,7 +57,7 @@
               </ul>
               <ul id="done-login" class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#"><img style="width:5vw;margin-right:2vw" src="/img/bag.png">가방</a>
+                  <a class="nav-link active" aria-current="page" href="/mybag?mem_id=<%=mem_id%>"><img style="width:5vw;margin-right:2vw" src="/img/bag.png">가방</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#"><img style="width:5vw;margin-right:2vw" src="/img/box.png">박스</a>

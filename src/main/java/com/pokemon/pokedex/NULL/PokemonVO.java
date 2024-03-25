@@ -1,4 +1,4 @@
-package com.pokemon.pokedex.VO;
+package com.pokemon.pokedex.NULL;
 
 import java.util.List;
 
