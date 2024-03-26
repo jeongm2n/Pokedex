@@ -1,5 +1,7 @@
 .bag-con{
     width : 50%;
+    font-family: "Jua", sans-serif;
+    font-style: normal;
 }
 
 .card-body > h4{
@@ -16,8 +18,17 @@
     font-weight: 700;
 }
 
+.ball{
+    width: 2vw;
+    margin-right: 1vw;
+}
+
 @media screen and (max-width:768px) {
     .bag-con{
         width : 100%;
+    }
+    .ball{
+        width: 6vw;
+        /*margin-right: 1vw;*/
     }
 }
