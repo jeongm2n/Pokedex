@@ -2,14 +2,25 @@
 <%@ include file="./layouts/header.jsp" %>
 <link rel="stylesheet" href="/css/mycss3.css">
 <script>
-    var origin = "${pokemon.img}";
+    var pokemons = [
+        <c:forEach var="pokemon" items="${pokemons}" varStatus="loop">
+            {
+                img: "${pokemon.img}",
+                simg: "${pokemon.simg}"
+            }<c:if test="${!loop.last}">,</c:if>
+        </c:forEach>
+    ];
     var isOriginalImage = true; // 현재 이미지가 원래 이미지인지 여부를 나타내는 변수
 
     function toggleImage() { //이로치 버튼 클릭 시 이로치 img로 변경
         if (isOriginalImage) {
-            $("#pokeimg").attr("src", "${pokemon.simg}");
+            $(".pokemonimg").each(function(index) {
+                $(this).attr("src", pokemons[index].simg);
+            });
         } else {
-            $("#pokeimg").attr("src", origin);
+            $(".pokemonimg").each(function(index) {
+                $(this).attr("src", pokemons[index].img);
+            });
         }
         isOriginalImage = !isOriginalImage; // 이미지를 번갈아가며 변경
     }
@@ -21,7 +32,7 @@
             <table class="form-table rounded-top">
             <tr>
                 <td class="fc-img-td" style="background-color: lightcyan;" rowspan="4" colspan="2">
-                    <img id="pokeimg" class="pokemonimg" src="${pokemon.img}"></td><th>이름</th><td colspan="3">${pokemon.korean}</td>
+                    <img class="pokemonimg" src="${pokemon.img}"></td><th>이름</th><td colspan="3">${pokemon.korean}</td>
             </tr>
             <tr>
                 <th>분류</th><td colspan="3">${pokemon.genus}</td></tr>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pokemon.pokedex.Mapper.MemberMapper">
+    <select id="checkId" resultType="int">
+        SELECT COUNT(mem_id) FROM members WHERE mem_id=#{id}
+    </select>
+
+    <select id="checkNick" resultType="int">
+        SELECT COUNT(nickname) FROM members WHERE nickname=#{nick}
+    </select>
+
+    <insert id="insertMember">
+        INSERT INTO members VALUES(#{id},#{password},#{nickname})
+    </insert>
+
+    <insert id="insertBag">
+        INSERT INTO bag VALUES(#{mem_id},#{name},#{category},#{many})
+    </insert>
+
+    <select id="goLogin" resultType="com.pokemon.pokedex.Entity.Member">
+        SELECT mem_id,nickname FROM members WHERE mem_id=#{id} AND password=#{password}
+    </select>
+</mapper>

@@ -1,0 +1,23 @@
+.bag-con{
+    width : 50%;
+}
+
+.card-body > h4{
+    font-weight: bold;
+}
+
+.bagtbl{
+    width:100%;
+    text-align : center;
+    margin-top : 5vh;
+}
+
+.bagtbl > td{
+    font-weight: 700;
+}
+
+@media screen and (max-width:768px) {
+    .bag-con{
+        width : 100%;
+    }
+}

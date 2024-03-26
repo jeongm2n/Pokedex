@@ -19,6 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/mycss.css">
@@ -28,11 +29,58 @@
         window.history.back();
     }
 </script>
+<% String nickname = (String) session.getAttribute("nickname");
+String mem_id = (String) session.getAttribute("mem_id");%>
 <body id="wrap">
-<div class="container header">
+<nav id="header" class="navbar fixed-top">
     <img class="back" src="/img/arrow.png" onclick="goBack();">
-    <div class="row">
-    <div class="col-4 gy-3"><img src="/img/logo/pokemon.png" class="logo"></div>
-    <div class="col-8 gy-4 header-font position-relative"><a class="position-absolute bottom-0 start-0" href="${contextPath}/main">포켓몬스터 도감</a></div>
+    <div class="container-fluid">
+        <a class="navbar-brand header-font" href="/main"><img class="logo" src="/img/logo/pokemon.png">Pokedex</a>
+        <div id="login1"><a class="login" href="/loginpage">로그인</a></div>
+        <div id="login2">
+          <a class="login"><img src="/img/id.png"><%=nickname%>님</a>
+          <a class="login" href="/mybag?mem_id=<%=mem_id%>"><img src="/img/bag.png">가방</a>
+          <a class="login" href="#"><img src="/img/box.png">상자</a>
+          <a class="login" href="/logout" style="font-size:8pt">로그아웃</a></div>
+        <button class="navbar-toggler mydd" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" style="width:60%" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+              <img id="idimg" src="/img/id.png" style="width:8vw"><h7 id="plslogin" class="offcanvas-title" id="offcanvasDarkNavbarLabel">로그인해주세요.</h7>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul id="none-login" class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/loginpage">로그인</a>
+                </li>
+              </ul>
+              <ul id="done-login" class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/mybag?mem_id=<%=mem_id%>"><img style="width:5vw;margin-right:2vw" src="/img/bag.png">가방</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"><img style="width:5vw;margin-right:2vw" src="/img/box.png">박스</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/logout" style="font-size:8pt">로그아웃</a>
+                </li>
+              </ul>
+            </div>
+          </div>
     </div>
-</div>
+</nav>
+<script>
+  var nickname = '<%=nickname%>';
+  $(document).ready(function(){
+    if(nickname=='null'){
+      $("#login2").hide();
+      $("#done-login").hide();
+    }else{
+      $("#login1").hide();
+      $("#plslogin").text(nickname+" 님");
+      $("#none-login").hide();
+    }
+  });
+</script>

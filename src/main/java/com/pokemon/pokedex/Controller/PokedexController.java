@@ -39,8 +39,8 @@ public class PokedexController {
         ModelAndView mav = new ModelAndView();
         PokemonJSON pokeJSON = new PokemonJSON();
 
-        for(int i=0; i<nums.length; i++){
-            if(no==nums[i]){
+        for(int i : nums){
+            if(no==i){
                 ArrayList<PokemonDetail> pokemons = pokeJSON.getFormchange(no);
                 mav.addObject("pokemons", pokemons);
                 mav.addObject("no", no);

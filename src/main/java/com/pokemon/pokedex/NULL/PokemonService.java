@@ -1,10 +1,8 @@
-package com.pokemon.pokedex.Service;
+package com.pokemon.pokedex.NULL;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
-
-import com.pokemon.pokedex.VO.PokemonVO;
 
 public interface PokemonService {
     @GET("pokemon-species/{no}")
