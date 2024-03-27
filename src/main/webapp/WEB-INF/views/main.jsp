@@ -1,20 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="./layouts/header.jsp" %>
 <script>
-    function goMain(){
+    function goMain2(){
         window.location.href = '/main2';
+    }
+    function goMain3(){
+        window.location.href = '/main3';
     }
 </script>
 <div class="container">
-    <div class="row">
-        <div class="card col-6">
-            <div class="card-body">
-                <h4>포켓몬 잡으러 가기</h4>
+    <div class="row" style="text-align: center;">
+        <div class="card col-12 col-md-6">
+            <div class="card-body" onclick="goMain3()">
+                <h4>포켓몬 잡기</h4>
             </div>
         </div>
-        <div class="card col-6">
-            <div class="card-body" onclick="goMain()">
-                <h4>도감 보러 가기</h4>
+        <div class="card col-12 col-md-6">
+            <div class="card-body" onclick="goMain2()">
+                <h4>전국도감</h4>
             </div>
         </div>
     </div>
