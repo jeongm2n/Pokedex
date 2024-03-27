@@ -72,8 +72,16 @@ html{
     background-color: #F0F8FF;
 }
 
+.leftimg{
+    width : 5vw;
+}
+
 .main-right:hover{
     background-color: #F0F8FF;
+}
+
+.rightimg{
+    width : 7vw;
 }
 
 .div1{
@@ -236,6 +244,12 @@ html{
     }
     .logo{
         width : 30vw;
+    }
+    .leftimg{
+        width : 10vw;
+    }
+    .rightimg{
+        width : 12vw;
     }
     .region-div{
         height:10vh;
