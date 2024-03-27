@@ -10,12 +10,12 @@
 </script>
 <div class="container">
     <div class="row" style="text-align: center;">
-        <div class="card col-12 col-md-6">
+        <div class="card col-12 col-md-6 main-left">
             <div class="card-body" onclick="goMain3()">
                 <h4>포켓몬 잡기</h4>
             </div>
         </div>
-        <div class="card col-12 col-md-6">
+        <div class="card col-12 col-md-6 main-right">
             <div class="card-body" onclick="goMain2()">
                 <h4>전국도감</h4>
             </div>

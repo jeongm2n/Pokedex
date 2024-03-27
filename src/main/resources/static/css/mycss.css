@@ -68,6 +68,14 @@ html{
     padding-bottom: 20vh;
 }
 
+.main-left:hover{
+    background-color: #F0F8FF;
+}
+
+.main-right:hover{
+    background-color: #F0F8FF;
+}
+
 .div1{
     width:100%;
     height:100%;
