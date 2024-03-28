@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pokemon.pokedex.Mapper.PokemonMapper">
+
+    <select id="getRand" resultType="com.pokemon.pokedex.Entity.PokemonDB">
+        SELECT no, name, img, type1, type2, percent FROM pokemons
+        WHERE region=#{region} AND no NOT IN (SELECT no FROM box WHERE mem_id=#{mem_id}) ORDER BY RAND() LIMIT 1
+    </select>
+
+</mapper>
