@@ -41,7 +41,7 @@ public class PokedexController {
         ArrayList<Pokemon> pokemons = pokeJSON.getData(num);
 
         mav.addObject("pokemons", pokemons);
-        mav.setViewName("pokedex");
+        mav.setViewName("/des/pokedex");
         return mav;
     }
 
@@ -55,14 +55,14 @@ public class PokedexController {
                 ArrayList<PokemonDetail> pokemons = pokeJSON.getFormchange(no);
                 mav.addObject("pokemons", pokemons);
                 mav.addObject("no", no);
-                mav.setViewName("detail_fc");
+                mav.setViewName("/des/detail_fc");
                 break;
             }
             else{
                 PokemonDetail pokemon = pokeJSON.getNormal(name,gen);
 
                 mav.addObject("pokemon", pokemon);
-                mav.setViewName("detail");
+                mav.setViewName("/des/detail");
             }
         }
         return mav;
