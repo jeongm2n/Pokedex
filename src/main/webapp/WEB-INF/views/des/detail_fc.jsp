@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="./layouts/header.jsp" %>
+<%@ include file="../layouts/header.jsp" %>
 <link rel="stylesheet" href="/css/mycss3.css">
 <script>
     var pokemons = [
@@ -53,5 +53,5 @@
             </c:forEach></table>
         </c:forEach>
 </div>
-<%@ include file="./layouts/footer.jsp" %>
+<%@ include file="../layouts/footer.jsp" %>
 </body>
