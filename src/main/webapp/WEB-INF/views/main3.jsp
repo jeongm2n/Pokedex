@@ -10,6 +10,7 @@ int cnt=0;
     <div class="container text-center">
     <%for(int i=0; i<3; i++){%>
         <div class="row">
+            <div class="col-md-1 null-div"></div>
             <%for(int j=0; j<3; j++){%>
                 <div class="col-md-3 col-4 region-div">
                     <div class="rounded-4 div1">

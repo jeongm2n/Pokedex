@@ -232,6 +232,9 @@ html{
 }
 
 @media screen and (max-width:425px) {
+    .null-div{
+        display:none;
+    }
     .login{
         display:none;
     }
