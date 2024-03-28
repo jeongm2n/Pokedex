@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../layouts/header.jsp" %>
-<link rel="stylesheet" href="/css/mycss.css">
 <% String gen = request.getParameter("gen"); 
 String[] region = {"관동지방","성도지방","호연지방","신오지방","하나지방","칼로스지방","알로라지방","가라르지방","팔데아지방"};
 String page_name;
