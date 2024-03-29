@@ -3,3 +3,17 @@
     margin-right:auto;
     margin-left:auto;
 }
+
+.tbl{
+    width : 100%;
+    text-align: center;
+}
+
+.type{
+    width : 8vw;
+    height : 3vh;
+}
+
+.poke{
+    width : 20vw;
+}
