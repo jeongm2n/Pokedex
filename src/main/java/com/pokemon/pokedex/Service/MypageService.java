@@ -15,4 +15,8 @@ public class MypageService {
     public ArrayList<Bag> getBag(String mem_id){
         return mymapper.getBag(mem_id);
     }
+
+    public ArrayList<Bag> getBalls(String mem_id){
+        return mymapper.getBalls(mem_id);
+    }
 }

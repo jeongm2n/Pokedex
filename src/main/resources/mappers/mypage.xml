@@ -5,4 +5,8 @@
     <select id="getBag" resultType="com.pokemon.pokedex.Entity.Bag">
         SELECT name, many FROM bag WHERE mem_id=#{mem_id}
     </select>
+
+    <select id="getBalls" resultType="com.pokemon.pokedex.Entity.Bag">
+        SELECT name, many FROM bag WHERE mem_id=#{mem_id} AND category='ball'
+    </select>
 </mapper>
