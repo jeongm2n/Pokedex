@@ -1,3 +1,16 @@
+.container{
+    display:flex;
+}
+
+section{
+    width:75%;
+    margin-right:5%;
+}
+
+aside{
+    width:20%
+}
+
 .first{
     width : 50%;
     margin-right:auto;

@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="/css/trip.css">
 
 <div class="container">
+<section>
 <div class="first">
     <table class="tbl">
         <tr><td>${pokemon.name}</td></tr>
@@ -11,6 +12,10 @@
         <c:if test="${!empty pokemon.type2}"><img class="type" src="/img/types/${pokemon.type2}.png"></c:if></td></tr>
     </table>
 </div>
+</section>
+<aside>
+    여기는 aside입니다.
+</aside>
 </div>
 <%@ include file="../layouts/footer.jsp" %>
 </body>
