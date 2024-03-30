@@ -16,12 +16,12 @@
             </div>
             <div class="card line">
                 <div class="card-body">
-                    야생의 ${pokemon.name}이 나타났다!!
+                    야생의 ${pokemon.name} 이/가 나타났다!!
                 </div>
             </div>
         </section>
         <aside>
-            <div class="card">
+            <div class="card overflow-auto">
                 <table class="table">
                 <c:forEach var="ball" items="${balls}">
                     <tr><td><img class="ball" src="../img/ball/${ball.name}.png"> x${ball.many}</td></tr>
@@ -30,8 +30,8 @@
             </div>
         </aside>
     </div>
-    <div>
-
+    <div style="text-align: center;">
+        <button class="btn btn-lg btn-outline-danger">잡는다</button>
     </div>
 </div>
 <%@ include file="../layouts/footer.jsp" %>

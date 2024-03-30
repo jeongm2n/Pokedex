@@ -1,4 +1,5 @@
-.container{
+.inner{
+    width:100%;
     display:flex;
 }
 
@@ -8,13 +9,20 @@ section{
 }
 
 aside{
-    width:20%
+    width:20%;
+    height:40vh;
+}
+
+aside > .card{
+    width : 100%;
+    height : 100%;
 }
 
 .first{
     width : 50%;
     margin-right:auto;
     margin-left:auto;
+    margin-bottom:5vh;
 }
 
 .tbl{
@@ -29,7 +37,7 @@ aside{
 
 .type{
     width : 8vw;
-    height : 3vh;
+    height : 4vh;
 }
 
 .poke{
@@ -38,9 +46,44 @@ aside{
     margin : 0 auto;
 }
 
+.table{
+    width : 100%;
+    text-align: center;
+}
+
+.table tr{
+    height: 25%;
+}
+
+.table tr:hover{
+    background-color: lightgray;
+}
+
+.ball{
+    width : 5vw;
+}
+
+.line{
+    border: 5px solid black;
+    font-family: "Stylish", serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size : 2rem;
+    margin-bottom:5vh;
+}
+
 @media screen and (max-width:1024px) {
     .tbl{
         font-size:1.5rem;
+    }
+}
+
+@media screen and (max-width:768px){
+    .ball{
+        width : 8vw;
+    }
+    aside{
+        height: 35vh;
     }
 }
 
@@ -50,5 +93,8 @@ aside{
     }
     .poke{
         width : 20vw;
+    }
+    .line{
+        font-size : 1rem;
     }
 }
