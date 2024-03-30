@@ -14,7 +14,12 @@
 </div>
 </section>
 <aside>
-    여기는 aside입니다.
+    <select class="form-select" multiple aria-label="multiple select example">
+        <option selected>몬스터볼</option>
+        <option value="1">슈퍼볼</option>
+        <option value="2">하이퍼볼</option>
+        <option value="3">마스터볼</option>
+      </select>
 </aside>
 </div>
 <%@ include file="../layouts/footer.jsp" %>
