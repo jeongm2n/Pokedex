@@ -80,7 +80,7 @@ aside > .card{
 
 @media screen and (max-width:768px){
     .ball{
-        width : 8vw;
+        width : 7vw;
     }
     aside{
         height: 35vh;
