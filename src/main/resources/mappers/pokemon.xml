@@ -4,8 +4,8 @@
 <mapper namespace="com.pokemon.pokedex.Mapper.PokemonMapper">
 
     <select id="getRand" resultType="com.pokemon.pokedex.Entity.PokemonDB">
-        SELECT no, name, img, type1, type2, percent FROM pokemons
-        WHERE region=#{region} AND no NOT IN (SELECT no FROM box WHERE mem_id=#{mem_id}) ORDER BY RAND() LIMIT 1
+        SELECT pk, name, img, type1, type2, percent FROM pokemons
+        WHERE region=#{region} AND pk NOT IN (SELECT poke_pk FROM box WHERE mem_id=#{mem_id}) ORDER BY RAND() LIMIT 1
     </select>
 
 </mapper>
