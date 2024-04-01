@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class PokemonDB {
+    private int pk;
     private int no;
     private String name;
     private String img;
