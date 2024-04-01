@@ -12,7 +12,7 @@ import com.pokemon.pokedex.Entity.Bag;
 import com.pokemon.pokedex.Entity.PokemonDB;
 import com.pokemon.pokedex.Service.MypageService;
 import com.pokemon.pokedex.Service.PokemonService;
-
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class TripController {
@@ -31,6 +31,15 @@ public class TripController {
         mav.addObject("balls",balls);
         mav.setViewName("/trip/catch");
         return mav;
+    }
+    
+    @PostMapping("/catch")
+    public String pokeCatch(@RequestParam int poke_pk, String mem_id, String ballname, int ballmany) {
+
+        ms.insertBox(poke_pk, mem_id, ballname);
+        ms.updateBall(ballmany, mem_id, ballname);        
+
+        return "main3";
     }
     
 }
