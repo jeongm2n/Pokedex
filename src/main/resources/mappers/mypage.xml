@@ -7,6 +7,14 @@
     </select>
 
     <select id="getBalls" resultType="com.pokemon.pokedex.Entity.Bag">
-        SELECT name, many FROM bag WHERE mem_id=#{mem_id} AND category='ball'
+        SELECT bag.name, bag.many, balls.plus FROM bag,balls WHERE bag.name=balls.name AND mem_id=#{mem_id} AND category='ball'
     </select>
+
+    <insert id="insertBox">
+        INSERT INTO box VALUES(#{poke_pk}, #{mem_id}, #{name})
+    </insert>
+
+    <update id="updateBall">
+        UPDATE bag SET many=#{many} WHERE mem_id=#{mem_id} AND name=#{name} 
+    </update>
 </mapper>

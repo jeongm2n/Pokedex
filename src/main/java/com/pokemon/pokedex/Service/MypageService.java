@@ -19,4 +19,12 @@ public class MypageService {
     public ArrayList<Bag> getBalls(String mem_id){
         return mymapper.getBalls(mem_id);
     }
+
+    public void insertBox(int poke_pk, String mem_id, String name){
+        mymapper.insertBox(poke_pk, mem_id, name);
+    }
+
+    public void updateBall(int many, String mem_id, String name){
+        mymapper.updateBall(many, mem_id, name);
+    }
 }
