@@ -40,7 +40,7 @@ String mem_id = (String) session.getAttribute("mem_id");%>
         <div id="login2">
           <a class="login"><img src="/img/id.png"><%=nickname%>님</a>
           <a class="login" href="/mybag?mem_id=<%=mem_id%>"><img src="/img/bag.png">가방</a>
-          <a class="login" href="#"><img src="/img/box.png">상자</a>
+          <a class="login" href="/mybox?mem_id=<%=mem_id%>"><img src="/img/box.png">상자</a>
           <a class="login" href="/logout" style="font-size:8pt">로그아웃</a></div>
         <button class="navbar-toggler mydd" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -61,7 +61,7 @@ String mem_id = (String) session.getAttribute("mem_id");%>
                   <a class="nav-link active" aria-current="page" href="/mybag?mem_id=<%=mem_id%>"><img style="width:5vw;margin-right:2vw" src="/img/bag.png">가방</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#"><img style="width:5vw;margin-right:2vw" src="/img/box.png">박스</a>
+                  <a class="nav-link active" aria-current="page" href="/mybox?mem_id=<%=mem_id%>"><img style="width:5vw;margin-right:2vw" src="/img/box.png">박스</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="/logout" style="font-size:8pt">로그아웃</a>
