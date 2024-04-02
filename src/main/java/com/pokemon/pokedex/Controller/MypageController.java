@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import java.util.ArrayList;
 
 import com.pokemon.pokedex.Entity.Bag;
+import com.pokemon.pokedex.Entity.Box;
 import com.pokemon.pokedex.Service.MypageService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,5 +28,16 @@ public class MypageController {
 
         return mav;
     }
+
+    @GetMapping("/mybox")
+    public ModelAndView getMyBox(@RequestParam String mem_id) {
+        ModelAndView mav = new ModelAndView();
+        ArrayList<Box> myBox = mypageService.getBox(mem_id);
+        
+        mav.addObject("mybox", myBox);
+        mav.setViewName("/mypage/box");
+        return mav;
+    }
+    
     
 }
