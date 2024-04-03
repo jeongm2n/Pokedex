@@ -6,16 +6,17 @@
     var ballbonus = 1;
     var ballname = '몬스터볼';
     var ballmany;
+    var mem_id = '<%=mem_id%>';
 
     function getBall(plus,name,many){
         $('#hideball').val(name);
         ballbonus = Number(plus);
-        ballmany = Number(many);
     }
 
     function calculate(percent){
         var sub = ballmany-1;
         $('#ballmany').val(sub);
+        $('#'+ballname).text('x'+sub);
         var a = null;
         if(percent<=45){
             a = (298 * ballbonus * percent)/300 * 2;
@@ -58,7 +59,7 @@
             <div class="card overflow-auto">
                 <table class="table">
                 <c:forEach var="ball" items="${balls}">
-                    <tr><td onclick="getBall('${ball.plus}','${ball.name}','${ball.many}')"><img class="ball" src="../img/ball/${ball.name}.png"> x${ball.many}</td></tr>
+                    <tr><td onclick="getBall('${ball.plus}','${ball.name}','${ball.many}')"><img class="ball" src="../img/ball/${ball.name}.png"> <font id="${ball.name}">x${ball.many}</font></td></tr>
                 </c:forEach>
                 </table>
             </div>
