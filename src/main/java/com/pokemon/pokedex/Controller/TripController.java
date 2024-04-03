@@ -14,6 +14,7 @@ import com.pokemon.pokedex.Service.MypageService;
 import com.pokemon.pokedex.Service.PokemonService;
 import org.springframework.web.bind.annotation.PostMapping;
 
+
 @Controller
 public class TripController {
     @Autowired
@@ -41,5 +42,4 @@ public class TripController {
 
         return "main3";
     }
-    
 }
