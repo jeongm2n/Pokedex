@@ -11,6 +11,7 @@ public interface MypageMapper {
     ArrayList<Bag> getBag(String mem_id);
     ArrayList<Bag> getBalls(String mem_id);
     void insertBox(int poke_pk, String mem_id, String name);
-    void updateBall(int many, String mem_id, String name);
+    void updateBall(String mem_id, String name);
+    int selectBall(String mem_id, String name);
     ArrayList<Box> getBox(String mem_id);
 }

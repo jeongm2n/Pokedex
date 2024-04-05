@@ -25,8 +25,12 @@ public class MypageService {
         mymapper.insertBox(poke_pk, mem_id, name);
     }
 
-    public void updateBall(int many, String mem_id, String name){
-        mymapper.updateBall(many, mem_id, name);
+    public void updateBall(String mem_id, String name){
+        mymapper.updateBall(mem_id, name);
+    }
+
+    public int selectBall(String mem_id, String name){
+        return mymapper.selectBall(mem_id, name);
     }
 
     public ArrayList<Box> getBox(String mem_id){
