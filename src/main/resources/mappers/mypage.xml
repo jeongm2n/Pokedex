@@ -15,8 +15,12 @@
     </insert>
 
     <update id="updateBall">
-        UPDATE bag SET many=#{many} WHERE mem_id=#{mem_id} AND name=#{name} 
+        UPDATE bag SET many=many-1 WHERE mem_id=#{mem_id} AND name=#{name} 
     </update>
+
+    <select id="selectBall" resultType="int">
+        SELECT many FROM bag WHERE mem_id=#{mem_id} AND name=#{name}
+    </select>
 
     <select id="getBox" resultType="com.pokemon.pokedex.Entity.Box">
         SELECT pokemons.img, box.ball FROM box,pokemons WHERE box.mem_id=#{mem_id} AND pokemons.pk=box.poke_pk
