@@ -5,7 +5,6 @@
 <script>
     var ballbonus = 1;
     var ballname = '몬스터볼';
-    var ballmany;
     var mem_id = '<%=mem_id%>';
 
     function getBall(plus,name,many){
@@ -13,10 +12,7 @@
         ballbonus = Number(plus);
     }
 
-    function calculate(percent){
-        var sub = ballmany-1;
-        $('#ballmany').val(sub);
-        $('#'+ballname).text('x'+sub);
+    function calculate(percent){      
         var a = null;
         if(percent<=45){
             a = (298 * ballbonus * percent)/300 * 2;
@@ -29,6 +25,21 @@
                 const rand = Math.floor(Math.random()*65537);
                 if(rand > b) {
                     alert('포획에 실패하였습니다!');
+                    $.ajax({
+                        url : "/calcBall",
+                        type : "POST",
+                        data : {
+                            mem_id : mem_id,
+                            ballname : ballname,
+                        },
+                        dataType : 'text',
+                        success : function(response){
+                            $('#'+ballname).text('x'+response);
+                        },
+                        error : function(xhr, status, error){
+                            console.error('AJAX Error:', status, error);
+                        }
+                    });
                     return false;
                 }
             }
@@ -71,7 +82,6 @@
             <input type="hidden" name="poke_pk" value="${pokemon.pk}">
             <input type="hidden" name="mem_id" value="<%=mem_id%>">
             <input type="hidden" id="hideball" name="ballname">
-            <input type="hidden" id="ballmany" name="ballmany">
             <input type="submit" class="btn btn-lg btn-outline-danger" value="잡는다" onclick="return calculate('${pokemon.percent}')">
         </form>
     </div>
