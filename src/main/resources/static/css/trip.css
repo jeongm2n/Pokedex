@@ -61,6 +61,7 @@ aside > .card{
 .table{
     width : 100%;
     text-align: center;
+    margin-bottom : 0;
 }
 
 .table tr{
@@ -82,7 +83,7 @@ aside > .card{
     font-style: normal;
     font-weight: bold;
     font-size : 2rem;
-    animation: opacity-line 2s ease-out;
+    animation: opacity-line 4s ease-out;
 }
 
 @keyframes opacity-line {
@@ -125,5 +126,8 @@ aside > .card{
     }
     .poke{
         width : 20vw;
+    }
+    .many{
+        font-size:0.7rem;
     }
 }
