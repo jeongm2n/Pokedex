@@ -52,12 +52,14 @@
 <div class="container">
     <div class="inner">
         <section>
-            <table class="tbl">
-                <tr><td>${pokemon.name}</td></tr>
-                <tr><td><img class="poke" src="${pokemon.img}"></td></tr>
-                <tr><td><img class="type" src="/img/types/${pokemon.type1}.png">
-                <c:if test="${!empty pokemon.type2}"><img class="type" src="/img/types/${pokemon.type2}.png"></c:if></td></tr>
-            </table>
+            <div class="first">
+                <table class="tbl">
+                    <tr><td>${pokemon.name}</td></tr>
+                    <tr><td><img class="poke" src="${pokemon.img}"></td></tr>
+                    <tr><td><img class="type" src="/img/types/${pokemon.type1}.png">
+                    <c:if test="${!empty pokemon.type2}"><img class="type" src="/img/types/${pokemon.type2}.png"></c:if></td></tr>
+                </table>
+            </div>
             <div class="card line">
                 <div class="card-body">
                     야생의 ${pokemon.name} 이/가 나타났다!!
