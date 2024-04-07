@@ -18,21 +18,26 @@ aside > .card{
     height : 100%;
 }
 
-.first{
-    width : 50%;
-    margin-right:auto;
-    margin-left:auto;
-    margin-bottom:5vh;
-}
-
 .tbl{
-    width : 100%;
     text-align: center;
     font-family: "Jua", sans-serif;
     font-weight: bold;
     font-style: normal;
     border-collapse: collapse;
     font-size: 2.5rem;
+    position: absolute;
+    top: 250px;
+    left: 450px;
+    animation: slide-poke 1s ease-out;
+}
+
+@keyframes slide-poke {
+    from{
+        left:-200px;
+    }
+    to{
+        left:450px;
+    }
 }
 
 .type{
@@ -42,6 +47,7 @@ aside > .card{
 
 .poke{
     width : 15vw;
+    height: 20vh;
     object-fit: contain;
     margin : 0 auto;
 }
@@ -64,17 +70,36 @@ aside > .card{
 }
 
 .line{
+    width: 60%;
     border: 5px solid black;
     font-family: "Stylish", serif;
     font-style: normal;
     font-weight: bold;
     font-size : 2rem;
-    margin-bottom:5vh;
+    position: absolute;
+    top: 650px;
+    left: 150px;
+    animation: slide-line 1s ease-out;
 }
+
+@keyframes slide-line {
+    from{
+        top: 1000px
+    }
+    to{
+        top: 650px
+    }
+}
+
 
 @media screen and (max-width:1024px) {
     .tbl{
         font-size:1.5rem;
+        top:150px;
+        left:350px;
+    }
+    .line{
+        top:420px;
     }
 }
 
@@ -84,6 +109,14 @@ aside > .card{
     }
     aside{
         height: 35vh;
+    }
+    .tbl{
+
+    }
+    .line{
+        font-size: 1rem;
+        top:280px;
+        left:100px;
     }
 }
 
