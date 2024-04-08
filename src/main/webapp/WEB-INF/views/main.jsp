@@ -1,26 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="./layouts/header.jsp" %>
 <script>
-    function goDex(region){
-        window.location.href = '${contextPath}/generation/' + region +'?gen='+region;
+    function goMain2(){
+        window.location.href = '/main2';
+    }
+    function goMain3(){
+        window.location.href = '/main3';
     }
 </script>
-<% String[] gens = {"1","2","3","4","5","6","7","mega","8","gmax","hisui","9"};
-String[] regions = {"관동지방","성도지방","호연지방","신오지방","하나지방","칼로스지방","알로라지방","메가진화","가라르지방","거다이맥스","히스이","팔데아지방"};
-int[] nums = {152,100,135,107,156,72,106,50,108,35,24,124};
-int cnt=0;
-%>
-    <div class="container text-center">
-    <%for(int i=0; i<3; i++){%>
-        <div class="row">
-            <%for(int j=0; j<4; j++){%>
-                <div class="col-md-3 col-6 region-div" onclick="goDex('<%=gens[cnt]%>')">
-                    <div class="rounded-4 div1">
-                        <div class="region_name"><%=regions[cnt]%></div><div class="poke_num"><%=nums[cnt]%></div></div></div>
-            <%cnt++;
-        }%>
+<div class="container">
+    <div class="row" style="text-align: center;">
+        <div class="card col-12 col-md-6 main-left">
+            <div class="card-body" onclick="goMain3()">
+                <h4>포켓몬 잡기</h4>
+                <img class="leftimg" src="/img/ball.png">
+            </div>
         </div>
-    <%}%> 
+        <div class="card col-12 col-md-6 main-right">
+            <div class="card-body" onclick="goMain2()">
+                <h4>전국도감</h4>
+                <img class="rightimg" src="/img/smart.png">
+            </div>
+        </div>
+    </div>
 </div>
 <%@ include file="./layouts/footer.jsp" %>
 </body>

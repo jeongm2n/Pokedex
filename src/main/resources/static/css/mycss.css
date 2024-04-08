@@ -68,6 +68,22 @@ html{
     padding-bottom: 20vh;
 }
 
+.main-left:hover{
+    background-color: #F0F8FF;
+}
+
+.leftimg{
+    width : 5vw;
+}
+
+.main-right:hover{
+    background-color: #F0F8FF;
+}
+
+.rightimg{
+    width : 7vw;
+}
+
 .div1{
     width:100%;
     height:100%;
@@ -216,6 +232,9 @@ html{
 }
 
 @media screen and (max-width:425px) {
+    .null-div{
+        display:none;
+    }
     .login{
         display:none;
     }
@@ -228,6 +247,12 @@ html{
     }
     .logo{
         width : 30vw;
+    }
+    .leftimg{
+        width : 10vw;
+    }
+    .rightimg{
+        width : 12vw;
     }
     .region-div{
         height:10vh;

@@ -16,10 +16,21 @@ import java.util.ArrayList;
 @Controller
 public class PokedexController {
     int[] nums = {386,413,492,487,479,351,550,555,648,641,642,645,646,647,681,720,718,741,745,801,800,849,888,889,892,483,484,905,964,978,999,901,1017,1024};
-    @GetMapping("main")
+    @GetMapping("/main")
     public String goMain() throws IOException{
         return "main";
     }
+
+    @GetMapping("/main2")
+    public String goMain2() throws IOException{
+        return "main2";
+    }
+
+    @GetMapping("/main3")
+    public String goMain3() {
+        return "main3";
+    }
+    
 
     @GetMapping("/generation/{num}")
     public ModelAndView goJSON(@PathVariable String num) throws IOException {
@@ -30,7 +41,7 @@ public class PokedexController {
         ArrayList<Pokemon> pokemons = pokeJSON.getData(num);
 
         mav.addObject("pokemons", pokemons);
-        mav.setViewName("pokedex");
+        mav.setViewName("/des/pokedex");
         return mav;
     }
 
@@ -44,14 +55,14 @@ public class PokedexController {
                 ArrayList<PokemonDetail> pokemons = pokeJSON.getFormchange(no);
                 mav.addObject("pokemons", pokemons);
                 mav.addObject("no", no);
-                mav.setViewName("detail_fc");
+                mav.setViewName("/des/detail_fc");
                 break;
             }
             else{
                 PokemonDetail pokemon = pokeJSON.getNormal(name,gen);
 
                 mav.addObject("pokemon", pokemon);
-                mav.setViewName("detail");
+                mav.setViewName("/des/detail");
             }
         }
         return mav;

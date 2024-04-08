@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 
 import com.pokemon.pokedex.Entity.Bag;
+import com.pokemon.pokedex.Entity.Box;
 import com.pokemon.pokedex.Mapper.MypageMapper;
 
 @Service
@@ -14,5 +15,25 @@ public class MypageService {
 
     public ArrayList<Bag> getBag(String mem_id){
         return mymapper.getBag(mem_id);
+    }
+
+    public ArrayList<Bag> getBalls(String mem_id){
+        return mymapper.getBalls(mem_id);
+    }
+
+    public void insertBox(int poke_pk, String mem_id, String name){
+        mymapper.insertBox(poke_pk, mem_id, name);
+    }
+
+    public void updateBall(String mem_id, String name){
+        mymapper.updateBall(mem_id, name);
+    }
+
+    public int selectBall(String mem_id, String name){
+        return mymapper.selectBall(mem_id, name);
+    }
+
+    public ArrayList<Box> getBox(String mem_id){
+        return mymapper.getBox(mem_id);
     }
 }

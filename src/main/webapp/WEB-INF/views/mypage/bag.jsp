@@ -8,7 +8,7 @@
     <table class="table table-hover bagtbl">
         <c:forEach var="item" items="${mybags}">
         <tr>
-            <td>${item.name}</td>
+            <td><img class="ball" src="/img/ball/${item.name}.png">${item.name}</td>
             <td>x ${item.many}</td>
         </tr>
         </c:forEach>
