@@ -47,6 +47,10 @@
         alert('포획 성공!');
         return true;
     }
+
+    function runaway(){
+        location.reload(true);
+    }
 </script>
 
 <div class="container">
@@ -84,7 +88,7 @@
             <input type="hidden" id="hideball" name="ballname">
             <input type="submit" class="btn btn-outline-danger" value="잡는다" onclick="return calculate('${pokemon.percent}')">
         </form>
-        <button type="button" class="btn btn-light" style="margin-left:5vw;">도망간다</button>
+        <button type="button" class="btn btn-light" style="margin-left:5vw;" onclick="runaway()">도망간다</button>
     </div>
 </div>
 <%@ include file="../layouts/footer.jsp" %>
