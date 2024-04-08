@@ -82,8 +82,9 @@
             <input type="hidden" name="poke_pk" value="${pokemon.pk}">
             <input type="hidden" name="mem_id" value="<%=mem_id%>">
             <input type="hidden" id="hideball" name="ballname">
-            <input type="submit" class="btn btn-lg btn-outline-danger" value="잡는다" onclick="return calculate('${pokemon.percent}')">
+            <input type="submit" class="btn btn-outline-danger" value="잡는다" onclick="return calculate('${pokemon.percent}')">
         </form>
+        <button type="button" class="btn btn-light" style="margin-left:5vw;">도망간다</button>
     </div>
 </div>
 <%@ include file="../layouts/footer.jsp" %>
