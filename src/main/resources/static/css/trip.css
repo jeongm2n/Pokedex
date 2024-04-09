@@ -26,9 +26,8 @@ aside > .card{
     margin-left:auto;
     margin-bottom : 5vh;
     background-image: url("../img/grass.png");
-    background-size: contain;
+    background-size: cover;
     background-position: left 0 bottom 0;
-    background-repeat: repeat-x;
 }
 
 .tbl{
