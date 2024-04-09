@@ -51,12 +51,20 @@
     function runaway(){
         location.reload(true);
     }
+    let type1 = '${pokemon.type1}';
+    let type2 = '${pokemon.type2}';
+
+    $(document).ready(function(){
+        if(type1=='water' || type2=='water'){
+            $("#first").css("background-image", "url(img/water.jpg)");
+        }
+    });
 </script>
 
 <div class="container">
     <div class="inner">
         <section>
-            <div class="first">
+            <div class="first" id="first">
                 <table class="tbl">
                     <tr><td>${pokemon.name}</td></tr>
                     <tr><td><img class="poke" src="${pokemon.img}"></td></tr>
