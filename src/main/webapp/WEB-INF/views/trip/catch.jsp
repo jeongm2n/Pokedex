@@ -6,10 +6,13 @@
     var ballbonus = 1;
     var ballname = '몬스터볼';
     var mem_id = '<%=mem_id%>';
+    var before = null;
 
     function getBall(plus,name,many){
+        ballname = name;
         $('#hideball').val(name);
         ballbonus = Number(plus);
+        $('#'+name+'1').addClass("ballclk");
     }
 
     function calculate(percent){      
@@ -34,7 +37,7 @@
                         },
                         dataType : 'text',
                         success : function(response){
-                            $('#'+ballname).text('x'+response);
+                            $('#'+ballname+'2').text('x'+response);
                         },
                         error : function(xhr, status, error){
                             console.error('AJAX Error:', status, error);
@@ -82,8 +85,8 @@
             <div class="card overflow-auto">
                 <table class="table">
                 <c:forEach var="ball" items="${balls}">
-                    <tr onclick="getBall('${ball.plus}','${ball.name}','${ball.many}')"><td><img class="ball" src="../img/ball/${ball.name}.png"></td>
-                        <td id="${ball.name}" class="many">x ${ball.many}</td></tr>
+                    <tr id="${ball.name}1" onclick="getBall('${ball.plus}','${ball.name}','${ball.many}')"><td><img class="ball" src="../img/ball/${ball.name}.png"></td>
+                        <td id="${ball.name}2" class="many">x ${ball.many}</td></tr>
                 </c:forEach>
                 </table>
             </div>

@@ -91,6 +91,10 @@ aside > .card{
     animation: opacity-line 4s ease-out;
 }
 
+.ballclk{
+    background-color: lightgray;
+}
+
 @keyframes opacity-line {
     from{
         opacity: 0;
