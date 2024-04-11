@@ -66,6 +66,7 @@ aside > .card{
     width : 100%;
     text-align: center;
     margin-bottom : 0;
+    font-size : 2rem;
 }
 
 .table tr{
@@ -121,6 +122,9 @@ aside > .card{
         font-size: 1rem;
     }
     .btn{
+        font-size:1rem;
+    }
+    .table{
         font-size:1rem;
     }
 }

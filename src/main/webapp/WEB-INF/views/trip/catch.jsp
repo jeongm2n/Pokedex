@@ -82,7 +82,7 @@
             <div class="card overflow-auto">
                 <table class="table">
                 <c:forEach var="ball" items="${balls}">
-                    <tr><td onclick="getBall('${ball.plus}','${ball.name}','${ball.many}')"><img class="ball" src="../img/ball/${ball.name}.png"></td>
+                    <tr onclick="getBall('${ball.plus}','${ball.name}','${ball.many}')"><td><img class="ball" src="../img/ball/${ball.name}.png"></td>
                         <td id="${ball.name}" class="many">x ${ball.many}</td></tr>
                 </c:forEach>
                 </table>
