@@ -6,13 +6,15 @@
     var ballbonus = 1;
     var ballname = '몬스터볼';
     var mem_id = '<%=mem_id%>';
-    var before = null;
+    var before;
 
     function getBall(plus,name,many){
         ballname = name;
         $('#hideball').val(name);
         ballbonus = Number(plus);
+        before.classList.remove("ballclk");
         $('#'+name+'1').addClass("ballclk");
+        before = document.getElementById(name+'1');
     }
 
     function calculate(percent){      
@@ -61,6 +63,8 @@
         if(type1=='water' || type2=='water'){
             $("#first").css("background-image", "url(img/water.jpg)");
         }
+        $('#몬스터볼1').addClass("ballclk");
+        before = document.getElementById("몬스터볼1");
     });
 </script>
 
