@@ -29,6 +29,10 @@ public class MypageService {
         mymapper.updateBall(mem_id, name);
     }
 
+    public void rewardBall(String mem_id, String rewardname, int rewardmany){
+        mymapper.rewardBall(mem_id,rewardname,rewardmany);
+    }
+
     public int selectBall(String mem_id, String name){
         return mymapper.selectBall(mem_id, name);
     }

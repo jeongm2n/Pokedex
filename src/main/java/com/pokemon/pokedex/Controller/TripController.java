@@ -37,10 +37,13 @@ public class TripController {
     }
     
     @PostMapping("/catch")
-    public String pokeCatch(@RequestParam int poke_pk, String mem_id, String ballname) {
+    public String pokeCatch(@RequestParam int poke_pk, String mem_id, String ballname, String rewardname, int rewardmany) {
 
         ms.insertBox(poke_pk, mem_id, ballname);
-        ms.updateBall(mem_id, ballname);        
+        ms.updateBall(mem_id, ballname);
+        
+        //reward는 먼저 가방에 해당 볼이 있는지 조회 후, 있으면 Update, 없으면 insert로 만들기
+        ms.rewardBall(mem_id,rewardname,rewardmany);
 
         return "main3";
     }
