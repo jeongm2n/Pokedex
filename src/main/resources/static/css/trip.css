@@ -95,6 +95,17 @@ aside > .card{
     background-color: lightgray;
 }
 
+#rewarddiv{
+    font-family: "Jua", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size : 1rem;
+}
+
+.rewardimg{
+    width: 3vw;
+}
+
 @keyframes opacity-line {
     from{
         opacity: 0;
@@ -142,5 +153,8 @@ aside > .card{
     }
     .many{
         font-size:0.7rem;
+    }
+    .rewardimg{
+        width:5vw;
     }
 }

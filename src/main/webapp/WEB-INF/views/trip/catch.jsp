@@ -90,7 +90,7 @@
         }
         $('#rewardname').val(reward1);
         $('#rewardmany').val(reward2);
-        $('#rewarddiv').prepend("포획 보상 : <img src='../img/ball/"+reward1+".png'> "+reward2+"개");
+        $('#rewarddiv').prepend("포획 보상 : <img class=rewardimg src='../img/ball/"+reward1+".png'> "+reward2+"개");
     });
 </script>
 
@@ -110,7 +110,7 @@
                     야생의 ${pokemon.name} 이/가 나타났다!!
                 </div>
             </div>
-            <div style="width:100%;text-align: right;">
+            <div style="width:100%;text-align:right;margin-top:20px;">
                 <div id="rewarddiv">
                 </div>
             </div>
