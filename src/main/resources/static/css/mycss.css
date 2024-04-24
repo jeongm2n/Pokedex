@@ -68,6 +68,10 @@ html{
     padding-bottom: 20vh;
 }
 
+.main-left, .main-right{
+    height:30vh;
+}
+
 .main-left:hover{
     background-color: #F0F8FF;
 }
