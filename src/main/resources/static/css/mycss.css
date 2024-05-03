@@ -23,6 +23,7 @@ html{
     font-weight: bold;
     font-style: normal;
     margin-right:1vw;
+    letter-spacing: 0.5ch;
 }
 
 .login > img{
