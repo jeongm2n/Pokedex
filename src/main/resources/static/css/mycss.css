@@ -25,30 +25,11 @@ html{
     margin-right:1vw;
     padding : 5px;
     letter-spacing: 0.5ch;
-    position: relative;
-    transition: all 0.4s;
-    overflow: hidden;
-}
-
-.login::before{
-    content: "";
-    position: absolute;
-    height: 100;
-    width: 100;
-    top:100%;
-    left:0;
-    background-color: white;
-    z-index: -1;
-    transition: all 0.4s;
 }
 
 .login > img{
     width:2vw;
     margin-right:0.5vw;
-}
-
-.login:hover::before{
-    transform: translateY(-100%);
 }
 
 .login:hover{
