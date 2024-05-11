@@ -370,6 +370,13 @@ html{
     font-style: normal;
 }
 
+.nav{
+    justify-content: center;
+    letter-spacing: 3px;
+    align-items: center;
+    height: 50%;
+}
+
 .sns{
     color:white;
     font-size:1rem;
