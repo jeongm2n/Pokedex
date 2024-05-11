@@ -31,11 +31,16 @@ html{
 .login:after{
     content: "";
     position: absolute;
-    width: 100%;
+    width: 0;
     height: 3px;
     background-color: white;
     left: 0;
     bottom: -10px;
+    transition: 0.5s;
+}
+
+.login:hover::after{
+    width: 100%;
 }
 
 .login > img{
