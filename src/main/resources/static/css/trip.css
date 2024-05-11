@@ -7,6 +7,7 @@ section{
     width:75%;
     margin-right:5%;
     margin-bottom : 5vh;
+    position: relative;
 }
 
 aside{
@@ -24,6 +25,9 @@ aside > .card{
     margin-right:auto;
     margin-left:auto;
     margin-bottom : 5vh;
+    background-image: url("../img/grass.png");
+    background-size: cover;
+    background-position: left 0 bottom 0;
 }
 
 .tbl{
@@ -62,6 +66,7 @@ aside > .card{
     width : 100%;
     text-align: center;
     margin-bottom : 0;
+    font-size : 2rem;
 }
 
 .table tr{
@@ -86,6 +91,21 @@ aside > .card{
     animation: opacity-line 4s ease-out;
 }
 
+.ballclk{
+    background-color: lightgray;
+}
+
+#rewarddiv{
+    font-family: "Jua", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size : 1rem;
+}
+
+.rewardimg{
+    width: 3vw;
+}
+
 @keyframes opacity-line {
     from{
         opacity: 0;
@@ -96,7 +116,8 @@ aside > .card{
 }
 
 .formdiv{
-    text-align : center;
+    display: flex;
+    justify-content: center;
 }
 
 @media screen and (max-width:1024px) {
@@ -118,6 +139,9 @@ aside > .card{
     .btn{
         font-size:1rem;
     }
+    .table{
+        font-size:1rem;
+    }
 }
 
 @media screen and (max-width:425px) {
@@ -129,5 +153,8 @@ aside > .card{
     }
     .many{
         font-size:0.7rem;
+    }
+    .rewardimg{
+        width:5vw;
     }
 }

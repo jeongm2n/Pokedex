@@ -18,6 +18,18 @@
         UPDATE bag SET many=many-1 WHERE mem_id=#{mem_id} AND name=#{name} 
     </update>
 
+    <select id="rewardselectBall" resultType="int">
+        SELECT COUNT(*) FROM bag WHERE mem_id=#{mem_id} AND name=#{rewardname}
+    </select>
+
+    <insert id="rewardInsert">
+        INSERT INTO bag VALUES(#{rewardname},#{mem_id},'ball',#{rewardmany})
+    </insert>
+
+    <update id="rewardUpdate">
+        UPDATE bag SET many=many+#{rewardmany} WHERE mem_id=#{mem_id} AND name=#{rewardname}
+    </update>
+
     <select id="selectBall" resultType="int">
         SELECT many FROM bag WHERE mem_id=#{mem_id} AND name=#{name}
     </select>
