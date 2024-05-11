@@ -373,6 +373,22 @@ html{
 .sns{
     color:white;
     font-size:1rem;
+    position: relative;
+}
+
+.sns:after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: powderblue;
+    left: 0;
+    bottom: -10px;
+    transition: 0.4s;
+}
+
+.sns:hover::after{
+    width: 100%;
 }
 
 .none{
