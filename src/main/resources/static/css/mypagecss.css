@@ -34,6 +34,11 @@
     margin : 0 auto;
 }
 
+.pokeinfo{
+    width:18%;
+    padding : 10px;
+}
+
 @media screen and (max-width:768px) {
     .bag-con{
         width : 100%;
