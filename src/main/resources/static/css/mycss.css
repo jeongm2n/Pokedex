@@ -381,6 +381,11 @@ html{
     color:white;
     font-size:1rem;
     position: relative;
+    font-weight: bolder;
+}
+
+.sns:hover{
+    color:skyblue;
 }
 
 .sns:after{
