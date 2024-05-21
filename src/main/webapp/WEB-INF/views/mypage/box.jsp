@@ -9,19 +9,26 @@
         </c:forEach>
         </div>
     </div>
-    <div class="card pokeinfo">
-        <div style="display: flex">
-            <img id="detailball">
-            <h4 id="detailname"></h4>
+    <div id="de">
+        <div class="card pokeinfo">
+            <div style="display: flex;">
+                <img id="detailball">
+                <h5 id="detailname" style="text-align: right;"></h5>
+            </div>
+            <img id="detailpoke">
+            <div style="display:flex">
+                <img id="type1">
+                <img id="type2">
+            </div>
         </div>
-        <img id="detailpoke">
-        <img id="type1">
-        <img id="type2">
     </div>
+    
 </div>
 <script>
 
     function getDetail(ball, pk, img){
+        $('#de').show();
+
         var no;
         var name;
         var type1;
