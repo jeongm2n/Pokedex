@@ -39,6 +39,6 @@
     </select>
 
     <select id="getDetail" resultType="com.pokemon.pokedex.Entity.PokemonDB">
-        SELECT no, img, type1, type2 FROM pokemons WHERE pk=#{pk}
+        SELECT no, name, type1, type2 FROM pokemons WHERE pk=#{pk}
     </select>
 </mapper>
