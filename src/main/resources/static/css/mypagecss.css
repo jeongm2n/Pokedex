@@ -37,6 +37,8 @@
 .pokeinfo{
     width:18%;
     padding : 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 @media screen and (max-width:768px) {

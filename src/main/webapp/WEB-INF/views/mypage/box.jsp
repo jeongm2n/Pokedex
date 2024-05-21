@@ -10,7 +10,13 @@
         </div>
     </div>
     <div class="card pokeinfo">
-
+        <div style="display: flex">
+            <img id="detailball">
+            <h4 id="detailname"></h4>
+        </div>
+        <img id="detailpoke">
+        <img id="type1">
+        <img id="type2">
     </div>
 </div>
 <%@ include file="../layouts/footer.jsp" %>
