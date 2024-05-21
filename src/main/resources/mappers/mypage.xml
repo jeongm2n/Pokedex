@@ -35,6 +35,6 @@
     </select>
 
     <select id="getBox" resultType="com.pokemon.pokedex.Entity.Box">
-        SELECT pokemons.img, box.ball FROM box,pokemons WHERE box.mem_id=#{mem_id} AND pokemons.pk=box.poke_pk
+        SELECT pokemons.pk, pokemons.img, box.ball FROM box,pokemons WHERE box.mem_id=#{mem_id} AND pokemons.pk=box.poke_pk
     </select>
 </mapper>
