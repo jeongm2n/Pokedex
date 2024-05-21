@@ -7,9 +7,11 @@ import java.util.ArrayList;
 
 import com.pokemon.pokedex.Entity.Bag;
 import com.pokemon.pokedex.Entity.Box;
+import com.pokemon.pokedex.Entity.PokemonDB;
 import com.pokemon.pokedex.Service.MypageService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 
@@ -38,5 +40,13 @@ public class MypageController {
         mav.setViewName("/mypage/box");
         return mav;
     }
+
+    @GetMapping("/boxdetail")
+    @ResponseBody
+    public PokemonDB getBoxDetail(@RequestParam int pk) {
+        PokemonDB poke = mypageService.getDetail(pk);
+        return poke;
+    }
+    
     
 }

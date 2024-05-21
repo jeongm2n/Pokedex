@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import com.pokemon.pokedex.Entity.Bag;
 import com.pokemon.pokedex.Entity.Box;
+import com.pokemon.pokedex.Entity.PokemonDB;
 
 @Mapper
 public interface MypageMapper {
@@ -17,4 +18,5 @@ public interface MypageMapper {
     void rewardUpdate(String mem_id, String rewardname, int rewardmany);
     int selectBall(String mem_id, String name);
     ArrayList<Box> getBox(String mem_id);
+    PokemonDB getDetail(int pk);
 }

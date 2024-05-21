@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import com.pokemon.pokedex.Entity.Bag;
 import com.pokemon.pokedex.Entity.Box;
+import com.pokemon.pokedex.Entity.PokemonDB;
 import com.pokemon.pokedex.Mapper.MypageMapper;
 
 @Service
@@ -47,5 +48,9 @@ public class MypageService {
 
     public ArrayList<Box> getBox(String mem_id){
         return mymapper.getBox(mem_id);
+    }
+
+    public PokemonDB getDetail(int pk){
+        return mymapper.getDetail(pk);
     }
 }
