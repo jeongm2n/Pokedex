@@ -10,7 +10,6 @@
 
     function getBall(plus,name,many){
         ballname = name;
-        $('#hideball').val(name);
         ballbonus = Number(plus);
         before.classList.remove("ballclk");
         $('#'+name+'1').addClass("ballclk");
@@ -49,6 +48,7 @@
                 }
             }
         }
+        $('#hideball').val(ballname);
         alert('포획 성공!');
         return true;
     }
