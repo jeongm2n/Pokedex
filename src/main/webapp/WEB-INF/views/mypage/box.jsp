@@ -13,10 +13,10 @@
         <div class="card pokeinfo">
             <div style="display: flex;">
                 <img id="detailball">
-                <h5 id="detailname" style="text-align: right;"></h5>
+                <h5 id="detailname"></h5>
             </div>
             <img id="detailpoke">
-            <div style="display:flex">
+            <div id="typediv" style="display:flex">
                 <img id="type1">
                 <img id="type2">
             </div>
@@ -28,13 +28,12 @@
 
     function getDetail(ball, pk, img){
         $('#de').show();
+        $('#type2').remove("");
 
         var no;
         var name;
         var type1;
         var type2;
-
-
 
         $.ajax({
             url: "/boxdetail",
@@ -61,9 +60,7 @@
         $('#detailpoke').attr("src", img);
         $('#type1').attr("src", "/img/types/" + type1 + ".png");
         if(type2!=null){
-            $('#type2').attr("src", "/img/types/" + type2 + ".png");
-        }else{
-            $('#type2').attr("src", "");
+            $('#typediv').append("<img id='type2' src='/img/types/" + type2 + ".png'>");
         }
     }
 </script>

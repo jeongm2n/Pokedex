@@ -21,7 +21,7 @@
 .boxdiv{
     width: 100%; 
     height: 800px;
-    margin-right: 2%;
+    margin-right: 0.5%;
 }
 
 .col-2{
@@ -44,7 +44,7 @@
 #de{
     display: none;
     width: 18%;
-    height: 50vh;
+    height: 60vh;
 }
 
 .pokeinfo{  
@@ -66,12 +66,13 @@
 
 #detailpoke{
     width: 13vw;
+    height: 20vh;
     margin : auto;
 }
 
 #type1, #type2{
     width: 50%;
-    height: 5vh;
+    height: 4vh;
 }
 
 @media screen and (max-width:768px) {
