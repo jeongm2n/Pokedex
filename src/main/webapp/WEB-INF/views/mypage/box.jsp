@@ -2,7 +2,7 @@
 <%@ include file="../layouts/header.jsp" %>
 <link rel="stylesheet" href="/css/mypagecss.css">
 <div class="container" style="display: flex;">
-    <div class="card" style="width:80%; margin-right:2%;">
+    <div class="card boxdiv">
         <div class="row">
         <c:forEach var="pokemon" items="${mybox}">
             <div class="col-2" onclick="getDetail('${pokemon.ball}','${pokemon.pk}','${pokemon.img}')"><img class="pokemon" src="${pokemon.img}"></div>
@@ -33,6 +33,8 @@
         var name;
         var type1;
         var type2;
+
+
 
         $.ajax({
             url: "/boxdetail",
