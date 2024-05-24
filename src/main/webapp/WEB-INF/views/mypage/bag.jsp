@@ -3,8 +3,8 @@
 <link rel="stylesheet" href="/css/mypagecss.css">
 <div class="container bag-con">
 <div class="card" style="height:50vh">
-    <div class="card-body" style="background-color: OldLace;">
-    <h4 class="card-title"><%=nickname%>의 가방</h4>
+    <div class="card-body bag-div">
+    <h4 class="card-title bag-title"><%=nickname%>의 가방</h4>
     <table class="table table-hover bagtbl">
         <c:forEach var="item" items="${mybags}">
         <tr>

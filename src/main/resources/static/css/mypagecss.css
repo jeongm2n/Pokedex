@@ -8,10 +8,14 @@
     font-weight: bold;
 }
 
+.bag-div{
+    background-color: OldLace;
+}
+
 .bagtbl{
     width:100%;
     text-align : center;
-    margin-top : 5vh;
+    margin-bottom: 0;
 }
 
 .bagtbl > td{
