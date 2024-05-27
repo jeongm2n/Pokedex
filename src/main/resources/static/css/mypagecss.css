@@ -22,6 +22,11 @@
     font-weight: 700;
 }
 
+.many{
+    font-family: "Jua", sans-serif;
+    font-style: normal;
+}
+
 .boxdiv{
     width: 100%; 
     height: 800px;

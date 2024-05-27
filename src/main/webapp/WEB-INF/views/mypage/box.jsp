@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../layouts/header.jsp" %>
 <link rel="stylesheet" href="/css/mypagecss.css">
-<div class="container" style="display: flex;">
-    <h1>잡은 수 : ${many}</h1>
+<div class="container">
+    <h4 class="many">잡은 수 : ${many}</h4>
+    <div style="display: flex; width:100%;">
     <div class="card boxdiv">
         <div class="row">
         <c:forEach var="pokemon" items="${mybox}">
@@ -22,6 +23,7 @@
                 <img id="type2">
             </div>
         </div>
+    </div>
     </div>
     
 </div>
