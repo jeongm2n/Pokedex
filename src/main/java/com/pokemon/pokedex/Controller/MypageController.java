@@ -36,6 +36,8 @@ public class MypageController {
         ModelAndView mav = new ModelAndView();
         ArrayList<Box> myBox = mypageService.getBox(mem_id);
         
+        int size = myBox.size();
+        mav.addObject("many", size);
         mav.addObject("mybox", myBox);
         mav.setViewName("/mypage/box");
         return mav;

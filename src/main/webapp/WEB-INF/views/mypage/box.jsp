@@ -2,6 +2,7 @@
 <%@ include file="../layouts/header.jsp" %>
 <link rel="stylesheet" href="/css/mypagecss.css">
 <div class="container" style="display: flex;">
+    <h1>잡은 수 : ${many}</h1>
     <div class="card boxdiv">
         <div class="row">
         <c:forEach var="pokemon" items="${mybox}">
