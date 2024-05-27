@@ -16,7 +16,7 @@ int cnt=0;
             <%for(int j=0; j<4; j++){%>
                 <div class="col-md-3 col-6 region-div" onclick="goDex('<%=gens[cnt]%>')">
                     <div class="rounded-4 div1">
-                        <div class="region_name"><%=regions[cnt]%></div><div class="poke_num"><%=nums[cnt]%></div></div></div>
+                        <h7 class="region_name"><%=regions[cnt]%></h7><h7 class="poke_num"><%=nums[cnt]%></h7></div></div>
             <%cnt++;
         }%>
         </div>

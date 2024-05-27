@@ -150,14 +150,31 @@ html{
 }
 
 .div1{
+    background-color: #2B394B;
     width:100%;
     height:100%;
     overflow:hidden;
-    text-align:center
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.4s;
+    z-index: 0;
 }
 
-.div1:hover{
-    opacity: 0.4;
+.div1::after{
+    position: absolute;
+    background-color: #EDE9D7;
+    content: "";
+    width: 100%;
+    height: 50%;
+    top:100%;
+    left:0;
+    transition: all 0.4s;
+    z-index: -1;
+}
+
+.div1:hover::after{
+    transform: translateY(-100%);
 }
 
 .typeimg{
@@ -216,11 +233,10 @@ html{
 }
 
 .region_name{
-    background-color: #2B394B;
     color:white;
 }
 .poke_num{
-    background-color: #EDE9D7;
+    color : #2B394B;
 }
 
 .no{
