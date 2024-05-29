@@ -3,7 +3,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.pokemon.pokedex.Mapper.MypageMapper">
     <select id="getBag" resultType="com.pokemon.pokedex.Entity.Bag">
-        SELECT name, many FROM bag WHERE mem_id=#{mem_id}
+        SELECT bag.name as name, many, des FROM bag,balls WHERE mem_id=#{mem_id} AND bag.name=balls.name
     </select>
 
     <select id="getBalls" resultType="com.pokemon.pokedex.Entity.Bag">
