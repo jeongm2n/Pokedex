@@ -22,6 +22,14 @@
     font-weight: 700;
 }
 
+.tr2{
+    display : none;
+}
+
+.tr1:hover ~ .tr2{
+    display : block
+}
+
 .many{
     font-family: "Jua", sans-serif;
     font-style: normal;

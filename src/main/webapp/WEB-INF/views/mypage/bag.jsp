@@ -7,9 +7,12 @@
     <h4 class="card-title bag-title"><%=nickname%>의 가방</h4>
     <table class="table table-hover bagtbl">
         <c:forEach var="item" items="${mybags}">
-        <tr>
+        <tr class="tr1">
             <td><img class="ball" src="/img/ball/${item.name}.png">${item.name}</td>
             <td>x ${item.many}</td>
+        </tr>
+        <tr class="tr2">
+            <td colspan="2"> ${item.des}</td>
         </tr>
         </c:forEach>
     </table>
