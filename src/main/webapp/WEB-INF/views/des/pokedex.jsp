@@ -31,11 +31,11 @@ if(gen.equals("mega")){
     </div>
     <c:forEach var="pokemon" items="${pokemons}">
     <div class="card col-4 col-md-2 text-center flip" onclick="goDetail('${pokemon.no}','${pokemon.korean}')">
-        <div class="div_else front">
+        <div class="cardfront">
             <p>${pokemon.korean}</p>
         </div>
 
-        <div class="back">
+        <div class="cardback">
             <div class="div_else">
                 <img src="${pokemon.img}" class="pokemonimg">
             </div>

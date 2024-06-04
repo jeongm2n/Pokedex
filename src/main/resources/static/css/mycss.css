@@ -202,25 +202,28 @@ html{
     justify-content: center;
 }
 
-.front, .back{
+.cardfront, .cardback{
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
 }
 
-.front{
+.cardfront{
+    display: flex; 
+    justify-content: center;
     writing-mode: vertical-lr;
 }
-.front > p{
+.cardfront > p{
     font-family: "Moirai One", system-ui;
     font-weight: bold;
     font-style: normal;
     font-size: 2rem;
     margin: auto;
+    word-spacing: 5px;
 }
 
-.back{
+.cardback{
     display: flex;
     flex-direction: column;
     transform: rotateY(180deg);
@@ -407,6 +410,9 @@ html{
     }
     .div_else{
         height:20vh
+    }
+    .cardfront > p{
+        font-size: 1rem;
     }
 }
 
