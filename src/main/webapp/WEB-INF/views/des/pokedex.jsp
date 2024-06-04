@@ -31,19 +31,25 @@ if(gen.equals("mega")){
     </div>
     <c:forEach var="pokemon" items="${pokemons}">
     <div class="card col-4 col-md-2 text-center flip" onclick="goDetail('${pokemon.no}','${pokemon.korean}')">
-        <div class="div_else" style="display: flex; justify-content: center;">
-            <img src="${pokemon.img}" class="pokemonimg">
+        <div class="div_else front">
+            <p>${pokemon.korean}</p>
         </div>
-        <div class="card_body middle_div">
-            <div class="no">No.${pokemon.no}</div>
-            <div class="name">${pokemon.korean}</div>
-        </div>
-        <div class="card_body type_div">
-            <c:forEach var="type" items="${pokemon.types}">
-                <c:if test="${!empty type}">
-                    <img class="typeimg" src="/img/types/${type}.png">
-                </c:if>
-            </c:forEach>
+
+        <div class="back">
+            <div class="div_else">
+                <img src="${pokemon.img}" class="pokemonimg">
+            </div>
+            <div class="card_body middle_div">
+                <div class="no">No.${pokemon.no}</div>
+                <div class="name">${pokemon.korean}</div>
+            </div>
+            <div class="card_body type_div">
+                <c:forEach var="type" items="${pokemon.types}">
+                    <c:if test="${!empty type}">
+                        <img class="typeimg" src="/img/types/${type}.png">
+                    </c:if>
+                </c:forEach>
+            </div>
         </div>
     </div>
     </c:forEach>
