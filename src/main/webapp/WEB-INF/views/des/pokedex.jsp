@@ -13,7 +13,7 @@ if(gen.equals("mega")){
     int n = Integer.parseInt(gen);
     page_name = region[n-1];
 }%>
-
+<link href="https://fonts.googleapis.com/css2?family=Moirai+One&display=swap" rel="stylesheet">
 <script>
     function goDetail(no, str){
         var gen = '<%=gen %>';

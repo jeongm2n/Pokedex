@@ -213,6 +213,10 @@ html{
     writing-mode: vertical-lr;
 }
 .front > p{
+    font-family: "Moirai One", system-ui;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 2rem;
     margin: auto;
 }
 
