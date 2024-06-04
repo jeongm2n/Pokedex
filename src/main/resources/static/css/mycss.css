@@ -188,6 +188,11 @@ html{
     margin : 0 auto;
 }
 
+.flip{
+    transform-style: preserve-3d;
+    transition: all 0.4s;
+}
+
 .div_else{
     height:20vh;
     vertical-align: middle;

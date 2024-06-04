@@ -30,7 +30,7 @@ if(gen.equals("mega")){
         </select><input type="text" id="search" placeholder="검색" style="height: 5vh;font-size:1.3rem">
     </div>
     <c:forEach var="pokemon" items="${pokemons}">
-    <div class="card col-4 col-md-2 text-center" onclick="goDetail('${pokemon.no}','${pokemon.korean}')">
+    <div class="card col-4 col-md-2 text-center flip" onclick="goDetail('${pokemon.no}','${pokemon.korean}')">
         <div class="div_else" style="display: flex; justify-content: center;">
             <img src="${pokemon.img}" class="pokemonimg">
         </div>
