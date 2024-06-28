@@ -11,9 +11,9 @@
             <td><img class="ball" src="/img/ball/${item.name}.png">${item.name}</td>
             <td>x ${item.many}</td>
         </tr>
-        <tr class="tr2">
+        <!-- <tr class="tr2">
             <td colspan="2"> ${item.des}</td>
-        </tr>
+        </tr> -->
         </c:forEach>
     </table>
     </div>
