@@ -32,7 +32,7 @@ public class MemberController {
     }
 
     @PostMapping("/dologin")
-    public String goLogin(HttpServletResponse response, @RequestParam String ID, String pwd, HttpSession session)throws Exception{
+    public String goLogin(HttpServletResponse response, @RequestParam String ID, @RequestParam String pwd, HttpSession session)throws Exception{
         Member result = memberService.goLogin(ID,pwd);
         if(result==null){
             PrintWriter out = response.getWriter();
