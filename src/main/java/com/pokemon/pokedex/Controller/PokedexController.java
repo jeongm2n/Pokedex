@@ -33,7 +33,7 @@ public class PokedexController {
     
 
     @GetMapping("/generation/{num}")
-    public ModelAndView goJSON(@PathVariable String num) throws IOException {
+    public ModelAndView goJSON(@PathVariable("num") String num) throws IOException {
         ModelAndView mav = new ModelAndView();
 
         PokemonJSON pokeJSON = new PokemonJSON();
