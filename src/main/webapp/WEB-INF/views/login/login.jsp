@@ -7,7 +7,7 @@
             <table class="logintbl">
                 <tr>
                     <td><img class="loginimg" src="/img/id.png"></td>
-                    <td><input name="ID" type="text" class="form-control" id="exampleFormControlInput1" placeholder="아이디"></td>
+                    <td><input name="mem_id" type="text" class="form-control" id="exampleFormControlInput1" placeholder="아이디"></td>
                 </tr>
                 <tr>
                     <td><img class="loginimg" src="/img/pwd.png"></td>
