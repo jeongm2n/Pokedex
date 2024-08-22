@@ -61,9 +61,9 @@ public class MemberController {
 
     @PostMapping("/dcheckId")
     @ResponseBody
-    public String doubleCheckId(@RequestParam String id) {
+    public String doubleCheckId(@RequestParam("mem_id") String mem_id) {
         //TODO: process POST request
-        int result = memberService.getCheckId(id);
+        int result = memberService.getCheckId(mem_id);
         System.out.println(result);
         if(result==1){
             return "true";

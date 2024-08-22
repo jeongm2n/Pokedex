@@ -15,7 +15,7 @@ $(document).ready(function(){
                 url: '/dcheckId', // 서버로 요청을 보낼 URL
                 type: 'POST', // HTTP 요청 메서드 (GET, POST 등)
                 data:{
-                    id : id
+                    mem_id : id
                 },
                 dataType: 'text', // 서버의 응답으로 받을 데이터 타입
                 success: function(response) { // 성공적으로 응답을 받았을 때 실행할 콜백 함수

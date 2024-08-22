@@ -11,7 +11,7 @@ public class MemberService {
     @Autowired
     MemberMapper member;
 
-    public int getCheckId(String id){
+    public int getCheckId(String id){ //회원가입 시 ID 중복체크
         return member.checkId(id);
     }
 
