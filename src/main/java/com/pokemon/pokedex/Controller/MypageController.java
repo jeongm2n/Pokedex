@@ -21,7 +21,7 @@ public class MypageController {
     MypageService mypageService;
 
     @GetMapping("/mybag")
-    public ModelAndView getMybag(@RequestParam String mem_id) {
+    public ModelAndView getMybag(@RequestParam("mem_id") String mem_id) {
         ModelAndView mav = new ModelAndView();
         ArrayList<Bag> myBag = mypageService.getBag(mem_id);
 
@@ -32,7 +32,7 @@ public class MypageController {
     }
 
     @GetMapping("/mybox")
-    public ModelAndView getMyBox(@RequestParam String mem_id) {
+    public ModelAndView getMyBox(@RequestParam("mem_id") String mem_id) {
         ModelAndView mav = new ModelAndView();
         ArrayList<Box> myBox = mypageService.getBox(mem_id);
         
@@ -45,7 +45,7 @@ public class MypageController {
 
     @GetMapping("/boxdetail")
     @ResponseBody
-    public PokemonDB getBoxDetail(@RequestParam int pk) {
+    public PokemonDB getBoxDetail(@RequestParam("pk") int pk) {
         PokemonDB poke = mypageService.getDetail(pk);
         return poke;
     }
