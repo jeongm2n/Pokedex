@@ -2,7 +2,7 @@
 <%@ include file="../layouts/header.jsp" %>
 <link rel="stylesheet" href="/css/mypagecss.css">
 <div class="container bag-con">
-<div class="card" style="height:50vh">
+<div class="card" style="height:50vh; overflow-x:auto;">
     <div class="card-body bag-div">
     <h4 class="card-title bag-title"><%=nickname%>의 가방</h4>
     <table class="table table-hover bagtbl">
