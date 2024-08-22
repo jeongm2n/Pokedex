@@ -15,7 +15,7 @@
     </insert>
 
     <insert id="insertBag">
-        INSERT INTO bag VALUES(#{mem_id},#{name},#{category},#{many})
+        INSERT INTO bag VALUES(#{name},#{mem_id},#{category},#{many})
     </insert>
 
     <select id="goLogin" resultType="com.pokemon.pokedex.Entity.Member">

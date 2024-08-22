@@ -74,7 +74,7 @@ public class MemberController {
 
     @PostMapping("/dcheckNick")
     @ResponseBody
-    public String doubleCheckNick(@RequestParam String nickname) {
+    public String doubleCheckNick(@RequestParam("nickname") String nickname) {
         //TODO: process POST request
         int result = memberService.getCheckNick(nickname);
         if(result==1){
@@ -85,7 +85,7 @@ public class MemberController {
     }
 
     @PostMapping("/regist")
-    public String postMethodName(@RequestParam String ID, String pwd, String nickname) {
+    public String postMethodName(@RequestParam("ID") String ID, @RequestParam("pwd") String pwd, @RequestParam("nickname") String nickname) {
         //TODO: process POST request
         memberService.insertMember(ID,pwd,nickname);
         memberService.insertBag(ID, "몬스터볼", "ball", 20);
