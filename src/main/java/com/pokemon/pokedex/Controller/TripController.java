@@ -26,7 +26,7 @@ public class TripController {
     MypageService ms;
 
     @GetMapping("/catchpage")
-    public ModelAndView goCatchpage(@RequestParam String region, String mem_id) {
+    public ModelAndView goCatchpage(@RequestParam("region") String region, @RequestParam("mem_id") String mem_id) {
         ModelAndView mav = new ModelAndView();
         PokemonDB pokemon = ps.getRand(mem_id, region);
         ArrayList<Bag> balls = ms.getBalls(mem_id);
@@ -37,7 +37,8 @@ public class TripController {
     }
     
     @PostMapping("/catch")
-    public String pokeCatch(@RequestParam int poke_pk, String mem_id, String ballname, String rewardname, int rewardmany) {
+    public String pokeCatch(@RequestParam("poke_pk") int poke_pk, @RequestParam("mem_id") String mem_id, 
+    @RequestParam("ballname") String ballname, @RequestParam("rewardname") String rewardname, @RequestParam("rewardmany") int rewardmany) {
 
         ms.insertBox(poke_pk, mem_id, ballname);
         ms.updateBall(mem_id, ballname);
@@ -55,7 +56,7 @@ public class TripController {
 
     @PostMapping("/calcBall")
     @ResponseBody
-    public String postMethodName(@RequestParam String mem_id, String ballname) {
+    public String postMethodName(@RequestParam("mem_id") String mem_id, @RequestParam("ballname") String ballname) {
         ms.updateBall(mem_id, ballname);
         String many = Integer.toString(ms.selectBall(mem_id, ballname));
 
